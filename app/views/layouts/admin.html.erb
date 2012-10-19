@@ -45,13 +45,7 @@
             <span class="icon-bar"></span>
           </a>
           <a class="brand" href="#">Realestate</a>
-          <div class="container nav-collapse">
-            <ul class="nav">
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
-            </ul>
-          </div><!--/.nav-collapse -->
+          <%= render 'admin/shared/navigation' %>
         </div>
       </div>
     </div>
@@ -60,6 +54,7 @@
       <div class="content">
         <div class="row">
            <div class="span9">
+             <%= render 'layouts/messages' %>
               <%= yield %>
             </div>
             <div class="span3">
@@ -76,9 +71,10 @@
         </div><!--/row-->
       </div><!--/content-->
 
-      <footer>
-        <p>&copy; Company 2012</p>
-      </footer>
+      <div id="footer">
+        <p>สงวนลิขสิทธิ์ © 2012 - Allproperty Media Co., Ltd.</p>
+        <p><a href="/ex_feedback">ติดต่อเรา</a></p>
+      </div>
 
     </div> <!-- /container -->
 

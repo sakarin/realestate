@@ -1,9 +1,15 @@
 <ul class="nav">
-  <li><%= link_to t('account.navigation.listing'), account_listings_path %></li>
+  <li><%= link_to "ข้อมูลผู้ใช้", admin_users_path %></li>
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">ประกาศ</a>
+    <ul class="dropdown-menu">
+      <li class="">
+        <%= link_to "แก้ไขบัญชี", edit_user_registration_path %>
+      </li>
+      <li><%= link_to "ข้อมูลผู้ใช้", admin_users_path %></li>
+    </ul>
+  </li>
 
-  <li><%= link_to t('account.navigation.account'), edit_user_detail_registration_path %></li>
-  <li><%= link_to t('account.navigation.inbox'), users_path %></li>
-  <li><%= link_to t('account.navigation.support'), users_path %></li>
 
 </ul>
 
