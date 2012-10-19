@@ -26,5 +26,15 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'omniauth-facebook'
 
+gem "cancan"
+gem "rolify"
+
+gem 'simple_form'
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
+gem 'ransack'
+gem "squeel"
+
+
 
 

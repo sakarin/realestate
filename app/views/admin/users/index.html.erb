@@ -1,0 +1,51 @@
+<div id="main" class="span8">
+  <div id="content">
+    <%= link_to t('admin.users.new'), new_admin_user_path, :class => "btn btn-success floatright" %>
+    <h3><%= "รายการ" + t('activerecord.models.user') %></h3>
+
+    <div class="clearboth"></div>
+
+    <%= form_tag multi_destroy_admin_users_path do %>
+        <table cellpadding="0" cellspacing="0" class="blue">
+          <thead>
+
+          <tr>
+            <th width="2%"><input type="checkbox" id="user_check_all" title="Check/uncheck all"></th>
+            <th width=""><%= sort_link @search, :email, t(:email, :scope => 'activerecord.attributes.user') %></th>
+            <th width="20%"><%= sort_link @search, :updated_at, t('updated_at') %></th>
+            <th width="15%"><%= t('toolbar') %></th>
+          </tr>
+
+          </thead>
+          <tbody>
+          <% @users.each do |user| %>
+              <tr class="<%= cycle('even', 'odd') %>" id="<%= dom_id user %>">
+                <td>
+                  <%= check_box_tag "user_ids[]", user.id, false, :class => "user_id_checkbox" %>
+                </td>
+                <td><%= link_to user.email, edit_admin_user_path(user) %></td>
+                <td><%= user.updated_at %></td>
+                <td>
+                  <div class="user_actions">
+                    <%= link_to t('toolbars.edit'), edit_admin_user_path(user), :title => t('toolbars.edit') , :class => "act edit" %>
+                    <%= link_to t('toolbars.delete'), admin_user_path(user), confirm: t('confirm.delete'), method: :delete, :title => t('toolbars.delete') , :class => "act delete" %>
+                  </div>
+
+                </td>
+              </tr>
+          <% end %>
+          </tbody>
+        </table>
+
+        <%= will_paginate @users, :renderer => BootstrapPagination::Rails %>
+
+        <div class="clearfix align-right">
+        </div>
+
+        <div class="actions no-indent align-right">
+          <%= submit_tag t('buttons.multi_delete'), :class => 'btn btn-danger' %>
+        </div>
+
+    <% end %>
+  </div>
+</div>

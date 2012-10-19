@@ -1,0 +1,131 @@
+th:
+  hello: "สวัสดี"
+  welcome: "ยินดีต้อนรับ"
+  prompt: "เลือก"
+  account:
+    navigation:
+      listing: "ประกาศของฉัน"
+      account: "ข้อมูลสมาชิก"
+      inbox: "ข้อความของฉัน"
+      support: "ฝ่ายบริการลูกค้า"
+
+    listing:
+      tabs:
+        listings_active: "ประกาศปัจจุบัน"
+        listings_drafts: "ประกาศฉบับร่าง"
+        listings_history: "ประกาศเก่า"
+        listings_exclusive: "ประกาศพิเศษ"
+      buttons:
+        new: "สร้างประกาศใหม่"
+        cancel: "ยกเลิกประกาศที่เลือก"
+      collect:
+        furnishing:
+          unfur: "ไม่มี"
+          part: "มีบางส่วน"
+          full: "ครบชุด"
+        facing:
+          north: "ทิศเหนือ"
+          neast: "ทิศตะวันออกเฉียงเหนือ"
+          nwest: "ทิศตะวันตกเฉียงเหนือ"
+          east: "ทิศตะวันออก"
+          west: "ทิศตะวันตก"
+          seast: "ทิศตะวันออกเฉียงใต้"
+          swest: "ทิศตะวันตกเฉียงใต้"
+          south: "ทิศใต้"
+
+  listing:
+    type:
+      rent: "เช่า"
+      sell: "ขาย"
+      opt:  "ขายดาวน์"
+
+  user:
+    buttons:
+      update: "บันทึกการเปลี่ยนแปลง"
+
+  admin:
+    users:
+      new: "เพิ่มผู้ใช้"
+    unit_features:
+      new: "เพิ่มคุณสมบัติพิเศษ"
+      created: "คุณได้ทำการสร้างคุณสมบัติพิเศษสำเร็จแล้ว."
+      updated: "คุณได้ทำการบันทึกข้อมูลคุณสมบัติพิเศษแล้ว."
+    furnitures:
+      new: "เพิ่มอุปกรณ์ตกแต่ง"
+      created: "คุณได้ทำการสร้างอุปกรณ์ตกแต่งสำเร็จแล้ว."
+      updated: "คุณได้ทำการบันทึกข้อมูลอุปกรณ์ตกแต่งแล้ว."
+    free_spaces:
+      new: "เพิ่มพื้นที่ว่างด้านนอก ด้านใน"
+      created: "คุณได้ทำการสร้างอุปกรณ์ตกแต่งสำเร็จแล้ว."
+      updated: "คุณได้ทำการบันทึกข้อมูลอุปกรณ์ตกแต่งแล้ว."
+    facilities:
+      new: "เพิ่มสิ่งอำนวยความสะดวก"
+      created: "คุณได้ทำการสร้างอุปกรณ์ตกแต่งสำเร็จแล้ว."
+      updated: "คุณได้ทำการบันทึกข้อมูลอุปกรณ์ตกแต่งแล้ว."
+
+  condo: "คอนโด"
+  home: "บ้านเดี่ยว"
+  townhouse: "ทาวน์เฮาส์"
+  land: "ที่ดิน"
+  apartment: "อพาร์ทเมนท์"
+
+  BAH: "บาท"
+  BAM: "บาท/เดือน"
+  BASM: "บาท/ตร.ม."
+  BASW: "บาท/ตร.วา"
+  BAR: "บาท/ไร่"
+  POA: "สอบถามราคา"
+  GUI: "ราคาคร่าวๆ"
+
+  F: "ขายขาด"
+  L: "เซ็งระยะยาว"
+
+  buttons:
+    back: "กลับ"
+    next: "ถัดไป"
+    update_and_exit: "บันทึกและออก"
+    finish: "ขาย/ให้เช่า ได้แล้ว"
+    cancel: "ย้อนกลับ"
+    renew: "ต่ออายุประกาศ"
+    multi_delete: "ลบรายการที่คุณเลือก"
+
+  toolbar: "เครื่องมือ"
+  toolbars:
+    edit: "แก้ไข"
+    delete: "ลบ"
+
+  updated_at: "วันที่ปรับปรุง"
+
+  controllers:
+    new: "เพ่ิม"
+    edit: "แก้ไข"
+
+  confirm:
+    delete: "คุณแน่ใจแล้วหร่อไม่"
+
+
+
+
+
+  activerecord:
+    models:
+        user: "ผู้ใช้"
+        unit_feature: "คุณสมบัติพิเศษ"
+        furniture: "อุปกรณ์ตกแต่ง"
+        free_space: "พื้นที่ว่างด้านนอก ด้านใน"
+        facility: "สิ่งอำนวยความสะดวก"
+    attributes:
+        user:
+          name:  "ชื่อ"
+        unit_feature:
+          name: "ชื่อ"
+        furniture:
+          name: "ชื่อ"
+        free_space:
+          name: "ชื่อ"
+        facility:
+          name: "ชื่อ"
+        listing:
+          unit: "ยูนิต"
+          price: "ราคา"
+

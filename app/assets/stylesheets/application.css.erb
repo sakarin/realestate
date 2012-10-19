@@ -1,0 +1,47 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+.even {background: whiteSmoke;}
+.odd {}
+
+.act {
+    display: inline-block;
+    text-indent: -999em;
+    width: 21px;
+    height: 21px;
+    background-image: url(<%= asset_path 'admin/icons/extranet-sprite.png' %>);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    margin: 2px;
+}
+
+.delete {
+    background-position: 0 -21px;
+}
+
+table.blue a:visited.sort_link {
+    color: white;
+}
+table.blue .sort_link {
+    padding-right: 15px;
+    /*background-image: url(<%= asset_path 'admin/icons/extranet-sprite.png' %>);*/
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: right 0;
+    color: white;
+}
+
+h3{
+    line-height: 30px;
+}
