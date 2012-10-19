@@ -25,6 +25,8 @@ th:
     #     password: 'No special characters, please.'
 
     labels:
+      users:
+        first_name: "ชื่อ"
 #      unit_feature:
 #        name: "ข้อมูล"
 

@@ -11,7 +11,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121018062502) do
+ActiveRecord::Schema.define(:version => 20121019024012) do
+
+  create_table "amphurs", :force => true do |t|
+    t.string  "code"
+    t.string  "name",        :default => "", :null => false
+    t.integer "geo_id",      :default => 0,  :null => false
+    t.integer "province_id"
+  end
+
+  create_table "districts", :force => true do |t|
+    t.string  "code"
+    t.string  "name",        :default => "", :null => false
+    t.integer "amphur_id"
+    t.integer "province_id"
+    t.integer "geo_id",      :default => 0,  :null => false
+  end
+
+  create_table "provinces", :force => true do |t|
+    t.string  "code"
+    t.string  "name",   :default => "", :null => false
+    t.integer "geo_id", :default => 0,  :null => false
+  end
 
   create_table "roles", :force => true do |t|
     t.string   "name"
@@ -44,6 +65,23 @@ ActiveRecord::Schema.define(:version => 20121018062502) do
     t.datetime "updated_at",                             :null => false
     t.string   "provider"
     t.string   "uid"
+    t.string   "title"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.date     "birth_date"
+    t.string   "telephone1"
+    t.string   "telephone2"
+    t.string   "fax"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "postcode"
+    t.string   "city"
+    t.integer  "province_id"
+    t.string   "country"
+    t.string   "introduction"
+    t.string   "service_and_expert"
+    t.string   "web_site"
+    t.string   "agency_logo"
   end
 
   add_index "users", ["authentication_token"], :name => "index_users_on_authentication_token", :unique => true

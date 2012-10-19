@@ -33,6 +33,7 @@ th:
           swest: "ทิศตะวันตกเฉียงใต้"
           south: "ทิศใต้"
 
+#th.account.users.updated
   listing:
     type:
       rent: "เช่า"
@@ -41,7 +42,7 @@ th:
 
   user:
     buttons:
-      update: "บันทึกการเปลี่ยนแปลง"
+      update: "ปรับปรุงผู้ใช้"
 
   admin:
     users:
@@ -62,6 +63,10 @@ th:
       new: "เพิ่มสิ่งอำนวยความสะดวก"
       created: "คุณได้ทำการสร้างอุปกรณ์ตกแต่งสำเร็จแล้ว."
       updated: "คุณได้ทำการบันทึกข้อมูลอุปกรณ์ตกแต่งแล้ว."
+
+  account:
+    users:
+      updated: "คุณได้ทำการปรับปรุงข้อมูลผู้ใช้แล้ว"
 
   condo: "คอนโด"
   home: "บ้านเดี่ยว"
@@ -116,7 +121,8 @@ th:
         facility: "สิ่งอำนวยความสะดวก"
     attributes:
         user:
-          name:  "ชื่อ"
+          first_name: "ชื่อ"
+          title: "คำนำหน้า"
         unit_feature:
           name: "ชื่อ"
         furniture:
