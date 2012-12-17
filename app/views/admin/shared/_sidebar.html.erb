@@ -1,0 +1,48 @@
+<div id="sidebar" class="span4">
+  <div class="block panel">
+    <div class="hcard clearfix">
+        <span class="avatar">
+	        <img src="https://lh5.googleusercontent.com/-V2-PEPv9UEc/AAAAAAAAAAI/AAAAAAAAAAA/eV5jBv5qy0A/s96-c/photo.jpg" alt="noimage_agent_45x60">
+		</span>
+
+      <div class="name">
+        <h4><%= "#{current_user.first_name}  #{current_user.last_name}" %></h4>
+        <div class="top2">
+          <span class="label label-info">เจ้าของทรัพย์สิน</span>
+        </div>
+        <div class="top2">
+
+          <%= link_to "แก้ไขบัญชี", edit_user_registration_path %>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <%= link_to "แก้ไขข้อมูลส่วนตัว", admin_users_path %>
+
+        </div>
+
+
+
+      </div>
+
+    </div>
+
+    <div class="cnt">
+      <p>
+        <b>หมดอายุ: 22 กันยายน 2556</b>
+        กรุณาติดต่อ (66) 02-352-4888 เพื่อขอข้อมูลเกี่ยวกับการต่ออายุสมาชิก.
+      </p>
+
+      <div class="alert alert-info">
+        <img src="http://cdn-th1.pgimgs.com/images/extranet/information.png" alt="information"><a href="/ex_upgrade">อัพเกรดสมาชิกเพื่อสิทธิพิเศษ</a>
+      </div>
+      <ul class="icon_view clearfix">
+        <li>
+          <a id="guidelines" href="/ex_upgrade">อัพเกรด</a>
+        </li>
+        <li>
+          <a id="bdm_contact" href="/ex_support">ฝ่ายบริการลูกค้า</a>
+        </li>
+      </ul>
+
+
+    </div>
+  </div>
+</div>

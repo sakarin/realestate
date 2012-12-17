@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121019024012) do
+ActiveRecord::Schema.define(:version => 20121019073536) do
 
   create_table "amphurs", :force => true do |t|
     t.string  "code"
@@ -65,6 +65,58 @@ ActiveRecord::Schema.define(:version => 20121019024012) do
     t.integer  "listing_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+  end
+
+  create_table "images", :force => true do |t|
+    t.string   "name"
+    t.string   "attachment"
+    t.integer  "position"
+    t.integer  "listing_id"
+    t.string   "session_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "listings", :force => true do |t|
+    t.string   "listing_type"
+    t.string   "property_type"
+    t.string   "listing_title_th"
+    t.string   "listing_description_th"
+    t.integer  "amphur_id"
+    t.integer  "district_id"
+    t.integer  "province_id"
+    t.string   "property_name"
+    t.string   "street_number"
+    t.string   "street_name"
+    t.string   "post_code"
+    t.integer  "price"
+    t.string   "price_type"
+    t.string   "tenure"
+    t.string   "lat_value"
+    t.string   "lon_value"
+    t.integer  "floorarea"
+    t.integer  "floorsize_x"
+    t.integer  "floorsize_y"
+    t.integer  "landarea_rai"
+    t.integer  "landarea_ngaan"
+    t.integer  "landarea_sqw"
+    t.integer  "landsize_x"
+    t.integer  "landsize_y"
+    t.string   "bedrooms"
+    t.string   "extra_rooms"
+    t.string   "bathrooms"
+    t.string   "number_of_floors"
+    t.string   "floor_position"
+    t.string   "furnishing"
+    t.string   "facing"
+    t.integer  "user_id"
+    t.string   "status"
+    t.datetime "published_date"
+    t.datetime "expired_date"
+    t.string   "notepad"
+    t.string   "comment"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
   end
 
   create_table "provinces", :force => true do |t|

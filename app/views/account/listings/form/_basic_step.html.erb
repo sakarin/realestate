@@ -1,0 +1,157 @@
+
+<h4>ข้อมูลเบื้องต้น</h4>
+<div class="control-group">
+  <label class="control-label" for="inputPassword">ประกาศประเภท:</label>
+
+  <div class="controls">
+    <label class="radio inline">
+      <%= radio_button("listing", "listing_type", "sale") %> ขาย
+    </label>
+    <label class="radio inline">
+      <%= radio_button("listing", "listing_type", "rent") %> เช่า
+    </label>
+    <label class="radio inline">
+      <%= radio_button("listing", "listing_type", "opt") %> ขายดาวน์
+    </label>
+  </div>
+</div>
+
+<div class="control-group">
+  <label class="control-label" for="inputPassword"> ประเภท :</label>
+
+  <div class="controls">
+    <%= select(:listing, :property_type, Listing::PROPERTY_TYPE.collect { |property_type| [t(property_type), property_type.to_s] }) %>
+  </div>
+</div>
+
+<div class="control-group">
+  <label class="control-label" for="inputPassword">หัวข้อประกาศ:</label>
+  <div class="controls">
+    <%= f.text_field :listing_title_th %>
+  </div>
+</div>
+
+<div class="control-group">
+  <label class="control-label" for="inputPassword">รายละเอียดเกี่ยวกับประกาศ:</label>
+  <div class="controls">
+    <%= f.text_area :listing_description_th, :cols => 5, :rows => 3 %>
+  </div>
+</div>
+
+<h4>รายละเอียดที่ตั้ง</h4>
+<div class="control-group" id="province-group">
+  <label class="control-label" for="inputPassword"> จังหวัด:</label>
+  <div class="controls">
+    <%= f.collection_select(:province_id, Province.order(:name), :id, :name, include_blank: true) %>
+  </div>
+</div>
+
+<div class="control-group"  id="amphur-group">
+  <label class="control-label" for="inputPassword"> อำเภอ:</label>
+  <div class="controls">
+    <% if @listing.province_id.blank? %>
+        <%= select_tag "listing_amphur_id", "<option></option>".html_safe %>
+        <%#= f.collection_select(:amphur_id, Amphur.order(:name), :id, :name, include_blank: true) %>
+    <% else %>
+        <%= f.collection_select(:amphur_id, Amphur.find_all_by_province_id(@listing.province_id), :id, :name, include_blank: false) %>
+    <% end %>
+
+  </div>
+</div>
+
+<div class="control-group">
+  <label class="control-label" for="inputPassword"> ตำบล:</label>
+  <div class="controls">
+    <% if @listing.amphur_id.blank? %>
+        <%= select_tag "listing_district_id", "<option></option>".html_safe %>
+        <%#= f.collection_select(:district_id, District.order(:name), :id, :name, include_blank: true) %>
+    <% else %>
+        <%= f.collection_select(:district_id, District.find_all_by_amphur_id(@listing.amphur_id), :id, :name, include_blank: false) %>
+    <% end %>
+
+  </div>
+</div>
+
+<div class="control-group">
+  <label class="control-label" for="inputPassword"> ชื่อโครงการ:</label>
+  <div class="controls">
+    <%= f.text_field :property_name, :class => "input-xlarge" %>
+  </div>
+</div>
+
+<div class="control-group">
+  <label class="control-label" for="inputPassword"> เลขที่ซอย:</label>
+  <div class="controls">
+    <%= f.text_field :street_number, :class => "input-mini" %>
+  </div>
+</div>
+
+<div class="control-group">
+  <label class="control-label" for="inputPassword"> ถนน:</label>
+  <div class="controls">
+    <%= f.text_field :street_name, :class => "input-xlarge" %>
+  </div>
+</div>
+
+<div class="control-group">
+  <label class="control-label" for="inputPassword"> รหัสไปรษณีย์:</label>
+  <div class="controls">
+    <%= f.text_field :post_code, :class => "input-small" %>
+  </div>
+</div>
+
+<%= render 'map', :f => f %>
+
+
+
+<h4>ข้อมูลด้านราคา</h4>
+<div class="control-group">
+  <label class="control-label" for="inputPassword"> ราคา:</label>
+  <div class="controls">
+    <%= f.text_field :price %> <%= select(:listing, :price_type, Listing::PRICE_TYPE.collect { |price_type| [t(price_type), price_type.to_s] }) %>
+  </div>
+</div>
+
+<div class="control-group">
+  <label class="control-label" for="inputPassword"> การครอบครอง:</label>
+  <div class="controls">
+    <%= select(:listing, :tenure, Listing::TENURE.collect { |tenure| [t(tenure), tenure.to_s] }) %>
+  </div>
+</div>
+
+<h4>ขนาดเพิ่มเติม</h4>
+<div class="control-group">
+  <label class="control-label" for="inputPassword"> พื้นที่ใช้สอย:</label>
+  <div class="controls">
+    <%=  f.text_field :floorarea , :class => "input-mini" %>  ตารางเมตร
+  </div>
+</div>
+
+<div class="control-group">
+  <label class="control-label" for="inputPassword"> ขนาดพื้นที่:</label>
+  <div class="controls">
+    <%=  f.text_field :floorsize_x , :class => "input-mini" %> x  <%=  f.text_field :floorsize_y, :class => "input-mini" %> เมตร
+  </div>
+</div>
+
+<div class="control-group">
+  <label class="control-label" for="inputPassword"> จำนวนที่ดิน:</label>
+  <div class="controls">
+    <%=  f.text_field :landarea_rai, :class => "input-mini" %> ไร่  <%=  f.text_field :landarea_ngaan, :class => "input-mini" %> งาน <%=  f.text_field :landarea_sqw, :class => "input-mini" %> ตารางวา
+  </div>
+</div>
+
+<div class="control-group">
+  <label class="control-label" for="inputPassword"> ขนาดที่ดิน:</label>
+  <div class="controls">
+    <%=  f.text_field :landsize_x, :class => "input-mini" %> x  <%=  f.text_field :landsize_y, :class => "input-mini" %> เมตร
+  </div>
+</div>
+
+
+<div class="actions no-indent clearfix">
+  <%= f.submit t('buttons.back'), :class => "btn floatleft", :name => "back_button"  %>
+  <%= f.submit t('buttons.update_and_exit'), :class => "btn btn-success", :name => "save_button" %>
+  <%= f.submit t('buttons.next'), :class => "btn btn-primary floatright"  %>
+</div>
+

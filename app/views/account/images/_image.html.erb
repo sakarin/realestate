@@ -1,0 +1,4 @@
+<div class="image">
+  <%= link_to image_tag(image.attachment_url(:thumb)), image if image.attachment? %>
+  <div class="name"><%= best_in_place image, :name, :path => account_image_path(image) %></div>
+</div>

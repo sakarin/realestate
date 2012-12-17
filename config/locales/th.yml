@@ -37,7 +37,7 @@ th:
   listing:
     type:
       rent: "เช่า"
-      sell: "ขาย"
+      sale: "ขาย"
       opt:  "ขายดาวน์"
 
   user:
