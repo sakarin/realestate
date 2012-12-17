@@ -1,0 +1,7 @@
+
+$('#listing_district_id').empty();
+$('#listing_district_id').append("<option value=''></option>");
+<% for district in @districts %>
+$('#listing_district_id').append($("<option></option>").attr("value",<%= district.id %>).text('<%= district.name %>'));
+<% end %>
+

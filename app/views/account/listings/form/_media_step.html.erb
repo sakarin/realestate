@@ -1,0 +1,55 @@
+<h3>ใส่รูปภาพประกอบ</h3>
+<%= form_for([:account, Image.new], :html => {:id => "new_image"}) do |f| %>
+    <%#= f.hidden_field :listing_id, "#{@listing.id.to_s}" %>
+
+    <span class="btn btn-success fileinput-button">
+                    <i class="icon-plus icon-white"></i>
+                    <span><%= t('fileupload.add_files') %></span>
+      <%= f.file_field :attachment, :multiple => true, name: "image[attachment]" %>
+                </span>
+    <button type="submit" class="btn btn-primary start">
+      <i class="icon-upload icon-white"></i>
+      <span><%= t('fileupload.start_upload') %></span>
+    </button>
+<% end %>
+<div id="images">
+  <%#= render @images %>
+</div>
+
+<div id="panel_photos" class="media_panel" style="">
+
+
+  <ul id="thumbnails2" class="ui-sortable">
+    <% @images.each do |image| %>
+        <li class="photolistitem">
+          <div class="imagecontainer"><%= link_to image_tag(image.attachment_url(:thumb)), image if image.attachment? %></div>
+          <div><span id="3296293" class="3296293">(คลิกเพื่อใส่ชื่อภาพ)</span></div>
+
+          <div class="photolistbtn" id="photolistbtn_3296293" style="left: 0; margin-left: 0; padding-left: 0; clear: both">
+            <div class="btnsmall" style="margin-left:10px">
+              <a href="/ex_edit_listing/596878/media?process=5078fd989116e&amp;deletemedia=3296293" onclick="javascript:return confirm('ลบรูปภาพนี้?')">ลบ</a>
+            </div>
+            <div class="btnsmallEnding"></div>
+            <b class="cover_image" style="margin-left:5px;">ภาพหน้าปกประกาศ</b>
+          </div>
+        </li>
+    <% end %>
+  </ul>
+
+
+</div>
+
+<script id="template-upload" type="text/x-tmpl">
+  <div class="upload">
+    {%=o.name%}
+    <div class="progress"><div class="bar" style="width: 0%"></div></div>
+  </div>
+</script>
+
+<%= form_for([:account, @listing], :html => {:class => "bs-docs-example form-horizontal", :id => "step_form"}) do |f| %>
+    <div class="actions no-indent clearfix">
+      <%= f.submit t('buttons.back'), :class => "btn floatleft", :name => "back_button" unless @listing.first_step? %>
+      <%= f.submit t('buttons.update_and_exit'), :class => "btn btn-success", :name => "save_button" %>
+      <%= f.submit t('buttons.next'), :class => "btn btn-primary floatright" unless @listing.last_step? %>
+    </div>
+<% end %>
