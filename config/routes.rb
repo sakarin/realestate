@@ -1,12 +1,24 @@
 Realestate::Application.routes.draw do
 
+  root :to => 'home#index'
+
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"},
              controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
   devise_for :users
 
-  root :to => 'home#index'
+  match "/dynamic_amphurs/:id" => "account/listings#dynamic_amphurs", :via => :post
+  match "/dynamic_districts/:id" => "account/listings#dynamic_districts", :via => :post
+
+  match "account/listings/:id/progress_trackers/:step" => "account/listings#progress_trackers", :via => :get
+  match "account/listings/progress_trackers/:step" => "account/listings#progress_trackers", :via => :get
+
+  match "/account" => "account/listings#index", :via => :get
+  match "/admin" => "admin/home#index", :via => :get
+
+
   namespace :admin do
+
     resources :users do
       collection do
         post :multi_destroy
@@ -37,7 +49,8 @@ Realestate::Application.routes.draw do
 
   namespace :account do
     resources :users
-
+    resources :listings
+    resources :images
   end
 
 

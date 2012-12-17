@@ -14,3 +14,7 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+//= require jquery-fileupload/basic
+//= require jquery-fileupload/vendor/tmpl
+//= require jquery.purr
+//= require best_in_place

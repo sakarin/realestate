@@ -19,6 +19,7 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
   gem "twitter-bootstrap-rails"
+  gem 'jquery-fileupload-rails'
 end
 
 gem 'jquery-rails'
@@ -32,8 +33,14 @@ gem "rolify"
 gem 'simple_form'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
+
+
 gem 'ransack'
+gem 'carrierwave'
+gem 'rmagick'
+gem 'best_in_place'
 gem "squeel"
+gem 'wicked'
 
 
 
