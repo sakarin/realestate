@@ -67,7 +67,9 @@ jQuery ->
       url: "/dynamic_amphurs/" + data
       data: data
       success: (response) ->
-        $("#listing_amphur_id").html html
+        $("#listing_amphur_id").html
+        updateMapCenter(district_lat, district_lng, 13)
+
 
   $("#listing_amphur_id").change ->
     data = $("#listing_amphur_id").val()
@@ -76,4 +78,17 @@ jQuery ->
       url: "/dynamic_districts/" + data
       data: data
       success: (response) ->
-        $("#listing_district_id").html html
+        $("#listing_district_id").html
+
+#  $('#images').sortable
+#    axis: 'y'
+#    handle: '.handle'
+#    update: ->
+#      $.post($(this).data('update-url'), $(this).sortable('serialize'))
+
+  $('#q_property_type_cont').change ->
+    $('#listing_search').submit()
+
+  $('#q_listing_title_th_cont').change ->
+    $('#listing_search').submit()
+

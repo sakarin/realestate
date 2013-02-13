@@ -1,0 +1,14 @@
+
+<%= simple_form_for [:admin, @expert], :html => { :class => 'form-horizontal' } do |f| %>
+    <fieldset>
+      <legend><%= t('controllers.' + controller.action_name.capitalize.downcase) %><%= t('activerecord.models.expert') %></legend>
+
+      <%= f.input :name %>
+
+
+      <div class="form-actions">
+        <%= f.submit nil, :class => 'btn btn-primary' %>
+        <%= link_to t('buttons.cancel'), admin_experts_path, :class => 'btn' %>
+      </div>
+    </fieldset>
+<% end %>

@@ -42,6 +42,25 @@ gem 'best_in_place'
 gem "squeel"
 gem 'wicked'
 
+gem 'acts_as_list'
+
+gem 'acts_as_commentable', '3.0.1'
+
+#gem 'acts_as_commentable_with_threading'
+
+
+
+gem 'redactor-rails'
+gem "mini_magick"
+
+gem 'state_machine'
+
+group :development do
+  gem 'annotate'
+  gem "better_errors"
+  gem 'binding_of_caller'
+  gem 'meta_request', '0.2.1'
+end
 
 
 

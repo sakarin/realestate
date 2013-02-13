@@ -22,32 +22,23 @@
       </div>
       <div class="clearboth"></div>
 
-        <%= search_form_for [:account, @search], :html => {:class => "f-filter"} do |f| %>
-        <div class="btn-group floatleft">
-          <a class="btn active" href="/ex_listings_drafts">ทั้งหมด</a>
-          <a class="btn" href="/ex_listings_drafts?filter=sale&amp;property_group=">ขาย</a>
-          <a class="btn" href="/ex_listings_drafts?filter=rent&amp;property_group=">สำหรับเช่า</a>
-        </div>
-        <div class="floatright">
-          <select class="" name="property_group" onchange="submitForm()">
-            <option value="">ประเภทอสังหาฯ</option>
-            <option value="">ทั้งหมด</option>
-            <option value="N">คอนโด</option>
-            <option value="B">บ้านเดี่ยว</option>
-            <option value="T">ทาวน์เฮ้าส์</option>
-            <option value="L">ที่ดิน</option>
-            <option value="A">อพาร์ทเมนท์</option>
-            <option value="C">เชิงพาณิชย์</option>
-          </select>
+      <%= search_form_for [:account, @search], :html => {:class => "f-filter"} do |f| %>
+          <div class="btn-group floatleft">
 
-          <select name="property_id" onchange="submitForm()">
-            <option value="">ค้นหาจากชื่อโครงการ</option>
-            <option value="">(ถ้ามี)</option>
-          </select>
-        </div>
-        <div class="clearboth"></div>
-        <input type="hidden" value="" name="sort">
-        <input type="hidden" value="" name="filter">
+            <%= link_to "ทั้งหมด", params.merge({:q => {:listing_type_does_not_equal => ''}}), {:class => 'btn active'} %>
+            <%= link_to "ขาย", params.merge({:q => {:listing_type_cont => 'sale'}}), {:class => 'btn'} %>
+            <%= link_to "สำหรับเช่า", params.merge({:q => {:listing_type_cont => 'rent'}}), {:class => 'btn'} %>
+          </div>
+
+          <div class="floatright">
+
+
+            <%= f.select(:property_type_cont, Listing::PROPERTY_TYPE.collect { |property_type| [t(property_type), property_type.to_s] }, {:prompt => "ทั้งหมด"}) %>
+            <%= f.select(:listing_title_th_cont, current_user.listings.collect { |name| [name.listing_title_th, name.listing_title_th] }, {:prompt => "ค้นหาจากชื่อโครงการ"}) %>
+
+          </div>
+          <div class="clearboth"></div>
+
       <% end %>
 
       <form action="/ex_listings_drafts" method="POST">
@@ -63,7 +54,7 @@
               <%= sort_link @search, :price, t(:price, :scope => 'activerecord.attributes.listing') %>
             </th>
             <th width="13%" class="">
-              <a class="sortable " href="/ex_listings_active?sort=enddate&amp;property_group=&amp;neworder=desc">วันหมดอายุ</a>
+              วันหมดอายุ
               <%#= sort_link @search, :price, t(:price, :scope => 'activerecord.attributes.listing') %>
             </th>
             <th width="10%">คุณภาพ</th>
@@ -71,7 +62,7 @@
           </tr>
           </thead>
           <tbody>
-            <% @listings.each do |listing| %>
+          <% @listings.each do |listing| %>
               <tr class="<%= cycle('even', 'odd') %>" id="<%= dom_id listing %>">
                 <td>
                   <%= check_box_tag "listing_ids[]", listing.id, false, :class => "listing_id_checkbox" %>
@@ -80,18 +71,18 @@
                 <td style="text-align:left">
                   <%= link_to "#{t('listing.type.' + listing.listing_type.to_s)} - #{listing.listing_title_th}", edit_account_listing_path(listing) %>
                 </td>
-                <td><%= "#{number_with_delimiter(listing.price)} #{t(listing.price_type)}" unless listing.price.blank?  %></td>
+                <td><%= "#{number_with_delimiter(listing.price)} #{t(listing.price_type)}" unless listing.price.blank? %></td>
                 <td><%= listing.updated_at %></td>
                 <td><span class="label success">100%</span></td>
                 <td>
                   <div class="listing_actions">
-                    <%= link_to t('toolbars.edit'), edit_account_listing_path(listing), :title => t('toolbars.edit') , :class => "act edit" %>
-                    <%= link_to t('toolbars.delete'), account_listing_path(listing), confirm: t('confirm.delete'), method: :delete, :title => t('toolbars.delete') , :class => "act delete" %>
+                    <%= link_to t('toolbars.edit'), edit_account_listing_path(listing), :title => t('toolbars.edit'), :class => "act edit" %>
+                    <%= link_to t('toolbars.delete'), account_listing_path(listing), confirm: t('confirm.delete'), method: :delete, :title => t('toolbars.delete'), :class => "act delete" %>
                   </div>
                 </td>
-                </tr>
-            <% end %>
-            </tbody>
+              </tr>
+          <% end %>
+          </tbody>
         </table>
         <div class="clearfix align-right">
         </div>
