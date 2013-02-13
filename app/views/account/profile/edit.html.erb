@@ -1,0 +1,50 @@
+<div class="row-fluid">
+  <%= render 'account/shared/sidebar' %>
+
+  <div id="main" class="span8">
+    <div id="content">
+      <%= render :partial => "account/users/user_tabs", :locals => {:current => 'User Profile'} %>
+
+      <%= simple_form_for([:account, @user], :url => account_profile_path(@user), :html => {:method => :put, :class => 'bs-docs-example form-horizontal'}) do |f| %>
+          <h3>ปรับปรุงข้อมูลบัญชีผู้ใช้</h3>
+          <%= f.error_notification %>
+          <%= display_base_errors @user %>
+
+          <%= f.input :introduction, :as => :text, :input_html => { :class => 'redactor' } %>
+
+          <%= f.input :web_site %>
+
+          <h4>บริการและความชำนาญพิเศษ</h4>
+          <div class="control-group">
+            <table class="inline-inputs bare">
+              <tbody>
+              <%= hidden_field_tag "user[expert_ids][]", nil %>
+              <% Expert.all.each_slice(3) do |slice| %>
+                  <tr>
+                    <% slice.each do |expert| %>
+                        <td width="33%">
+                          <label class="checkbox">
+                            <%= check_box_tag "user[expert_ids][]", expert.id, @user.expert_ids.include?(expert.id), id: dom_id(expert) %>
+                            <%= expert.name.strip %>
+                          </label>
+                        </td>
+                    <% end %>
+                  </tr>
+              <% end %>
+              </tbody>
+            </table>
+          </div>
+
+
+          <div class="form-actions">
+            <%= f.submit t('user.buttons.update'), :class => "btn btn-primary" %>
+          </div>
+
+
+      <% end %>
+
+    </div>
+  </div>
+
+
+</div>

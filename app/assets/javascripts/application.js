@@ -18,3 +18,4 @@
 //= require jquery-fileupload/vendor/tmpl
 //= require jquery.purr
 //= require best_in_place
+//= require redactor-rails

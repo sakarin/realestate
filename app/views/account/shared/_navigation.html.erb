@@ -1,9 +1,9 @@
 <ul class="nav">
-  <li><%= link_to t('account.navigation.listing'), account_listings_path %></li>
+  <li><%= link_to t('accounts.navigation.listing'), account_listings_path %></li>
 
-  <li><%= link_to t('account.navigation.account'), "" %></li>
-  <li><%= link_to t('account.navigation.inbox'), "" %></li>
-  <li><%= link_to t('account.navigation.support'), "" %></li>
+  <li><%= link_to t('accounts.navigation.account'), edit_user_registration_path %></li>
+  <li><%= link_to t('accounts.navigation.inbox'), account_inbox_index_path %></li>
+  <li><%= link_to t('accounts.navigation.support'), "" %></li>
 
 </ul>
 
@@ -27,10 +27,12 @@
       <li class="divider"></li>
       <li>
 
-        <%= link_to "ออกจากระบบ", destroy_user_session_path %>
+        <%#= link_to "ออกจากระบบ", destroy_user_session_path, :method => 'delete' %>
+        <%= link_to 'Logout22', destroy_user_session_path, :method=>'delete' %>
       </li>
     </ul>
   </li>
+
 
 </ul>
 

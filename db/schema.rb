@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121019073536) do
+ActiveRecord::Schema.define(:version => 20130131041607) do
 
   create_table "amphurs", :force => true do |t|
     t.string  "code"
@@ -20,12 +20,44 @@ ActiveRecord::Schema.define(:version => 20121019073536) do
     t.integer "province_id"
   end
 
+  create_table "comments", :force => true do |t|
+    t.string   "title",            :limit => 50, :default => ""
+    t.text     "comment"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.integer  "user_id"
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
+    t.string   "name"
+    t.string   "telephone"
+    t.string   "email"
+    t.string   "comment_type"
+    t.string   "state"
+  end
+
+  add_index "comments", ["commentable_id"], :name => "index_comments_on_commentable_id"
+  add_index "comments", ["commentable_type"], :name => "index_comments_on_commentable_type"
+  add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
+
   create_table "districts", :force => true do |t|
     t.string  "code"
     t.string  "name",        :default => "", :null => false
     t.integer "amphur_id"
     t.integer "province_id"
     t.integer "geo_id",      :default => 0,  :null => false
+  end
+
+  create_table "experts", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "experts_users", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "expert_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "facilities", :force => true do |t|
@@ -119,11 +151,47 @@ ActiveRecord::Schema.define(:version => 20121019073536) do
     t.datetime "updated_at",             :null => false
   end
 
+  create_table "post_groups", :force => true do |t|
+    t.string   "name"
+    t.string   "slug"
+    t.integer  "parent"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "posts", :force => true do |t|
+    t.string   "name"
+    t.string   "slug"
+    t.text     "content"
+    t.integer  "post_group_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "posts", ["post_group_id"], :name => "index_admin_posts_on_post_group_id"
+
   create_table "provinces", :force => true do |t|
     t.string  "code"
     t.string  "name",   :default => "", :null => false
     t.integer "geo_id", :default => 0,  :null => false
   end
+
+  create_table "redactor_assets", :force => true do |t|
+    t.string   "data_file_name",                  :null => false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.integer  "assetable_id"
+    t.string   "assetable_type",    :limit => 30
+    t.string   "type",              :limit => 30
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+  end
+
+  add_index "redactor_assets", ["assetable_type", "assetable_id"], :name => "idx_redactor_assetable"
+  add_index "redactor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_redactor_assetable_type"
 
   create_table "roles", :force => true do |t|
     t.string   "name"
@@ -147,6 +215,28 @@ ActiveRecord::Schema.define(:version => 20121019073536) do
     t.integer  "listing_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+  end
+
+  create_table "user_details", :force => true do |t|
+    t.string   "title"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.date     "birth_date"
+    t.string   "telephone1"
+    t.string   "telephone2"
+    t.string   "fax"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "postcode"
+    t.string   "city"
+    t.integer  "province_id"
+    t.string   "country"
+    t.string   "introduction"
+    t.string   "service_and_expert"
+    t.string   "web_site"
+    t.string   "agency_logo"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
   create_table "users", :force => true do |t|
@@ -186,12 +276,10 @@ ActiveRecord::Schema.define(:version => 20121019073536) do
     t.string   "service_and_expert"
     t.string   "web_site"
     t.string   "agency_logo"
+    t.boolean  "notice_news"
+    t.boolean  "notice_property"
+    t.boolean  "notice_new_property"
   end
-
-  add_index "users", ["authentication_token"], :name => "index_users_on_authentication_token", :unique => true
-  add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
-  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
-  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
   create_table "users_roles", :id => false, :force => true do |t|
     t.integer "user_id"

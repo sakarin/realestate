@@ -1,7 +1,7 @@
 <ul class="nav">
   <li><%= link_to "ข้อมูลผู้ใช้", admin_users_path %></li>
   <li class="dropdown">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown">ประกาศ</a>
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">ตั้งค่า</a>
     <ul class="dropdown-menu">
       <li class="">
         <%= link_to "ตั้งค่าคุณสมบัติพิเศษ", admin_unit_features_path %>
@@ -9,13 +9,14 @@
       <li><%= link_to "ตั้งค่าอุปกรณ์ตกแต่ง", admin_furnitures_path %></li>
       <li><%= link_to "ตั้งค่าพื้นที่ว่างด้านนอก ด้านใน", admin_free_spaces_path %></li>
       <li><%= link_to "ตั้งค่าสิ่งอำนวยความสะดวก", admin_facilities_path %></li>
+      <li><%= link_to "ตั้งค่าบริการและความชำนาญพิเศษ", admin_experts_path %></li>
     </ul>
   </li>
   <li class="dropdown">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">บทความ</a>
     <ul class="dropdown-menu">
-      <li><%= link_to "หมวดหมู่", admin_unit_features_path %></li>
-      <li><%= link_to "เรื่อง", admin_furnitures_path %></li>
+      <li><%= link_to "หมวดหมู่", admin_post_groups_path %></li>
+      <li><%= link_to "เรื่อง", admin_posts_path %></li>
 
     </ul>
   </li>

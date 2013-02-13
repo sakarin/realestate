@@ -61,6 +61,7 @@ class Account::ListingsController < Account::BaseController
     session[:listing_params] ||= {}
     @listing = Listing.find(params[:id])
     @listing.current_step = session[:listing_step]
+
     @images = @listing.images
   end
 

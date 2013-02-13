@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @admin_post.name %>
+</p>
+
+<p>
+  <b>Slug:</b>
+  <%= @admin_post.slug %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @admin_post.content %>
+</p>
+
+<p>
+  <b>Post group:</b>
+  <%= @admin_post.post_group %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_post_path(@admin_post) %> |
+<%= link_to 'Back', admin_posts_path %>

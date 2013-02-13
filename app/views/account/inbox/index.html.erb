@@ -1,0 +1,72 @@
+<div class="row-fluid">
+  <%= render 'account/shared/sidebar' %>
+
+  <div id="main" class="span8">
+    <div id="content">
+
+      <ul id="tabs" class="nav nav-tabs">
+        <li<%== ' class="active"' if params['read'].nil? %>>
+          <%= link_to t('accounts.inbox.tabs.new'), account_inbox_index_path %>
+        </li>
+        <li <%== ' class="active"' unless params['read'].nil? %>>
+          <%= link_to t('accounts.inbox.tabs.old'), "/account/inbox?read=ture" %>
+        </li>
+
+      </ul>
+
+
+
+
+      <h3>กล่องข้อความ (<%= @comments.unread.count %>)</h3>
+
+      <div class="clearboth"></div>
+
+      <%= form_tag multi_keep_account_inbox_index_path do %>
+      <table cellpadding="0" cellspacing="0" class="blue">
+        <thead>
+        <tr>
+          <th width="2%"><input type="checkbox" id="comment_check_all" title="Check/uncheck all"></th>
+          <th width="10%">ประเภท</th>
+          <th width="20%" class="">
+            จาก
+          </th>
+          <th width="15%" class="">
+            ข้อความ
+          </th>
+          <th width="13%" class="">
+            วันที่
+
+          </th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <% @comments.each do |comment| %>
+            <tr class="<%= cycle('even', 'odd') %>" id="<%= dom_id comment %>">
+              <td>
+                <%= check_box_tag "comment_ids[]", comment.id, false, :class => "comment_id_checkbox" %>
+              </td>
+              <td><%= comment.title  %></td>
+              <td><%= link_to comment.name, account_inbox_path(comment) %></td>
+              <td>
+                <%= comment.comment %>
+              </td>
+              <td><%= comment.created_at %></td>
+
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+
+
+      <div class="actions no-indent align-right">
+        <% if params['read'].nil? %>
+            <%= submit_tag t('buttons.keep'), :class => 'btn' %>
+        <% end %>
+        <%= submit_tag t('buttons.multi_delete'), :class => 'btn btn-danger' %>
+      </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>

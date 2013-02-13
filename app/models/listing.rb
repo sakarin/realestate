@@ -1,3 +1,4 @@
+
 class Listing < ActiveRecord::Base
   PROPERTY_TYPE = [:condo, :home, :townhouse, :land, :apartment]
   PRICE_TYPE = [:BAH, :BAM, :BASM, :BASW, :BAR, :POA, :GUI]
@@ -18,7 +19,7 @@ class Listing < ActiveRecord::Base
   attr_accessible :bedrooms, :extra_rooms, :bathrooms, :number_of_floors, :floor_position, :furnishing, :facing
 
 
-  has_many :images
+  has_many :images, :order => "position"
 
   belongs_to :user
 
@@ -36,6 +37,10 @@ class Listing < ActiveRecord::Base
 
   has_many :facilities_listings
   has_many :facilities, through: :facilities_listings
+
+  has_many :comments, as: :commentable
+
+  validates_presence_of :listing_title_th
 
   attr_writer :current_step
 

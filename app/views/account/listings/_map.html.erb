@@ -1,62 +1,87 @@
 <script type="text/javascript">
-    var map; // กำหนดตัวแปร map ไว้ด้านนอกฟังก์ชัน เพื่อให้สามารถเรียกใช้งาน จากส่วนอื่นได้
-    var GGM; // กำหนดตัวแปร GGM ไว้เก็บ google.maps Object จะได้เรียกใช้งานได้ง่ายขึ้น
-    function initialize() { // ฟังก์ชันแสดงแผนที่
-        GGM=new Object(google.maps); // เก็บตัวแปร google.maps Object ไว้ในตัวแปร GGM
-        // กำหนดจุดเริ่มต้นของแผนที่
-        var my_Latlng  = new GGM.LatLng(13.761728449950002,100.6527900695800);
-        <% unless @listing.lat_value.blank? %>
-            var my_Latlng  = new GGM.LatLng(<%= @listing.lat_value %>, <%= @listing.lon_value %>);
-        <% end %>
-        var my_mapTypeId=GGM.MapTypeId.ROADMAP; // กำหนดรูปแบบแผนที่ที่แสดง
-        // กำหนด DOM object ที่จะเอาแผนที่ไปแสดง ที่นี้คือ div id=map_canvas
-        var my_DivObj=$("#map_canvas")[0];
-        // กำหนด Option ของแผนที่
-        var myOptions = {
-            zoom: 13, // กำหนดขนาดการ zoom
-            center: my_Latlng , // กำหนดจุดกึ่งกลาง
-            mapTypeId:my_mapTypeId // กำหนดรูปแบบแผนที่
-        };
-        map = new GGM.Map(my_DivObj,myOptions);// สร้างแผนที่และเก็บตัวแปรไว้ในชื่อ map
+    function updateLatLng() {
+        mkctn ? ($("#lat_value").val(mk.getPosition().lat()), $("#lon_value").val(mk.getPosition().lng())) : ($("#lat").val(null), $("#lng").val(null))
+    }
+    function toggleMarker() {
+        mkctn ? (mk.setMap(null), mkctn = 0, updateLatLng()) : (mk.setPosition(map.getCenter()), mk.setMap(map), mkctn = 1, updateLatLng())
+    }
+    function latlngLookup(e) {
+        geocoder.geocode({address: e, region: "th"}, function (e, t) {
+            t == google.maps.GeocoderStatus.OK ? (map.panTo(e[0].geometry.location), mkctn ? (mk.setPosition(e[0].geometry.location), updateLatLng()) : toggleMarker()) : alert("Google หาตำแหน่งที่ระบุไม่พบ")
+        })
+    }
+    function updateMapCenter(e, t, n) {
+        if (typeof google != "undefined") {
+            var r = new google.maps.LatLng(e, t);
+            map.setCenter(r), map.setZoom(n)
+        }
+    }
+    function provinceObserve() {
+        function e() {
+            updateMapCenter(district_lat, district_lng, 13)
+        }
 
-        var my_Marker = new GGM.Marker({ // สร้างตัว marker
-            position: my_Latlng,  // กำหนดไว้ที่เดียวกับจุดกึ่งกลาง
-            map: map, // กำหนดว่า marker นี้ใช้กับแผนที่ชื่อ instance ว่า map
-            draggable:true, // กำหนดให้สามารถลากตัว marker นี้ได้
-            title:"คลิกลากเพื่อหาตำแหน่งจุดที่ต้องการ!" // แสดง title เมื่อเอาเมาส์มาอยู่เหนือ
-        });
+        function t() {
+            updateMapCenter(subdistrict_lat, subdistrict_lng, 14)
+        }
 
-        // กำหนด event ให้กับตัว marker เมื่อสิ้นสุดการลากตัว marker ให้ทำงานอะไร
-        GGM.event.addListener(my_Marker, 'dragend', function() {
-            var my_Point = my_Marker.getPosition();  // หาตำแหน่งของตัว marker เมื่อกดลากแล้วปล่อย
-            map.panTo(my_Point);  // ให้แผนที่แสดงไปที่ตัว marker
-            $("#lat_value").val(my_Point.lat());  // เอาค่า latitude ตัว marker แสดงใน textbox id=lat_value
-            $("#lon_value").val(my_Point.lng()); // เอาค่า longitude ตัว marker แสดงใน textbox id=lon_value
-//            $("#zoom_value").val(map.getZoom()); // เอาขนาด zoom ของแผนที่แสดงใน textbox id=zoom_value
-        });
-
-        // กำหนด event ให้กับตัวแผนที่ เมื่อมีการเปลี่ยนแปลงการ zoom
-        GGM.event.addListener(map, 'zoom_changed', function() {
-//            $("#zoom_value").val(map.getZoom()); // เอาขนาด zoom ของแผนที่แสดงใน textbox id=zoom_value
-        });
-
+//        $("#apartment_province_code").live("change", function () {
+//            $("#district-select, #subdistrict-select").empty().html('<select disabled class="short"><option value="">กำลังโหลด ...</option></select>'), $("#district-select").load("/misc/on_province_changed", {province_code: $(this).val()}, function () {
+//                $("#subdistrict-select").html('<select class="short" id="apartment_subdistrict_code" name="apartment[subdistrict_code]"><option value="">ตำบล/แขวง</option></select>'), e()
+//            })
+//        }), $("#apartment_district_code").live("change", function () {
+//            $("#subdistrict-select").empty().html('<select disabled class="short"><option value="">กำลังโหลด ...</option></select>'), $("#subdistrict-select").load("/misc/on_district_changed", {district_code: $(this).val()}, t)
+//        }), $("#apartment_subdistrict_code").live("change", function () {
+//            $.get("/misc/on_subdistrict_changed", {subdistrict_code: $(this).val()}, function (e) {
+//                updateMapCenter(e.lat, e.lng, 15)
+//            }, "json")
+//        })
     }
 
-    function mark_map(){
-//        alert("mark map function");
-        my_Marker.position = my_Latlng;
+    function initMap() {
+
+        provinceObserve();
+        var e, t = $("#lat_value").val(), n = $("#lon_value").val();
+        t ? e = new google.maps.LatLng(t, n) : e = new google.maps.LatLng(13.7541, 100.4939);
+        var r = {zoom: 10, center: e, mapTypeControlOptions: {mapTypeIds: [google.maps.MapTypeId.ROADMAP, google.maps.MapTypeId.HYBRID]}, noClear: !0, mapTypeId: google.maps.MapTypeId.ROADMAP, disableDoubleClickZoom: !0, scrollwheel: !1, streetViewControl: !1};
+        geocoder = new google.maps.Geocoder, map = new google.maps.Map(document.getElementById("map_canvas"), r);
+        var i = "http://a3.static.in.th/assets/pin_blue_selected.png";
+        mk = new google.maps.Marker({draggable: !0, icon: i, map: map}), google.maps.event.addListener(mk, "dragend", function () {
+            updateLatLng()
+        }), google.maps.event.addListener(map, "click", function (e) {
+            mk.setPosition(e.latLng), map.panTo(e.latLng), mkctn ? updateLatLng() : toggleMarker()
+        });
+        var s = google.maps.event.addListener(map, "idle", function () {
+            google.maps.event.removeListener(s), t && (toggleMarker(), map.setZoom(13))
+        });
+        $("#maplookup").click(function () {
+            var e = $("#listing_property_name").val() + " , ", t = $("#listing_street_number").val() + " , ", n = $("#listing_street_name").val() + " , ", r = $("#listing_province_id option:selected").text(), i = $("#listing_amphur_id option:selected").text() + " , ", s = $("#listing_district_id option:selected").text() + " , ", o = t + n + s + i + r;
+            return latlngLookup(o), !1
+        })
+    }
+    function loadMapScript() {
+        var e = document.createElement("script");
+        e.type = "text/javascript", e.src = "http://maps.googleapis.com/maps/api/js?sensor=true&language=th&callback=initMap", document.body.appendChild(e)
     }
 
 
 </script>
 
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.2&sensor=false&language=th&callback=initialize"></script>
+<script type="text/javascript">
+    var map, mkctn, mk, geocoder;
+    loadMapScript();
+
+//    $(document).ready(function() {
+//        loadMapScript();
+//    })
+</script>
+
+
 
 <style type="text/css">
 
     div#map_canvas{
         margin:auto;
-        /*width:500px;*/
         height:310px;
         overflow:hidden;
     }
@@ -64,7 +89,8 @@
 <div class="control-group">
   <label class="control-label" for="inputPassword"> แผนที่:</label>
   <div class="controls">
-    <%= button_to_function "ปักหมดบนแผนที่", "mark_map()", :class => "btn" %>
+    <%#= button_to_function "ปักหมดบนแผนที่", "mark_map()", :class => "btn" %>
+    <a id="maplookup" href='#' class="btn">กดเพื่อค้นหาตำแหน่ง</a>
   </div>
 </div>
 

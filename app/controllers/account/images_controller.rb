@@ -2,6 +2,7 @@ class Account::ImagesController < Account::BaseController
   respond_to :html, :json
 
   def index
+    @images = Image.order("position")
 
   end
 
@@ -15,9 +16,13 @@ class Account::ImagesController < Account::BaseController
 
   def create
 
+    @listing = Listing.find(params[:listing_id])
+
     @image = Image.new(params[:image])
     @image.session_id= session[:session_id]
+    @image.listing = @listing
     @image.save
+
 
   end
 
@@ -35,8 +40,19 @@ class Account::ImagesController < Account::BaseController
   end
 
   def destroy
+    @listing = Listing.find(params[:listing_id])
+
     @image = Image.find(params[:id])
     @image.destroy
-    redirect_to account_images_url, notice: "Image was successfully destroyed."
+    #redirect_to edit_account_listing_path(@listing), notice: "Image was successfully destroyed."
+    redirect_to edit_account_listing_path(@listing)
+    #render :edit
+  end
+
+  def sort
+    params[:image].each_with_index do |id, index|
+      Image.update_all({position: index+1}, {id: id})
+    end
+    render nothing: true
   end
 end
