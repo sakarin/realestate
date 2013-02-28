@@ -191,7 +191,7 @@
       <file leaf-file-name="deploy.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/deploy.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="46" selection-start="1005" selection-end="1025" vertical-scroll-proportion="0.5642776">
+            <state line="4" column="1" selection-start="117" selection-end="117" vertical-scroll-proportion="0.07281001">
               <folding />
             </state>
           </provider>
@@ -240,10 +240,10 @@
         <option value="$PROJECT_DIR$/app/controllers/account/listings_controller.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/Capfile" />
-        <option value="$PROJECT_DIR$/config/deploy.rb" />
         <option value="$PROJECT_DIR$/config/unicorn_init.sh" />
         <option value="$PROJECT_DIR$/config/unicorn.rb" />
         <option value="$PROJECT_DIR$/config/nginx.conf" />
+        <option value="$PROJECT_DIR$/config/deploy.rb" />
       </list>
     </option>
   </component>
@@ -982,7 +982,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/deploy.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="46" selection-start="1005" selection-end="1025" vertical-scroll-proportion="0.5642776">
+        <state line="4" column="1" selection-start="117" selection-end="117" vertical-scroll-proportion="0.07281001">
           <folding />
         </state>
       </provider>
