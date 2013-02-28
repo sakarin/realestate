@@ -237,6 +237,7 @@ DEPENDENCIES
   devise
   jquery-fileupload-rails
   jquery-rails
+  less-rails
   meta_request (= 0.2.1)
   mini_magick
   omniauth-facebook
@@ -252,6 +253,7 @@ DEPENDENCIES
   squeel
   state_machine
   stringex (~> 1.3.2)
+  therubyracer
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)
   unicorn

@@ -20,11 +20,15 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
 
+
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
+  gem "therubyracer"
+  gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+  gem 'twitter-bootstrap-rails' #, :git => 'http://github.com/seyhunak/twitter-bootstrap-rails.git'
+
   gem 'uglifier', '>= 1.0.3'
-  gem "twitter-bootstrap-rails"
   gem 'jquery-fileupload-rails'
 end
 
@@ -49,6 +53,8 @@ gem "squeel"
 gem 'wicked'
 
 gem 'acts_as_list'
+
+
 
 gem 'acts_as_commentable', '3.0.1'
 

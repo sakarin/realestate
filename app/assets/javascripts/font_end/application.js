@@ -10,12 +10,12 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery
-//= require jquery_ujs
-//= require twitter/bootstrap
+//= require /jquery
+//= require /jquery_ujs
+//= require /twitter/bootstrap
 //= require_tree .
-//= require jquery-fileupload/basic
-//= require jquery-fileupload/vendor/tmpl
-//= require jquery.purr
-//= require best_in_place
-//= require redactor-rails
+//= require /jquery-fileupload/basic
+//= require /jquery-fileupload/vendor/tmpl
+//= require /jquery.purr
+//= require /best_in_place
+//= require /redactor-rails
