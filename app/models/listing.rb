@@ -1,4 +1,5 @@
 
+
 class Listing < ActiveRecord::Base
   PROPERTY_TYPE = [:condo, :home, :townhouse, :land, :apartment]
   PRICE_TYPE = [:BAH, :BAM, :BASM, :BASW, :BAR, :POA, :GUI]
@@ -7,8 +8,7 @@ class Listing < ActiveRecord::Base
   FACING = [:NORTH, :NEAST, :NWEST, :EAST, :WEST, :SEAST, :SWEST, :SOUTH]
 
 
-
-  attr_accessible :listing_type, :property_type, :listing_title_th, :listing_description_th
+  attr_accessible :listing_type, :property_type, :listing_title_th, :listing_description_th, :slug
   attr_accessible :amphur_id, :district_id, :province_id
   attr_accessible :property_name, :street_number, :street_name, :post_code
   attr_accessible :price, :price_type, :tenure
@@ -18,10 +18,15 @@ class Listing < ActiveRecord::Base
   attr_accessible :unit_feature_ids, :furniture_ids, :free_space_ids, :facility_ids
   attr_accessible :bedrooms, :extra_rooms, :bathrooms, :number_of_floors, :floor_position, :furnishing, :facing
 
+  # url friendly (see https://github.com/kaiuhl/pretty-param for details)
+  has_pretty_param :slug
+
 
   has_many :images, :order => "position"
 
   belongs_to :user
+
+
 
 
 
@@ -40,9 +45,42 @@ class Listing < ActiveRecord::Base
 
   has_many :comments, as: :commentable
 
-  validates_presence_of :listing_title_th
+  validates_presence_of :listing_title_th, :listing_type, :price
+  #validates :permalink, :presence => true
 
   attr_writer :current_step
+
+
+  scope :with_state, lambda { |s| where(:state => s) }
+  scope :unread, with_state('complete')
+  scope :read, with_state('show')
+  scope :read, with_state('hidden')
+  scope :read, with_state('draft')
+
+  # shipment state machine (see http://github.com/pluginaweek/state_machine/tree/master for details)
+  state_machine :initial => 'draft', :use_transactions => false do
+    event :complete do
+      transition :from => 'draft', :to => 'complete'
+    end
+    event :show do
+      transition :from => 'complete', :to => 'show'
+      transition :from => 'hidden', :to => 'show'
+    end
+    event :hidden do
+      transition :from => 'show', :to => 'hidden'
+      transition :from => 'complete', :to => 'hidden'
+    end
+    #after_transition :to => 'shipped', :do => :after_ship
+  end
+
+  before_validation :generate_slug
+
+  def generate_slug
+    self.slug ||= listing_title_th
+  end
+
+
+
 
   def current_step
     @current_step || steps.first

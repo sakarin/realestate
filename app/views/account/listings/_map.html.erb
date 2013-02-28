@@ -45,7 +45,7 @@
         t ? e = new google.maps.LatLng(t, n) : e = new google.maps.LatLng(13.7541, 100.4939);
         var r = {zoom: 10, center: e, mapTypeControlOptions: {mapTypeIds: [google.maps.MapTypeId.ROADMAP, google.maps.MapTypeId.HYBRID]}, noClear: !0, mapTypeId: google.maps.MapTypeId.ROADMAP, disableDoubleClickZoom: !0, scrollwheel: !1, streetViewControl: !1};
         geocoder = new google.maps.Geocoder, map = new google.maps.Map(document.getElementById("map_canvas"), r);
-        var i = "http://a3.static.in.th/assets/pin_blue_selected.png";
+        var i = "/assets/admin/icons/pin_blue_selected.png" ;
         mk = new google.maps.Marker({draggable: !0, icon: i, map: map}), google.maps.event.addListener(mk, "dragend", function () {
             updateLatLng()
         }), google.maps.event.addListener(map, "click", function (e) {

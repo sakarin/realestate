@@ -1,44 +1,62 @@
 
 <h4>ข้อมูลเบื้องต้น</h4>
-<div class="control-group">
-  <label class="control-label" for="inputPassword">ประกาศประเภท:</label>
 
-  <div class="controls">
-    <label class="radio inline">
-      <%= radio_button("listing", "listing_type", "sale") %> ขาย
-    </label>
-    <label class="radio inline">
-      <%= radio_button("listing", "listing_type", "rent") %> เช่า
-    </label>
-    <label class="radio inline">
-      <%= radio_button("listing", "listing_type", "opt") %> ขายดาวน์
-    </label>
-  </div>
-</div>
+
+<%= f.input :listing_type,
+            :collection => [["sale", 'ขาย'], ["rent", 'เช่า'], ["opt", 'ขายดาวน์']],
+            :label_method => :last,
+            :value_method => :first,
+            :as => :radio %>
 
 <div class="control-group">
-  <label class="control-label" for="inputPassword"> ประเภท :</label>
+  <label class="control-label" for="property_type"> ประเภท :</label>
 
   <div class="controls">
     <%= select(:listing, :property_type, Listing::PROPERTY_TYPE.collect { |property_type| [t(property_type), property_type.to_s] }) %>
   </div>
-</div>
 
-<div class="control-group">
-  <label class="control-label" for="inputPassword">หัวข้อประกาศ:</label>
-  <div class="controls">
-    <%= f.text_field :listing_title_th %>
-  </div>
 </div>
+<%#= form_for @user do |f|
+  f.collection_radio_buttons :options, [[true, 'Yes'] ,[false, 'No']], :first, :last
+end %>
 
-<div class="control-group">
-  <label class="control-label" for="inputPassword">รายละเอียดเกี่ยวกับประกาศ:</label>
-  <div class="controls">
-    <%= f.text_area :listing_description_th, :cols => 5, :rows => 3 %>
-  </div>
-</div>
+
+
+<%= f.input :listing_title_th %>
+
+<%= f.input :listing_description_th, :as => :text, :input_html => { :cols => 50, :rows => 3 } %>
+
 
 <h4>รายละเอียดที่ตั้ง</h4>
+
+<div class="control-group">
+  <label class="control-label" for="inputPassword"> ชื่อโครงการ:</label>
+  <div class="controls">
+    <%= f.text_field :property_name, :class => "input-xlarge" %>
+  </div>
+</div>
+
+<div class="control-group">
+  <label class="control-label" for="inputPassword"> เลขที่ซอย:</label>
+  <div class="controls">
+    <%= f.text_field :street_number, :class => "input-mini" %>
+  </div>
+</div>
+
+<div class="control-group">
+  <label class="control-label" for="inputPassword"> ถนน:</label>
+  <div class="controls">
+    <%= f.text_field :street_name, :class => "input-xlarge" %>
+  </div>
+</div>
+
+<div class="control-group">
+  <label class="control-label" for="inputPassword"> รหัสไปรษณีย์:</label>
+  <div class="controls">
+    <%= f.text_field :post_code, :class => "input-small" %>
+  </div>
+</div>
+
 <div class="control-group" id="province-group">
   <label class="control-label" for="inputPassword"> จังหวัด:</label>
   <div class="controls">
@@ -72,43 +90,18 @@
   </div>
 </div>
 
-<div class="control-group">
-  <label class="control-label" for="inputPassword"> ชื่อโครงการ:</label>
-  <div class="controls">
-    <%= f.text_field :property_name, :class => "input-xlarge" %>
-  </div>
-</div>
 
-<div class="control-group">
-  <label class="control-label" for="inputPassword"> เลขที่ซอย:</label>
-  <div class="controls">
-    <%= f.text_field :street_number, :class => "input-mini" %>
-  </div>
-</div>
-
-<div class="control-group">
-  <label class="control-label" for="inputPassword"> ถนน:</label>
-  <div class="controls">
-    <%= f.text_field :street_name, :class => "input-xlarge" %>
-  </div>
-</div>
-
-<div class="control-group">
-  <label class="control-label" for="inputPassword"> รหัสไปรษณีย์:</label>
-  <div class="controls">
-    <%= f.text_field :post_code, :class => "input-small" %>
-  </div>
-</div>
 
 <%= render 'map', :f => f %>
 
 
 
 <h4>ข้อมูลด้านราคา</h4>
+<%= f.input :price %>
 <div class="control-group">
-  <label class="control-label" for="inputPassword"> ราคา:</label>
+  <label class="control-label" for="inputPassword"> หน่วย:</label>
   <div class="controls">
-    <%= f.text_field :price %> <%= select(:listing, :price_type, Listing::PRICE_TYPE.collect { |price_type| [t(price_type), price_type.to_s] }) %>
+    <%#= f.text_field :price %> <%= select(:listing, :price_type, Listing::PRICE_TYPE.collect { |price_type| [t(price_type), price_type.to_s] }) %>
   </div>
 </div>
 
@@ -150,7 +143,6 @@
 
 
 <div class="actions no-indent clearfix">
-  <%= f.submit t('buttons.back'), :class => "btn floatleft", :name => "back_button"  %>
   <%= f.submit t('buttons.update_and_exit'), :class => "btn btn-success", :name => "save_button" %>
   <%= f.submit t('buttons.next'), :class => "btn btn-primary floatright"  %>
 </div>

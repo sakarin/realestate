@@ -15,30 +15,11 @@ jQuery ->
       else
         alert("#{file.name} is not a gif, jpeg, or png image file")
     progress: (e, data) ->
-      if data.context
-        progress = parseInt(data.loaded / data.total * 100, 10)
-        data.context.find('.bar').css('width', progress + '%')
+      $("#spinner").show()
     success: (data, status) =>
-      $('.upload').remove
+      $("#spinner").hide()
+      $("#calltouploadpic").hide()
 
-  $('#image_attachment').change
-    dataType: "script"
-    add: (e, data) ->
-      types = /(\.|\/)(gif|jpe?g|png)$/i
-      file = data.files[0]
-      if types.test(file.type) || types.test(file.name)
-        data.context = $(tmpl("template-upload", file))
-        $('#new_image').append(data.context)
-        data.submit()
-      else
-        alert("#{file.name} is not a gif, jpeg, or png image file")
-    progress: (e, data) ->
-      if data.context
-        progress = parseInt(data.loaded / data.total * 100, 10)
-        data.context.find('.bar').css('width', progress + '%')
-    success: (data, status) =>
-      alert "sss2"
-      data.context.find('.bar').remove
 
   $('.best_in_place').best_in_place()
 
@@ -80,15 +61,31 @@ jQuery ->
       success: (response) ->
         $("#listing_district_id").html
 
-#  $('#images').sortable
-#    axis: 'y'
-#    handle: '.handle'
-#    update: ->
-#      $.post($(this).data('update-url'), $(this).sortable('serialize'))
+  $('#images').sortable
+    axis: 'xy'
+    handle: '.handle'
+    refreshPositions: true
+    opacity: 0.6
+    scroll:true
+
+    placeholder: 'sortable_placeholder'
+    containment: 'parent'
+    update: ->
+      $.post($(this).data('update-url'), $(this).sortable('serialize'))
 
   $('#q_property_type_cont').change ->
     $('#listing_search').submit()
 
   $('#q_listing_title_th_cont').change ->
     $('#listing_search').submit()
+
+
+  $(".image").live "mouseover mouseout", (event) ->
+    if event.type is "mouseover"
+      $(this).find("a:first").show()
+    else
+      $(this).find("a:first").hide()
+
+
+
 

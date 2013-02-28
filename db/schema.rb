@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130131041607) do
+ActiveRecord::Schema.define(:version => 20130225214002) do
 
   create_table "amphurs", :force => true do |t|
     t.string  "code"
@@ -149,7 +149,15 @@ ActiveRecord::Schema.define(:version => 20130131041607) do
     t.string   "comment"
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false
+    t.string   "state"
+    t.string   "slug"
+    t.string   "make_permalink"
+    t.string   "permalink"
   end
+
+  add_index "listings", ["make_permalink"], :name => "index_listings_on_make_permalink"
+  add_index "listings", ["permalink"], :name => "index_listings_on_permalink"
+  add_index "listings", ["slug"], :name => "index_listings_on_slug"
 
   create_table "post_groups", :force => true do |t|
     t.string   "name"

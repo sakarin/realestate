@@ -1,17 +1,17 @@
 <div class="row-fluid">
-  <%= render 'account/shared/sidebar' %>
 
-  <div id="main" class="span8">
+
+  <div id="main" class="span12">
     <div id="content">
       <ul id="tabs" class="nav nav-tabs">
         <li class="active">
-          <%= link_to t('account.listing.tabs.listings_active'), "#" %>
+          <%= link_to t('accounts.listing.tabs.listings_active'), "#" %>
         </li>
-        <li><%= link_to t('account.listing.tabs.listings_drafts'), "#" %></li>
-        <li><%= link_to t('account.listing.tabs.listings_history'), "#" %></li>
-        <li><%= link_to t('account.listing.tabs.listings_exclusive'), "#" %></li>
+        <li><%= link_to t('accounts.listing.tabs.listings_drafts'), "#" %></li>
+        <li><%= link_to t('accounts.listing.tabs.listings_history'), "#" %></li>
+        <li><%= link_to t('accounts.listing.tabs.listings_exclusive'), "#" %></li>
       </ul>
-      <%= link_to t('account.listing.buttons.new'), new_account_listing_path, :class => "btn btn-success floatright" %>
+      <%= link_to t('accounts.listing.buttons.new'), new_account_listing_path, :class => "btn btn-success floatright" %>
 
       <h3>ประกาศฉบับร่าง (0)</h3>
 
@@ -84,8 +84,10 @@
           <% end %>
           </tbody>
         </table>
+        <%= will_paginate @furnitures, :renderer => BootstrapPagination::Rails %>
         <div class="clearfix align-right">
         </div>
+
         <div class="actions no-indent align-right">
           <%= submit_tag t('buttons.multi_delete'), :class => 'btn btn-danger' %>
         </div>

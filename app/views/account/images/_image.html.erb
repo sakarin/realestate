@@ -1,13 +1,9 @@
-<li class="photolistitem">
-  <div class="imagecontainer"><%= link_to image_tag(image.attachment_url(:thumb)), image if image.attachment? %></div>
-  <div><span id="3296293" class="3296293"><%= best_in_place image, :name, :path => account_listing_image_path(@listing, image) %></span></div>
-
-  <div class="photolistbtn" id="photolistbtn_3296293" style="left: 0; margin-left: 0; padding-left: 0; clear: both">
-    <div class="btnsmall" style="margin-left:10px">
-      <span class="handle">[drag]</span>
-      <%= link_to "ลบ", account_listing_image_path(@listing, image), :confirm => 'Are you sure?', :method => :delete %>
+<%= content_tag_for :li, image do %>
+    <%= link_to "", account_listing_image_path(@listing, image), :method => :delete, :class => "delete" %>
+    <div class="handle">
+      <div class="imagecontainer">
+        <%= image_tag(image.attachment_url(:thumb)) %>
+      </div>
+      <div class="image-name"><%= best_in_place image, :name, :path => account_listing_image_path(@listing, image) %></div>
     </div>
-    <div class="btnsmallEnding"></div>
-
-  </div>
-</li>
+<% end %>

@@ -28,6 +28,10 @@ class Ability
     user ||= User.new # guest user (not logged in)
     if user.has_role? :admin
       can :manage, :all
+    else
+      can :manage, Listing do |listing|
+        listing.try(:user) == user
+      end
     end
   end
 end

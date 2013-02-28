@@ -60,5 +60,10 @@ module Realestate
     config.assets.version = '1.0'
 
     #config.assets.precompile += ["redactor-rails/*"]
+
+     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+
+     config.assets.precompile += %w( .svg .eot .woff .ttf )
+
   end
 end

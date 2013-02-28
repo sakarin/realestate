@@ -1,6 +1,9 @@
 th:
   hello: "สวัสดี"
   welcome: "ยินดีต้อนรับ"
+  fileupload:
+    add_files: "ใส่รูปภาพ"
+
   prompt: "เลือก"
   accounts:
     inbox:
@@ -21,6 +24,7 @@ th:
       buttons:
         new: "สร้างประกาศใหม่"
         cancel: "ยกเลิกประกาศที่เลือก"
+
       collect:
         furnishing:
           unfur: "ไม่มี"
@@ -104,6 +108,8 @@ th:
     renew: "ต่ออายุประกาศ"
     multi_delete: "ลบรายการที่คุณเลือก"
     keep: "เก็บข้อความ"
+    draft: "บันทึกเป็นฉบับร่าง"
+    ok: "ยืนยัน"
 
   toolbar: "เครื่องมือ"
   toolbars:
@@ -158,7 +164,6 @@ th:
           notice_new_property: "ต้องการรับอีเมลแจ้งเตือนเมื่อมีโครงการใหม่"
 
 
-
         unit_feature:
           name: "ชื่อ"
         furniture:
@@ -170,6 +175,8 @@ th:
         listing:
           unit: "ยูนิต"
           price: "ราคา"
+          listing_title_th: "ชื่ออสังหาฯ"
+          listing_description_th: "รายละเอียดเกี่ยวกับประกาศ"
         post_group:
           name: "ชื่อ"
           slug: "slug"

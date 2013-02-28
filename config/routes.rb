@@ -21,8 +21,8 @@ Realestate::Application.routes.draw do
   end
 
 
-  match "/dynamic_amphurs/:id" => "account/listings#dynamic_amphurs", :via => :post
-  match "/dynamic_districts/:id" => "account/listings#dynamic_districts", :via => :post
+  match "/dynamic_amphurs/:province_id" => "account/listings#dynamic_amphurs", :via => :post
+  match "/dynamic_districts/:amphur_id" => "account/listings#dynamic_districts", :via => :post
 
   match "account/listings/:id/progress_trackers/:step" => "account/listings#progress_trackers", :via => :get
   match "account/listings/progress_trackers/:step" => "account/listings#progress_trackers", :via => :get
@@ -102,6 +102,9 @@ Realestate::Application.routes.draw do
       end
     end
 
+    # may be used
+    #resources :images
+
 
     resources :inbox do
       collection do
@@ -110,7 +113,7 @@ Realestate::Application.routes.draw do
       end
     end
   end
-  #resources :images
+
 
 
 

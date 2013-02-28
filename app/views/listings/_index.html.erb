@@ -1,0 +1,42 @@
+<table cellpadding="0" cellspacing="0" class="blue">
+  <thead>
+  <tr>
+    <th width="2%"><input type="checkbox" id="listing_check_all" title="Check/uncheck all"></th>
+    <th width="10%">รหัส</th>
+    <th width="20%" class="">
+      <%#= sort_link @search, :listing_title_th, t(:unit, :scope => 'activerecord.attributes.listing') %>
+    </th>
+    <th width="15%" class="">
+      <%#= sort_link @search, :price, t(:price, :scope => 'activerecord.attributes.listing') %>
+    </th>
+    <th width="13%" class="">
+      วันหมดอายุ
+      <%#= sort_link @search, :price, t(:price, :scope => 'activerecord.attributes.listing') %>
+    </th>
+    <th width="10%">คุณภาพ</th>
+    <th width="15%">เครื่องมือ</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @listings.each do |listing| %>
+      <tr class="<%= cycle('even', 'odd') %>" id="<%= dom_id listing %>">
+        <td>
+          <%= check_box_tag "listing_ids[]", listing.id, false, :class => "listing_id_checkbox" %>
+        </td>
+        <td><%= link_to "#{listing.id}", listing_path(listing) %></td>
+        <td style="text-align:left">
+          <%= link_to "#{t('listing.type.' + listing.listing_type.to_s)} - #{listing.listing_title_th}", listing_path(listing) %>
+        </td>
+        <td><%= "#{number_with_delimiter(listing.price)} #{t(listing.price_type)}" unless listing.price.blank? %></td>
+        <td><%= listing.updated_at %></td>
+        <td><span class="label success">100%</span></td>
+        <td>
+          <div class="listing_actions">
+            <%= link_to t('toolbars.edit'), edit_account_listing_path(listing), :title => t('toolbars.edit'), :class => "act edit" %>
+            <%= link_to t('toolbars.delete'), account_listing_path(listing), confirm: t('confirm.delete'), method: :delete, :title => t('toolbars.delete'), :class => "act delete" %>
+          </div>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

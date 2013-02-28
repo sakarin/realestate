@@ -66,7 +66,7 @@
         <tr>
           <% slice.each do |unit_feature| %>
               <td width="33%">
-                <label class="checkbox inline">
+                <label class="checkbox">
                   <%= check_box_tag "listing[unit_feature_ids][]", unit_feature.id, @listing.unit_feature_ids.include?(unit_feature.id), id: dom_id(unit_feature) %>
                   <%= unit_feature.name %>
                 </label>
@@ -87,7 +87,7 @@
         <tr>
           <% slice.each do |furniture| %>
               <td width="33%">
-                <label class="checkbox inline">
+                <label class="checkbox">
                   <%= check_box_tag "listing[furniture_ids][]", furniture.id, @listing.furniture_ids.include?(furniture.id), id: dom_id(furniture) %>
                   <%= furniture.name %>
                 </label>
@@ -108,7 +108,7 @@
         <tr>
           <% slice.each do |free_space| %>
               <td width="33%">
-                <label class="checkbox inline">
+                <label class="checkbox">
                   <%= check_box_tag "listing[free_space_ids][]", free_space.id, @listing.free_space_ids.include?(free_space.id), id: dom_id(free_space) %>
                   <%= free_space.name %>
                 </label>
@@ -129,7 +129,7 @@
         <tr>
           <% slice.each do |facility| %>
               <td width="33%">
-                <label class="checkbox inline">
+                <label class="checkbox">
                   <%= check_box_tag "listing[facility_ids][]", facility.id, @listing.facility_ids.include?(facility.id), id: dom_id(facility) %>
                   <%= facility.name %>
                 </label>
