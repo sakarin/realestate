@@ -1,0 +1,94 @@
+<h4>ตัวอย่างประกาศ</h4>
+<table width="925" border="0" cellpadding="0" cellspacing="0" style="margin:0 0 0 15px; border-bottom: solid 1px #CCC; padding:15px;">
+  <tbody>
+  <tr>
+    <td width="170" valign="top"><img alt="Pic-general-2" height="66" src="/assets/pic-general-2.jpg" width="146"></td>
+    <td width="30" align="center" valign="top"><img alt="Icon-sale" height="15" src="/assets/icon-sale.png" width="14">
+    </td>
+    <td width="210" valign="top"><span class="text-recom-1">ขาย - ขายอาคารพาณิชย์ 4 ห้อง</span>
+									<span class="text-recom-2">ตึกแถว/อาคารพาณิชย์ (ขายขาด)
+											พหลโยธิน591/18 Pholyothin Rd
+								ปากเพรียว, เมืองสระบุรี, สระบุรี</span></td>
+    <td width="30" align="center" valign="top">
+      <img alt="Icon-money" height="13" src="/assets/icon-money.png" width="12"></td>
+    <td width="189" valign="top" class="text-recom-1" style="border-right:solid 1px #cbcbcb;">39,900,000 บาท<br>
+      ที่ดิน : 1 งาน 60 ตารางวา<br>
+      พื้นที่ใช้สอย : 640 ตารางเมตร
+    </td>
+    <td width="30" align="center" valign="top" class="text-recom-2">
+      <img alt="Icon-man" height="12" src="/assets/icon-man.png" width="12"></td>
+    <td width="266" valign="top" class="text-recom-2">ธีระศํกดิ์ เลาหเจริญสมบัติ โทร 0818535444<br>
+      <span class="text-recom-3">ลงประกาศเมื่อ 18 ธันวาคม 2555</span><br>
+      <span class="text-recom-4">ติดต่อผู้ลงประกาศ     เก็บไว้ดูภายหลัง</span><br>
+      <br></td>
+  </tr>
+  </tbody>
+</table>
+
+<h4>ยืนยันรายละเอียดประกาศและเปิดใช้งาน</h4>
+
+<table class="zebra-striped">
+  <tbody>
+  <tr>
+    <td class="title">สถานะปัจจุบัน:</td>
+    <td>
+      <span class="label ประกาศฉบับร่าง">ประกาศฉบับร่าง</span>
+    </td>
+  </tr>
+  <tr>
+    <td class="title">ประกาศประเภท :</td>
+    <td>
+      ขาย
+    </td>
+  </tr>
+  <tr>
+    <td class="title">ประเภท :</td>
+    <td>
+      คอนโด
+    </td>
+  </tr>
+  <tr>
+    <td class="title">ชื่อโครงการ</td>
+    <td>
+    </td>
+  </tr>
+  <tr>
+    <td class="title">ที่อยู่:</td>
+    <td>
+
+      <br>
+      บุ่ง, เมืองอำนาจเจริญ, อำนาจเจริญ
+
+    </td>
+  </tr>
+  <tr>
+
+    <td class="title">พื่นที่ใช้สอย / จำนวนห้องนอน:</td>
+    <td>45 ตารางเมตร / สตูดิโอ</td>
+
+  </tr>
+  <tr>
+    <td class="title">วันที่ลงประกาศ:</td>
+    <td>
+      ยังไม่ลงประกาศ
+    </td>
+  </tr>
+  <tr>
+    <td class="title">ราคา:</td>
+    <td>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<div class="actions no-indent clearfix">
+
+   <% if %w(draft).include?(@listing.state) %>
+      <%= f.submit t('buttons.draft'), :class => "btn btn-success", :name => "draft_button" %>
+      <%= f.submit t('buttons.ok'), :class => "btn btn-primary", :name => "ok_button" %>
+  <% else %>
+      <%= f.submit t('buttons.finish'), :class => "btn btn-success", :name => "save_button" %>
+      <%= f.submit t('buttons.back'), :class => "btn btn-danger", :name => "back_button" %>
+      <%= f.submit t('buttons.renew'), :class => "btn btn-primary", :name => "renew_button" %>
+  <% end %>
+</div>

@@ -1,0 +1,98 @@
+<div class="row-fluid">
+
+
+  <div id="main" class="span12">
+    <div id="content">
+      <ul id="tabs" class="nav nav-tabs">
+        <li class="active">
+          <%= link_to t('accounts.listing.tabs.listings_active'), "#" %>
+        </li>
+        <li><%= link_to t('accounts.listing.tabs.listings_drafts'), "#" %></li>
+        <li><%= link_to t('accounts.listing.tabs.listings_history'), "#" %></li>
+        <li><%= link_to t('accounts.listing.tabs.listings_exclusive'), "#" %></li>
+      </ul>
+      <%= link_to t('accounts.listing.buttons.new'), new_account_listing_path, :class => "btn btn-success floatright" %>
+
+      <h3>ประกาศฉบับร่าง (0)</h3>
+
+      <div class="alert alert-block">
+        <img src="http://cdn-th1.pgimgs.com/images/extranet/information.png" alt="information">ประกาศมีอายุ 60
+        วันนับจากวันลงประกาศหรือวันที่ต่ออายุล่าสุด โดยระบบจะแจ้งเตือนทางอีเมลก่อนประกาศหมดอายุ<br>ระบบอนุญาตให้ต่ออายุหรือเลื่อนประกาศได้สัปดาห์ละ
+        1 ครั้ง
+      </div>
+      <div class="clearboth"></div>
+
+      <%= search_form_for [:account, @search], :html => {:class => "f-filter"} do |f| %>
+          <div class="btn-group floatleft">
+
+            <%= link_to "ทั้งหมด", params.merge({:q => {:listing_type_does_not_equal => ''}}), {:class => 'btn active'} %>
+            <%= link_to "ขาย", params.merge({:q => {:listing_type_cont => 'sale'}}), {:class => 'btn'} %>
+            <%= link_to "สำหรับเช่า", params.merge({:q => {:listing_type_cont => 'rent'}}), {:class => 'btn'} %>
+          </div>
+
+          <div class="floatright">
+
+
+            <%= f.select(:property_type_cont, Listing::PROPERTY_TYPE.collect { |property_type| [t(property_type), property_type.to_s] }, {:prompt => "ทั้งหมด"}) %>
+            <%= f.select(:listing_title_th_cont, current_user.listings.collect { |name| [name.listing_title_th, name.listing_title_th] }, {:prompt => "ค้นหาจากชื่อโครงการ"}) %>
+
+          </div>
+          <div class="clearboth"></div>
+
+      <% end %>
+
+      <form action="/ex_listings_drafts" method="POST">
+        <table cellpadding="0" cellspacing="0" class="blue">
+          <thead>
+          <tr>
+            <th width="2%"><input type="checkbox" id="listing_check_all" title="Check/uncheck all"></th>
+            <th width="10%">รหัส</th>
+            <th width="20%" class="">
+              <%= sort_link @search, :listing_title_th, t(:unit, :scope => 'activerecord.attributes.listing') %>
+            </th>
+            <th width="15%" class="">
+              <%= sort_link @search, :price, t(:price, :scope => 'activerecord.attributes.listing') %>
+            </th>
+            <th width="13%" class="">
+              วันหมดอายุ
+              <%#= sort_link @search, :price, t(:price, :scope => 'activerecord.attributes.listing') %>
+            </th>
+            <th width="10%">คุณภาพ</th>
+            <th width="15%">เครื่องมือ</th>
+          </tr>
+          </thead>
+          <tbody>
+          <% @listings.each do |listing| %>
+              <tr class="<%= cycle('even', 'odd') %>" id="<%= dom_id listing %>">
+                <td>
+                  <%= check_box_tag "listing_ids[]", listing.id, false, :class => "listing_id_checkbox" %>
+                </td>
+                <td><%= link_to "#{listing.id}", edit_account_listing_path(listing) %></td>
+                <td style="text-align:left">
+                  <%= link_to "#{t('listing.type.' + listing.listing_type.to_s)} - #{listing.listing_title_th}", edit_account_listing_path(listing) %>
+                </td>
+                <td><%= "#{number_with_delimiter(listing.price)} #{t(listing.price_type)}" unless listing.price.blank? %></td>
+                <td><%= listing.updated_at %></td>
+                <td><span class="label success">100%</span></td>
+                <td>
+                  <div class="listing_actions">
+                    <%= link_to t('toolbars.edit'), edit_account_listing_path(listing), :title => t('toolbars.edit'), :class => "act edit" %>
+                    <%= link_to t('toolbars.delete'), account_listing_path(listing), confirm: t('confirm.delete'), method: :delete, :title => t('toolbars.delete'), :class => "act delete" %>
+                  </div>
+                </td>
+              </tr>
+          <% end %>
+          </tbody>
+        </table>
+        <%= will_paginate @furnitures, :renderer => BootstrapPagination::Rails %>
+        <div class="clearfix align-right">
+        </div>
+
+        <div class="actions no-indent align-right">
+          <%= submit_tag t('buttons.multi_delete'), :class => 'btn btn-danger' %>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

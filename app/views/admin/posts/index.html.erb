@@ -1,0 +1,55 @@
+<div class="row-fluid">
+
+
+  <div id="main" class="span12">
+    <div id="content">
+      <%= link_to  t('admin.new') + t('activerecord.models.post'), new_admin_post_path, :class => "btn btn-success floatright" %>
+      <h3><%= t('activerecord.models.post') %></h3>
+
+      <div class="clearboth"></div>
+
+      <%= form_tag multi_destroy_admin_posts_path do %>
+          <table cellpadding="0" cellspacing="0" class="blue">
+            <thead>
+
+            <tr>
+              <th width="2%"><input type="checkbox" id="post_check_all" title="Check/uncheck all"></th>
+              <th width=""><%= sort_link @search, :name, t(:name, :scope => 'activerecord.attributes.post') %></th>
+              <th width="20%"><%= sort_link @search, :updated_at, t('updated_at') %></th>
+              <th width="15%"><%= t('toolbar') %></th>
+            </tr>
+
+            </thead>
+            <tbody>
+            <% @posts.each do |post| %>
+                <tr class="<%= cycle('even', 'odd') %>" id="<%= dom_id post %>">
+                  <td>
+                    <%= check_box_tag "post_ids[]", post.id, false, :class => "post_id_checkbox" %>
+                  </td>
+                  <td><%= link_to post.name, edit_admin_post_path(post) %></td>
+                  <td><%= post.updated_at %></td>
+                  <td>
+                    <div class="post_actions">
+                      <%= link_to t('toolbars.edit'), edit_admin_post_path(post), :title => t('toolbars.edit') , :class => "act edit" %>
+                      <%= link_to t('toolbars.delete'), admin_post_path(post), confirm: t('confirm.delete'), method: :delete, :title => t('toolbars.delete') , :class => "act delete" %>
+                    </div>
+
+                  </td>
+                </tr>
+            <% end %>
+            </tbody>
+          </table>
+
+          <%= will_paginate @posts, :renderer => BootstrapPagination::Rails %>
+
+          <div class="clearfix align-right">
+          </div>
+
+          <div class="actions no-indent align-right">
+            <%= submit_tag t('buttons.multi_delete'), :class => 'btn btn-danger' %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,193 @@
+th:
+  hello: "สวัสดี"
+  welcome: "ยินดีต้อนรับ"
+  fileupload:
+    add_files: "ใส่รูปภาพ"
+
+  prompt: "เลือก"
+  accounts:
+    inbox:
+      tabs:
+        new: "กล่องข้อความ"
+        old: "ข้อความเก่า"
+    navigation:
+      listing: "ประกาศของฉัน"
+      account: "ข้อมูลสมาชิก"
+      inbox: "ข้อความของฉัน"
+      support: "ฝ่ายบริการลูกค้า"
+    listing:
+      tabs:
+        listings_active: "ประกาศปัจจุบัน"
+        listings_drafts: "ประกาศฉบับร่าง"
+        listings_history: "ประกาศเก่า"
+        listings_exclusive: "ประกาศพิเศษ"
+      buttons:
+        new: "สร้างประกาศใหม่"
+        cancel: "ยกเลิกประกาศที่เลือก"
+
+      collect:
+        furnishing:
+          unfur: "ไม่มี"
+          part: "มีบางส่วน"
+          full: "ครบชุด"
+        facing:
+          north: "ทิศเหนือ"
+          neast: "ทิศตะวันออกเฉียงเหนือ"
+          nwest: "ทิศตะวันตกเฉียงเหนือ"
+          east: "ทิศตะวันออก"
+          west: "ทิศตะวันตก"
+          seast: "ทิศตะวันออกเฉียงใต้"
+          swest: "ทิศตะวันตกเฉียงใต้"
+          south: "ทิศใต้"
+
+
+ # account.index.tabs.old
+
+#th.account.users.updated
+  listing:
+    type:
+      rent: "เช่า"
+      sale: "ขาย"
+      opt:  "ขายดาวน์"
+
+  user:
+    buttons:
+      update: "ปรับปรุงผู้ใช้"
+
+  admin:
+    new: "เพิ่ม"
+    created: "ถูกเพิ่มแล้ว"
+    users:
+      new: "เพิ่มผู้ใช้"
+    unit_features:
+      new: "เพิ่มคุณสมบัติพิเศษ"
+      created: "คุณได้ทำการสร้างคุณสมบัติพิเศษสำเร็จแล้ว."
+      updated: "คุณได้ทำการบันทึกข้อมูลคุณสมบัติพิเศษแล้ว."
+    furnitures:
+      new: "เพิ่มอุปกรณ์ตกแต่ง"
+      created: "คุณได้ทำการสร้างอุปกรณ์ตกแต่งสำเร็จแล้ว."
+      updated: "คุณได้ทำการบันทึกข้อมูลอุปกรณ์ตกแต่งแล้ว."
+    free_spaces:
+      new: "เพิ่มพื้นที่ว่างด้านนอก ด้านใน"
+      created: "คุณได้ทำการสร้างอุปกรณ์ตกแต่งสำเร็จแล้ว."
+      updated: "คุณได้ทำการบันทึกข้อมูลอุปกรณ์ตกแต่งแล้ว."
+    facilities:
+      new: "เพิ่มสิ่งอำนวยความสะดวก"
+      created: "คุณได้ทำการสร้างอุปกรณ์ตกแต่งสำเร็จแล้ว."
+      updated: "คุณได้ทำการบันทึกข้อมูลอุปกรณ์ตกแต่งแล้ว."
+    experts:
+          new: "เพิ่มบริการและความชำนาญพิเศษ"
+
+  account:
+    users:
+      updated: "คุณได้ทำการปรับปรุงข้อมูลผู้ใช้แล้ว"
+
+  condo: "คอนโด"
+  home: "บ้านเดี่ยว"
+  townhouse: "ทาวน์เฮาส์"
+  land: "ที่ดิน"
+  apartment: "อพาร์ทเมนท์"
+
+  BAH: "บาท"
+  BAM: "บาท/เดือน"
+  BASM: "บาท/ตร.ม."
+  BASW: "บาท/ตร.วา"
+  BAR: "บาท/ไร่"
+  POA: "สอบถามราคา"
+  GUI: "ราคาคร่าวๆ"
+
+  F: "ขายขาด"
+  L: "เซ็งระยะยาว"
+
+  buttons:
+    back: "กลับ"
+    next: "ถัดไป"
+    update_and_exit: "บันทึกและออก"
+    finish: "ขาย/ให้เช่า ได้แล้ว"
+    cancel: "ย้อนกลับ"
+    renew: "ต่ออายุประกาศ"
+    multi_delete: "ลบรายการที่คุณเลือก"
+    keep: "เก็บข้อความ"
+    draft: "บันทึกเป็นฉบับร่าง"
+    ok: "ยืนยัน"
+
+  toolbar: "เครื่องมือ"
+  toolbars:
+    edit: "แก้ไข"
+    delete: "ลบ"
+
+  updated_at: "วันที่ปรับปรุง"
+
+  controllers:
+    new: "เพ่ิม"
+    edit: "แก้ไข"
+
+  confirm:
+    delete: "คุณแน่ใจแล้วหร่อไม่"
+
+
+
+
+
+  activerecord:
+    models:
+        user: "ผู้ใช้"
+        unit_feature: "คุณสมบัติพิเศษ"
+        furniture: "อุปกรณ์ตกแต่ง"
+        free_space: "พื้นที่ว่างด้านนอก ด้านใน"
+        facility: "สิ่งอำนวยความสะดวก"
+        post_group: "หมวดหมู่"
+        post: "เรื่อง"
+        expert: "บริการและความชำนาญพิเศษ"
+    attributes:
+        user:
+          first_name: "ชื่อ"
+          title: "คำนำหน้า"
+          email: "อีเมล์"
+          password: "รหัสผ่านใหม่"
+          password_confirmation: "ยืนยันรหัสผ่าน"
+          current_password: "รหัสผ่านเดิม"
+
+          first_name: "ชื่อ"
+          last_name: "นามสกุล"
+          telephone1: "หมายเลขโทรศัพท์มือถือ"
+          telephone2: "เบอร์โทรศัพท์สำรอง"
+          fax: "แฟกซ์"
+          address1: "ที่อยู่ 1"
+          address2: "ที่อยู่ 2"
+          postcode: "รหัสไปรษณีย์"
+          city: "อำเภอ/เขต/ตำบล/แขวง"
+          introduction: "คำแนะนำเบื้องต้น"
+          web_site: "เว็บไซต์"
+          notice_news: "ต้องการรับข่าวอัพเดต"
+          notice_property: "ต้องการรับข่าวเกี่ยวกับอสังหาริมทรัพย์"
+          notice_new_property: "ต้องการรับอีเมลแจ้งเตือนเมื่อมีโครงการใหม่"
+
+
+        unit_feature:
+          name: "ชื่อ"
+        furniture:
+          name: "ชื่อ"
+        free_space:
+          name: "ชื่อ"
+        facility:
+          name: "ชื่อ"
+        listing:
+          unit: "ยูนิต"
+          price: "ราคา"
+          listing_title_th: "ชื่ออสังหาฯ"
+          listing_description_th: "รายละเอียดเกี่ยวกับประกาศ"
+        post_group:
+          name: "ชื่อ"
+          slug: "slug"
+          parent: "หลัก"
+          description: "คำขยายความ"
+        post:
+          name: "ชื่อเรื่อง"
+          slug: "slug"
+          post_group: "หมวดหมู่"
+          content: "เนื้อหา"
+        expert:
+          name: "รายละเอียด"
+
+

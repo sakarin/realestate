@@ -1,0 +1,14 @@
+
+<%= simple_form_for [:admin, @user], :html => { :class => 'form-horizontal' } do |f| %>
+    <fieldset>
+      <legend><%= t('controllers.' + controller.action_name.capitalize.downcase) %><%= t('activerecord.models.user') %></legend>
+
+      <%= f.input :email %>
+     <%= render "admin/users/roles" %>
+
+      <div class="form-actions">
+        <%= f.submit nil, :class => 'btn btn-primary' %>
+        <%= link_to t('buttons.cancel'), admin_users_path, :class => 'btn' %>
+      </div>
+    </fieldset>
+<% end %>

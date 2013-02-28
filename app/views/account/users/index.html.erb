@@ -1,0 +1,157 @@
+<script>
+    //    $(document).ready(function () {
+    //        // put all your jQuery goodness in here.
+    //        $('#user_birth_date_1i').addClass("span2");
+    //        $('#user_birth_date_2i').addClass("span3");
+    //        $('#user_birth_date_3i').addClass("span2");
+    //    });
+
+</script>
+
+<div class="row-fluid">
+
+
+  <div id="main" class="span12">
+    <div id="content">
+      <%= render :partial => "user_tabs", :locals => {:current => 'User Details'} %>
+
+      <h3>ปรับปรุงข้อมูลบัญชีผู้ใช้</h3>
+      <%= simple_form_for([:account, @user], :html => {:method => :put, :class => "form-horizontal"}) do |f| %>
+
+
+          <h4>ข้อมูลส่วนตัว</h4>
+
+          <div class="control-group">
+            <label class="control-label" for="inputPassword">คำนำหน้า:</label>
+
+            <div class="controls">
+              <%= f.select "title", "<option value='mr'>นาย</option value='mrs'><option>นาง</option  value='ms'><option>นางสาว</option>".html_safe %>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label" for="inputPassword">ชื่อ:</label>
+
+            <div class="controls">
+              <%= f.text_field :first_name %>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label" for="inputPassword">นามสกุล</label>
+
+            <div class="controls">
+              <%= f.text_field :last_name %>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label" for="inputPassword">วัน/เดือน/ปี เกิด</label>
+
+            <div class="controls">
+
+              <div class="input">
+                <%= f.date_select :birth_date, :start_year => 1932 %>
+              </div>
+            </div>
+          </div>
+
+
+          <h4>ข้อมูลผู้ติดต่อ</h4>
+
+          <div class="control-group">
+            <label class="control-label" for="inputPassword">อีเมล์</label>
+
+            <div class="controls">
+              <div class="input-prepend">
+                <span class="add-on"><i class="icon-envelope"></i></span><%= f.email_field :email %>
+              </div>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label" for="inputPassword">หมายเลขโทรศัพท์มือถือ</label>
+
+            <div class="controls">
+              <div class="input-prepend">
+                <span class="add-on">0</span><%= f.telephone_field :telephone1 %>
+              </div>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label" for="inputPassword">เบอร์โทรศัพท์สำรอง</label>
+
+            <div class="controls">
+              <div class="input-prepend">
+                <span class="add-on">0</span><%= f.telephone_field :telephone2 %>
+              </div>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label" for="inputPassword">แฟกซ์</label>
+
+            <div class="controls">
+              <%= f.text_field :fax %>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="inputPassword">ที่อยู่ 1</label>
+
+            <div class="controls">
+              <%= f.text_field :address1, :class => "span9" %>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="inputPassword">ที่อยู่ 2</label>
+
+            <div class="controls">
+              <%= f.text_field :address2, :class => "span9" %>
+            </div>
+          </div>
+
+
+          <div class="control-group">
+            <label class="control-label" for="inputPassword">อำเภอ/เขต/ตำบล/แขวง</label>
+
+            <div class="controls">
+              <%= f.text_field :city %>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="inputPassword">จังหวัด</label>
+
+            <div class="controls">
+              <%= f.collection_select(:province_id, Province.order(:name), :id, :name, include_blank: true) %>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="inputPassword">รหัสไปรษณีย์</label>
+
+            <div class="controls">
+              <%= f.text_field :postcode %>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="inputPassword">ประเทศ</label>
+
+            <div class="controls">
+              <%= f.text_field :country %>
+            </div>
+          </div>
+
+
+          <div class="form-actions">
+            <%= f.submit t('user.buttons.update'), :class => "btn btn-primary" %>
+
+
+          </div>
+
+      <% end %>
+
+    </div>
+  </div>
+
+
+</div>

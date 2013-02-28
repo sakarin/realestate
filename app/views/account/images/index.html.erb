@@ -1,0 +1,36 @@
+<div class="row-fluid">
+
+  <div id="main" class="span12">
+    <div id="content">
+      <h3>สร้างประกาศ</h3>
+
+      <%= render "step" %>
+
+      <div id="images">
+        <%= render @images %>
+      </div>
+      <div class="clear"></div>
+
+      <%= form_for [:account, Image.new] do |f| %>
+          <%= f.label :attachment, "Upload images:" %>
+          <%= f.file_field :attachment, multiple: true, name: "image[attachment]" %>
+      <% end %>
+
+      <script id="template-upload" type="text/x-tmpl">
+        <div class="upload">
+          {%=o.name%}
+          <div class="progress"><div class="bar" style="width: 0%"></div></div>
+        </div>
+      </script>
+      <%= form_for([:account, @listing], :html => {:class => "bs-docs-example form-horizontal"}) do |f| %>
+      <div class="actions no-indent clearfix">
+        <%= f.submit t('buttons.back'), :class => "btn floatleft", :name => "back_button"  %>
+        <%= f.submit t('buttons.update_and_exit'), :class => "btn btn-success", :name => "save_button" %>
+        <%= f.submit t('buttons.next'), :class => "btn btn-primary floatright"  %>
+      </div>
+      <% end %>
+
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,38 @@
+<h3>ใส่รูปภาพประกอบ</h3>
+
+<div id="spinner" class="spinner" style="display:none;">
+</div>
+
+<%= form_for([:account, @listing, Image.new], :html => {:id => "new_image"}) do |f| %>
+    <span class="btn btn-success fileinput-button">
+                    <i class="icon-plus icon-white"></i>
+                    <span><%= t('fileupload.add_files') %></span>
+      <%= f.file_field :attachment, :multiple => true, name: "image[attachment]" %>
+    </span>
+    <span style="padding-left: 10px;font-size: 12px; text-align: center;">(สามารถอัพโหลดได้หลายๆรูปภาพในคราวเดียว)</span>
+
+<% end %>
+<script id="template-upload" type="text/x-tmpl">
+  <div class="upload">
+  </div>
+</script>
+
+<div id="preview" class="clearfix">
+
+  <ul id="images" data-update-url="<%= sort_account_listing_images_url(@listing) %>">
+    <%= render @listing.images %>
+  </ul>
+
+  <% if @listing.images.blank? %>
+      <span id="calltouploadpic"><%= image_tag "admin/icons/addpic-big.png", :alt => "Addpic-big"  %>กดปุ่มใส่รูปภาพ <b>หรือ
+        <br>ลากรูปภาพมาวางบริเวณนี้ เพิ่มอัพโหลด</b></span>
+  <% end %>
+</div>
+
+<%= form_for([:account, @listing], :html => {:class => "bs-docs-example form-horizontal", :id => "step_form"}) do |f| %>
+    <div class="actions no-indent clearfix">
+      <%= f.submit t('buttons.back'), :class => "btn floatleft", :name => "back_button" unless @listing.first_step? %>
+      <%= f.submit t('buttons.update_and_exit'), :class => "btn btn-success", :name => "save_button" %>
+      <%= f.submit t('buttons.next'), :class => "btn btn-primary floatright" unless @listing.last_step? %>
+    </div>
+<% end %>

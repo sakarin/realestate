@@ -1,0 +1,56 @@
+<div class="row-fluid">
+
+
+  <div id="main" class="span12">
+    <div id="content">
+      <%= link_to t('admin.unit_features.new'), new_admin_unit_feature_path, :class => "btn btn-success floatright" %>
+      <h3><%= t('activerecord.models.unit_feature') %></h3>
+
+      <div class="clearboth"></div>
+
+      <%= form_tag multi_destroy_admin_unit_features_path do %>
+          <table cellpadding="0" cellspacing="0" class="blue">
+            <thead>
+
+            <tr>
+              <th width="2%"><input type="checkbox" id="unit_feature_check_all" title="Check/uncheck all"></th>
+              <th width=""><%= sort_link @search, :name, t(:name, :scope => 'activerecord.attributes.unit_feature') %></th>
+              <th width="20%"><%= sort_link @search, :updated_at, t('updated_at') %></th>
+              <th width="15%"><%= t('toolbar') %></th>
+            </tr>
+
+            </thead>
+            <tbody>
+            <% @unit_features.each do |unit_feature| %>
+                <tr class="<%= cycle('even', 'odd') %>" id="<%= dom_id unit_feature %>">
+                  <td>
+                    <%= check_box_tag "unit_feature_ids[]", unit_feature.id, false, :class => "unit_feature_id_checkbox" %>
+                  </td>
+                  <td><%= link_to unit_feature.name, edit_admin_unit_feature_path(unit_feature) %></td>
+                  <td><%= unit_feature.updated_at %></td>
+                  <td>
+                    <div class="unit_feature_actions">
+                      <%= link_to t('toolbars.edit'), edit_admin_unit_feature_path(unit_feature), :title => t('toolbars.edit') , :class => "act edit" %>
+                      <%= link_to t('toolbars.delete'), admin_unit_feature_path(unit_feature), confirm: t('confirm.delete'), method: :delete, :title => t('toolbars.delete') , :class => "act delete" %>
+                    </div>
+
+                  </td>
+                </tr>
+            <% end %>
+            </tbody>
+          </table>
+
+          <%= will_paginate @unit_features, :renderer => BootstrapPagination::Rails %>
+
+          <div class="clearfix align-right">
+          </div>
+
+          <div class="actions no-indent align-right">
+
+            <%= submit_tag t('buttons.multi_delete'), :class => 'btn btn-danger' %>
+
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>

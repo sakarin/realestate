@@ -1,0 +1,15 @@
+<ul id="tabs" class="nav nav-tabs">
+  <li<%== ' class="active"' if current == 'User' %>>
+    <%= link_to "บัญชี", edit_user_registration_path %>
+  </li>
+  <li <%== ' class="active"' if current == 'User Details' %>>
+    <%= link_to "ข้อมูลในการติดต่อ", account_contact_index_path %>
+  </li>
+  <li <%== ' class="active"' if current == 'User Profile' %>>
+
+    <%= link_to "ข้อมูลแสดงต่อสาธารณะ", account_profile_index_path %>
+  </li>
+  <li <%== ' class="active"' if current == 'Notification' %>>
+    <%= link_to "การรับข่าวสาร", account_notification_index_path %>
+  </li>
+</ul>

@@ -1,0 +1,28 @@
+<div class="row-fluid">
+
+
+  <div id="main" class="span12">
+    <div id="content">
+      <%= render :partial => "account/users/user_tabs", :locals => {:current => 'Notification'} %>
+
+      <%= simple_form_for([:account, @user], :url => account_notification_path(@user), :html => {:method => :put, :class => 'bs-docs-example form-horizontal'}) do |f| %>
+
+          <%= f.error_notification %>
+          <%= display_base_errors @user %>
+
+          <%= f.input :notice_news %>
+          <%= f.input :notice_property %>
+          <%= f.input :notice_new_property %>
+
+          <div class="form-actions">
+            <%= f.submit t('user.buttons.update'), :class => "btn btn-primary" %>
+          </div>
+
+
+      <% end %>
+
+    </div>
+  </div>
+
+
+</div>

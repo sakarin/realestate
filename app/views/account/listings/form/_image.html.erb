@@ -1,0 +1,14 @@
+
+
+<%= content_tag_for :li, image do %>
+    <div class="imagecontainer"><%= link_to image_tag(image.attachment_url(:thumb)), image if image.attachment? %></div>
+    <div><span  class="3296293"><%= best_in_place image, :name, :path => account_listing_image_path(image) %></span></div>
+
+    <div class="photolistbtn" id="photolistbtn_3296293" style="left: 0; margin-left: 0; padding-left: 0; clear: both">
+      <div class="btnsmall" style="margin-left:10px">
+        <%= link_to "remove", image, :confirm => 'Are you sure?', :method => :delete %>
+      </div>
+      <div class="btnsmallEnding"><span class="handle">[drag]</span></div>
+      <b class="cover_image" style="margin-left:5px;">ภาพหน้าปกประกาศ</b>
+    </div>
+<% end %>

@@ -1,0 +1,58 @@
+<script>
+    $(document).ready(function () {
+        // put all your jQuery goodness in here.
+        $('#user_birth_date_1i').addClass("span2");
+        $('#user_birth_date_2i').addClass("span3");
+        $('#user_birth_date_3i').addClass("span2");
+    });
+</script>
+
+<div class="row-fluid">
+
+
+  <div id="main" class="span12">
+    <div id="content">
+      <%= render :partial => "account/users/user_tabs", :locals => {:current => 'User Details'} %>
+
+      <%= simple_form_for([:account, @user], :url => account_contact_path(@user), :html => {:method => :put, :class => "bs-docs-example form-horizontal"}) do |f| %>
+          <%= f.error_notification %>
+          <%= display_base_errors @user %>
+
+          <h4>ข้อมูลส่วนตัว</h4>
+          <%= f.input :first_name %>
+          <%= f.input :last_name %>
+
+          <div class="control-group">
+            <label class="control-label" for="inputPassword">วัน/เดือน/ปี เกิด</label>
+            <div class="controls">
+              <div class="input">
+                <%= f.date_select :birth_date, :start_year => 1932 %>
+              </div>
+            </div>
+          </div>
+
+          <h4>ข้อมูลผู้ติดต่อ</h4>
+          <%= f.input :email, :required => true %>
+          <%= f.input :telephone1 %>
+          <%= f.input :telephone2 %>
+          <%= f.input :fax %>
+          <%= f.input :address1 %>
+          <%= f.input :address2 %>
+          <%= f.input :city %>
+          <%= f.input :postcode %>
+
+          <%#= f.input :country %>
+
+
+
+
+          <div class="form-actions">
+            <%= f.submit t('user.buttons.update'), :class => "btn btn-primary" %>
+          </div>
+      <% end %>
+
+    </div>
+  </div>
+
+
+</div>

@@ -1,0 +1,42 @@
+<h3>ใส่รูปภาพประกอบ</h3>
+<%= form_for([:account, @listing, Image.new], :html => {:id => "new_image"}) do |f| %>
+
+
+    <span class="btn btn-success fileinput-button">
+                    <i class="icon-plus icon-white"></i>
+                    <span><%= t('fileupload.add_files') %></span>
+      <%= f.file_field :attachment, :multiple => true, name: "image[attachment]" %>
+                </span>
+    <button type="submit" class="btn btn-primary start">
+      <i class="icon-upload icon-white"></i>
+      <span><%= t('fileupload.start_upload') %></span>
+    </button>
+<% end %>
+
+
+
+<div id="panel_photos" class="media_panel" >
+  <ul id="images" data-update-url="<%= sort_account_listing_images_url(@listing) %>" >
+    <% @images.each do |image| %>
+        <%#= render image %>
+        <%= content_tag_for :li, image do %>
+            <span class="handle">[drag]</span>
+            <%= link_to image_tag(image.attachment_url(:thumb)), image if image.attachment? %>
+        <% end %>
+    <% end %>
+  </ul>
+</div>
+
+<script id="template-upload" type="text/x-tmpl">
+  <div class="upload">
+
+  </div>
+</script>
+
+<%= form_for([:account, @listing], :html => {:class => "bs-docs-example form-horizontal", :id => "step_form"}) do |f| %>
+    <div class="actions no-indent clearfix">
+      <%= f.submit t('buttons.back'), :class => "btn floatleft", :name => "back_button" unless @listing.first_step? %>
+      <%= f.submit t('buttons.update_and_exit'), :class => "btn btn-success", :name => "save_button" %>
+      <%= f.submit t('buttons.next'), :class => "btn btn-primary floatright" unless @listing.last_step? %>
+    </div>
+<% end %>

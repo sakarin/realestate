@@ -1,0 +1,22 @@
+<div class="row-fluid">
+
+  <div id="main" class="span12">
+    <div id="content">
+      <h3>สร้างประกาศ</h3>
+
+
+      <% unless @listing.current_step == "media" %>
+          <%= simple_form_for([:account, @listing], :html => {:class => "bs-docs-example form-horizontal", :id => "step_form"}) do |f| %>
+              <%= render "step" %>
+              <%= render "account/listings/form/#{@listing.current_step}_step", :f => f %>
+          <% end %>
+      <% else %>
+          <%= render "step" %>
+          <%= render "account/listings/form/#{@listing.current_step}_step" %>
+      <% end %>
+
+
+    </div>
+  </div>
+
+</div>
