@@ -35,7 +35,7 @@
     <file path="/permalinks.rb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1361827514879" ignored="false" />
     <file path="/post.rb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1361891199232" ignored="false" />
     <file path="/production.rb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1362105567929" ignored="false" />
-    <file path="/Gemfile" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1362039933926" ignored="false" />
+    <file path="/Gemfile" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1362107104897" ignored="false" />
     <file path="/application.rb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1362104563693" ignored="false" />
     <file path="/Capfile" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1362106367808" ignored="false" />
     <file path="/database.yml" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1362106799927" ignored="false" />
@@ -175,10 +175,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Gemfile" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="0" selection-start="943" selection-end="943" vertical-scroll-proportion="0.0">
+            <state line="43" column="10" selection-start="975" selection-end="975" vertical-scroll-proportion="0.36">
               <folding />
             </state>
           </provider>
@@ -238,10 +238,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="database.yml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="database.yml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/database.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="16" selection-start="643" selection-end="643" vertical-scroll-proportion="0.74666667">
+            <state line="20" column="0" selection-start="485" selection-end="642" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -290,10 +290,10 @@
         <option value="$PROJECT_DIR$/config/application.rb" />
         <option value="$PROJECT_DIR$/config/initializers/better_errors/rails.rb" />
         <option value="$PROJECT_DIR$/config/environments/production.rb" />
-        <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/Capfile" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/config/database.yml" />
+        <option value="$PROJECT_DIR$/Gemfile" />
       </list>
     </option>
   </component>
@@ -1063,13 +1063,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="0" selection-start="943" selection-end="943" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Capfile">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="0" selection-start="65" selection-end="65" vertical-scroll-proportion="0.0">
@@ -1093,7 +1086,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/database.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="16" selection-start="643" selection-end="643" vertical-scroll-proportion="0.74666667">
+        <state line="20" column="0" selection-start="485" selection-end="642" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="10" selection-start="975" selection-end="975" vertical-scroll-proportion="0.36">
           <folding />
         </state>
       </provider>
