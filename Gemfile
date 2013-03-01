@@ -32,6 +32,15 @@ group :assets do
   gem 'jquery-fileupload-rails'
 end
 
+group :development do
+  gem 'annotate'
+  gem "better_errors"
+  gem 'binding_of_caller'
+
+  gem 'meta_request', '0.2.1'
+end
+
+
 gem 'jquery-rails'
 
 gem 'devise'
@@ -72,15 +81,8 @@ gem "ancestry"
 
 gem 'pretty_param'
 
-gem "better_errors"
-gem 'binding_of_caller'
-
-group :development do
-  gem 'annotate'
 
 
-  gem 'meta_request', '0.2.1'
-end
 
 
 

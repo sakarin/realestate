@@ -182,10 +182,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Gemfile" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="23" selection-start="1339" selection-end="1339" vertical-scroll-proportion="0.0">
+            <state line="41" column="0" selection-start="943" selection-end="943" vertical-scroll-proportion="0.94666666">
               <folding />
             </state>
           </provider>
@@ -227,10 +227,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nginx.conf" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="nginx.conf" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/nginx.conf">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="10" selection-start="613" selection-end="613" vertical-scroll-proportion="0.6666667">
+            <state line="25" column="10" selection-start="613" selection-end="613" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -289,9 +289,9 @@
         <option value="$PROJECT_DIR$/app/views/layouts/account.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/bootstrap_and_overrides.css.less" />
         <option value="$PROJECT_DIR$/config/application.rb" />
-        <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/config/initializers/better_errors/rails.rb" />
         <option value="$PROJECT_DIR$/config/environments/production.rb" />
+        <option value="$PROJECT_DIR$/Gemfile" />
       </list>
     </option>
   </component>
@@ -1161,13 +1161,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="23" selection-start="1339" selection-end="1339" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/initializers/better_errors/rails.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="0" selection-start="230" selection-end="286" vertical-scroll-proportion="0.0">
@@ -1191,7 +1184,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/nginx.conf">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="10" selection-start="613" selection-end="613" vertical-scroll-proportion="0.6666667">
+        <state line="25" column="10" selection-start="613" selection-end="613" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="0" selection-start="943" selection-end="943" vertical-scroll-proportion="0.94666666">
           <folding />
         </state>
       </provider>
