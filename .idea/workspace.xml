@@ -34,7 +34,7 @@
     <file path="$PROJECT_DIR$/../shop/app/controllers/spree/home_controller_decorator.rb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1361827170474" ignored="false" />
     <file path="/permalinks.rb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1361827514879" ignored="false" />
     <file path="/post.rb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1361891199232" ignored="false" />
-    <file path="/production.rb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1362105567929" ignored="false" />
+    <file path="/production.rb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1362315231243" ignored="false" />
     <file path="/Gemfile" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1362107104897" ignored="false" />
     <file path="/application.rb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1362291538743" ignored="false" />
     <file path="/Capfile" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1362106367808" ignored="false" />
@@ -207,16 +207,7 @@
       <file leaf-file-name="production.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="1" selection-start="969" selection-end="969" vertical-scroll-proportion="0.49502763">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/application.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="43" selection-start="2991" selection-end="2991" vertical-scroll-proportion="0.0">
+            <state line="18" column="31" selection-start="644" selection-end="644" vertical-scroll-proportion="0.017679557">
               <folding />
             </state>
           </provider>
@@ -1129,14 +1120,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/application.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="43" selection-start="2991" selection-end="2991" vertical-scroll-proportion="0.0">
+        <state line="66" column="43" selection-start="2991" selection-end="2991" vertical-scroll-proportion="0.840884">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="1" selection-start="969" selection-end="969" vertical-scroll-proportion="0.49502763">
+        <state line="18" column="31" selection-start="644" selection-end="644" vertical-scroll-proportion="0.017679557">
           <folding />
         </state>
       </provider>
