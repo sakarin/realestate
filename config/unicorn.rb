@@ -4,7 +4,7 @@ pid "#{root}/tmp/pids/unicorn.pid"
 stderr_path "#{root}/log/unicorn.log"
 stdout_path "#{root}/log/unicorn.log"
 
-listen "/tmp/unicorn.realestate.sock"
+listen "/tmp/unicorn.realestate.sock", :backlog => 64
 worker_processes 4
 timeout 30
 
@@ -48,7 +48,7 @@ after_fork do |server, worker|
   # server.listen(addr, :tries => -1, :delay => 5, :tcp_nopush => true)
 
   # the following is *required* for Rails + "preload_app true",
-  defined?(ActiveRecord::Base) and
+  #defined?(ActiveRecord::Base) and
       ActiveRecord::Base.establish_connection
 
   # if preload_app is true, then you may also want to check and
