@@ -207,7 +207,7 @@
       <file leaf-file-name="production.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="4" selection-start="972" selection-end="972" vertical-scroll-proportion="0.19447514">
+            <state line="33" column="27" selection-start="1248" selection-end="1248" vertical-scroll-proportion="0.29281768">
               <folding />
             </state>
           </provider>
@@ -888,13 +888,13 @@
       <method />
     </configuration>
     <list size="7">
-      <item index="0" class="java.lang.String" itemvalue="Rake.db:migrate" />
-      <item index="1" class="java.lang.String" itemvalue="Rake.routes" />
-      <item index="2" class="java.lang.String" itemvalue="IRB console.Rails console: realestate" />
-      <item index="3" class="java.lang.String" itemvalue="Rails.Production: realestate" />
-      <item index="4" class="java.lang.String" itemvalue="Rails.Development: realestate" />
-      <item index="5" class="java.lang.String" itemvalue="Rake.test" />
-      <item index="6" class="java.lang.String" itemvalue="Rake.spec" />
+      <item index="0" class="java.lang.String" itemvalue="Rails.Production: realestate" />
+      <item index="1" class="java.lang.String" itemvalue="Rails.Development: realestate" />
+      <item index="2" class="java.lang.String" itemvalue="Rake.test" />
+      <item index="3" class="java.lang.String" itemvalue="Rake.spec" />
+      <item index="4" class="java.lang.String" itemvalue="Rake.db:migrate" />
+      <item index="5" class="java.lang.String" itemvalue="Rake.routes" />
+      <item index="6" class="java.lang.String" itemvalue="IRB console.Rails console: realestate" />
     </list>
     <recent_temporary>
       <list size="5">
@@ -1127,7 +1127,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="4" selection-start="972" selection-end="972" vertical-scroll-proportion="0.19447514">
+        <state line="33" column="27" selection-start="1248" selection-end="1248" vertical-scroll-proportion="0.29281768">
           <folding />
         </state>
       </provider>
