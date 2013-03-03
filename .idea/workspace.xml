@@ -186,7 +186,7 @@
       <file leaf-file-name="application.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/application.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="54" selection-start="1955" selection-end="1955" vertical-scroll-proportion="0.0">
+            <state line="18" column="43" selection-start="766" selection-end="766" vertical-scroll-proportion="-11.076923">
               <folding />
             </state>
           </provider>
@@ -195,7 +195,7 @@
       <file leaf-file-name="deploy.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/deploy.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="29" selection-start="195" selection-end="205" vertical-scroll-proportion="0.0">
+            <state line="10" column="39" selection-start="268" selection-end="268" vertical-scroll-proportion="-5.1538463">
               <folding />
             </state>
           </provider>
@@ -204,7 +204,7 @@
       <file leaf-file-name="nginx.conf" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/nginx.conf">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="0" selection-start="629" selection-end="629" vertical-scroll-proportion="0.0">
+            <state line="22" column="43" selection-start="535" selection-end="535" vertical-scroll-proportion="-13.538462">
               <folding />
             </state>
           </provider>
@@ -213,16 +213,7 @@
       <file leaf-file-name="unicorn.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/unicorn.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="40" selection-start="252" selection-end="252" vertical-scroll-proportion="0.17679559">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="unicorn_init.sh" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/unicorn_init.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="39" selection-start="477" selection-end="477" vertical-scroll-proportion="12.961538">
+            <state line="40" column="38" selection-start="1560" selection-end="1560" vertical-scroll-proportion="0.63594997">
               <folding />
             </state>
           </provider>
@@ -1088,28 +1079,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/application.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="54" selection-start="1955" selection-end="1955" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/deploy.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="29" selection-start="195" selection-end="205" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/nginx.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="629" selection-end="629" vertical-scroll-proportion="0.0">
+        <state line="18" column="43" selection-start="766" selection-end="766" vertical-scroll-proportion="-11.076923">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/unicorn_init.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="39" selection-start="477" selection-end="477" vertical-scroll-proportion="12.961538">
+        <state line="14" column="39" selection-start="477" selection-end="477" vertical-scroll-proportion="0.25483504">
           <folding />
         </state>
       </provider>
@@ -1121,9 +1098,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/deploy.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="39" selection-start="268" selection-end="268" vertical-scroll-proportion="-5.1538463">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/nginx.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="43" selection-start="535" selection-end="535" vertical-scroll-proportion="-13.538462">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config/unicorn.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="40" selection-start="252" selection-end="252" vertical-scroll-proportion="0.17679559">
+        <state line="40" column="38" selection-start="1560" selection-end="1560" vertical-scroll-proportion="0.63594997">
           <folding />
         </state>
       </provider>
