@@ -26,3 +26,5 @@ user2.add_role :trial
 user3 = User.create! :email => 'starter@example.com', :password => '123456', :password_confirmation => '123456'
 puts 'New user created: ' << user3.email
 user3.add_role :starter
+
+

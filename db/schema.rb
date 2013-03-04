@@ -11,9 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130224190632) do
+ActiveRecord::Schema.define(:version => 20130304023220) do
 
-  create_table "admin_experts", :force => true do |t|
+  create_table "_experts", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -51,6 +51,12 @@ ActiveRecord::Schema.define(:version => 20130224190632) do
     t.integer "amphur_id"
     t.integer "province_id"
     t.integer "geo_id",      :default => 0,  :null => false
+  end
+
+  create_table "experts", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "experts_users", :force => true do |t|
@@ -151,8 +157,12 @@ ActiveRecord::Schema.define(:version => 20130224190632) do
     t.datetime "updated_at",             :null => false
     t.string   "state"
     t.string   "slug"
+    t.string   "make_permalink"
+    t.string   "permalink"
   end
 
+  add_index "listings", ["make_permalink"], :name => "index_listings_on_make_permalink"
+  add_index "listings", ["permalink"], :name => "index_listings_on_permalink"
   add_index "listings", ["slug"], :name => "index_listings_on_slug"
 
   create_table "post_groups", :force => true do |t|
@@ -173,7 +183,7 @@ ActiveRecord::Schema.define(:version => 20130224190632) do
     t.datetime "updated_at",    :null => false
   end
 
-  add_index "posts", ["post_group_id"], :name => "index_posts_on_post_group_id"
+  add_index "posts", ["post_group_id"], :name => "index_admin_posts_on_post_group_id"
 
   create_table "provinces", :force => true do |t|
     t.string  "code"
@@ -221,6 +231,28 @@ ActiveRecord::Schema.define(:version => 20130224190632) do
     t.datetime "updated_at",      :null => false
   end
 
+  create_table "user_details", :force => true do |t|
+    t.string   "title"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.date     "birth_date"
+    t.string   "telephone1"
+    t.string   "telephone2"
+    t.string   "fax"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "postcode"
+    t.string   "city"
+    t.integer  "province_id"
+    t.string   "country"
+    t.string   "introduction"
+    t.string   "service_and_expert"
+    t.string   "web_site"
+    t.string   "agency_logo"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
@@ -262,11 +294,6 @@ ActiveRecord::Schema.define(:version => 20130224190632) do
     t.boolean  "notice_property"
     t.boolean  "notice_new_property"
   end
-
-  add_index "users", ["authentication_token"], :name => "index_users_on_authentication_token", :unique => true
-  add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
-  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
-  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
   create_table "users_roles", :id => false, :force => true do |t|
     t.integer "user_id"

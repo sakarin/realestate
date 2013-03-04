@@ -28,7 +28,7 @@
     <file path="/_image.html.erb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1361672634853" ignored="false" />
     <file path="/listings.css.scss" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1361682002217" ignored="false" />
     <file path="/application.css.less.erb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1361668795700" ignored="false" />
-    <file path="/Dummy.txt" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1361826390862" ignored="false" />
+    <file path="/Dummy.txt" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1362364336866" ignored="false" />
     <file path="/ability.rb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1361729749655" ignored="false" />
     <file path="/application_controller.rb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1361730698820" ignored="false" />
     <file path="$PROJECT_DIR$/../shop/app/controllers/spree/home_controller_decorator.rb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1361827170474" ignored="false" />
@@ -42,6 +42,8 @@
     <file path="/unicorn.rb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1362279102302" ignored="false" />
     <file path="/development.rb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1362283288100" ignored="false" />
     <file path="/unicorn_init.sh" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1362351357743" ignored="false" />
+    <file path="/20130304023220_create_expert.rb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1362364349247" ignored="false" />
+    <file path="/thailand_area.rb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1362364775716" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,64 +185,52 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="application.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/config/application.rb">
+      <file leaf-file-name="thailand_area.sql" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/thailand_area.sql">
+          <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="52" selection-start="3037" selection-end="3037" vertical-scroll-proportion="0.8725825">
+            <state line="1023" column="86" selection-start="417" selection-end="66999" vertical-scroll-proportion="-5.194805">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
+      <file leaf-file-name="thailand_area.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/thailand_area.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="902" column="0" selection-start="0" selection-end="66634" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.css.less.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/account/application.css.less.erb">
+      <file leaf-file-name="seeds.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/seeds.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+            <state line="30" column="0" selection-start="1185" selection-end="1185" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="account.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/account.html.erb">
+      <file leaf-file-name="database.yml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/database.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="69" selection-start="592" selection-end="592" vertical-scroll-proportion="-8.96">
+            <state line="28" column="30" selection-start="643" selection-end="643" vertical-scroll-proportion="0.49502763">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gemfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="113" selection-start="762" selection-end="762" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
+      <file leaf-file-name="thailand.sql" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/thailand.sql">
+          <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+            <state />
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="nginx.conf" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/nginx.conf">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="27" selection-start="91" selection-end="117" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="production.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="3" selection-start="970" selection-end="970" vertical-scroll-proportion="0.0">
+            <state line="10031" column="22" selection-start="729913" selection-end="729913" vertical-scroll-proportion="-2081.87">
               <folding />
             </state>
           </provider>
@@ -255,16 +245,11 @@
   </component>
   <component name="GeneratorOptions">
     <option name="VCS_SHOW_CONFIRMATION" value="true" />
+    <option name="ENVIRONMENT" value="development" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/jquery.fileupload-ui.css.erb" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/font_end/application.js" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/bootstrap_and_overrides.css.less" />
-        <option value="$PROJECT_DIR$/config/initializers/better_errors/rails.rb" />
-        <option value="$PROJECT_DIR$/Capfile" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/config/database.yml" />
         <option value="$PROJECT_DIR$/config/database.example.yml" />
         <option value="$PROJECT_DIR$/config/environments/development.rb" />
@@ -275,6 +260,12 @@
         <option value="$PROJECT_DIR$/config/environments/production.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/account.html.erb" />
         <option value="$PROJECT_DIR$/config/application.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20130304023131_expert.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20130304023220_create_expert.rb" />
+        <option value="$PROJECT_DIR$/db/thailand_area.sql" />
+        <option value="$PROJECT_DIR$/db/thailand.sql" />
+        <option value="$PROJECT_DIR$/db/thailand_area.rb" />
+        <option value="$PROJECT_DIR$/db/seeds.rb" />
       </list>
     </option>
   </component>
@@ -345,38 +336,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="realestate" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="realestate" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tasks" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="realestate" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="realestate" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="db" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -392,24 +351,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="realestate" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="realestate" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="environments" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -464,6 +405,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="realestate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="realestate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -572,11 +531,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/db" />
       <recent name="$PROJECT_DIR$/app/assets/stylesheets/admin" />
       <recent name="$PROJECT_DIR$/app/assets/stylesheets/account" />
       <recent name="$PROJECT_DIR$/config/initializers" />
       <recent name="$PROJECT_DIR$/lib" />
-      <recent name="$PROJECT_DIR$/app/assets/images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/db" />
@@ -586,7 +545,7 @@
       <recent name="$PROJECT_DIR$/app/assets/images/admin/icons" />
     </key>
   </component>
-  <component name="RunManager" selected="Rails.Production: realestate">
+  <component name="RunManager" selected="Rails.Development: realestate">
     <configuration default="false" name="db:migrate" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
       <module name="realestate" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
@@ -973,13 +932,13 @@
       <method />
     </configuration>
     <list size="7">
-      <item index="0" class="java.lang.String" itemvalue="Rake.db:migrate" />
-      <item index="1" class="java.lang.String" itemvalue="Rake.routes" />
-      <item index="2" class="java.lang.String" itemvalue="IRB console.Rails console: realestate" />
-      <item index="3" class="java.lang.String" itemvalue="Rails.Production: realestate" />
-      <item index="4" class="java.lang.String" itemvalue="Rails.Development: realestate" />
-      <item index="5" class="java.lang.String" itemvalue="Rake.test" />
-      <item index="6" class="java.lang.String" itemvalue="Rake.spec" />
+      <item index="0" class="java.lang.String" itemvalue="Rails.Production: realestate" />
+      <item index="1" class="java.lang.String" itemvalue="Rails.Development: realestate" />
+      <item index="2" class="java.lang.String" itemvalue="Rake.test" />
+      <item index="3" class="java.lang.String" itemvalue="Rake.spec" />
+      <item index="4" class="java.lang.String" itemvalue="Rake.db:migrate" />
+      <item index="5" class="java.lang.String" itemvalue="Rake.routes" />
+      <item index="6" class="java.lang.String" itemvalue="IRB console.Rails console: realestate" />
     </list>
     <recent_temporary>
       <list size="5">
@@ -1119,112 +1078,120 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/database.example.yml">
+    <entry file="file://$PROJECT_DIR$/db/migrate/20130114133633_create_admin_experts.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="29" selection-start="643" selection-end="643" vertical-scroll-proportion="0.49502763" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20130114151853_create_expert_user.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/expert.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/schema.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="36" selection-start="689" selection-end="689" vertical-scroll-proportion="-2.1153846">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20121008113603_free_spaces.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="6" selection-start="45" selection-end="147" vertical-scroll-proportion="0.12375691">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20130224190632_add_slug_to_listings.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20130304023220_create_expert.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="20" selection-start="112" selection-end="112" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20120929055256_create_amphur.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20120929055549_create_districts.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20120929055602_create_provinces.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20121004110131_create_unit_features.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/thailand.sql">
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10031" column="22" selection-start="729913" selection-end="729913" vertical-scroll-proportion="-2081.87">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/thailand_area.sql">
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1023" column="86" selection-start="417" selection-end="66999" vertical-scroll-proportion="-5.194805">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/thailand_area.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="902" column="0" selection-start="0" selection-end="66634" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/seeds.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="0" selection-start="1185" selection-end="1185" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/database.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="109" selection-start="643" selection-end="643" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="82" selection-start="724" selection-end="724" vertical-scroll-proportion="0.28287292">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="33" selection-start="460" selection-end="460" vertical-scroll-proportion="0.35359117">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/deploy.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="39" selection-start="268" selection-end="268" vertical-scroll-proportion="0.15244596">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="3" selection-start="970" selection-end="970" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/unicorn_init.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="145" selection-start="768" selection-end="768" vertical-scroll-proportion="0.49502763">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/unicorn.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="42" selection-start="1307" selection-end="1307" vertical-scroll-proportion="0.601105">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/account/application.css.less.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/account.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="69" selection-start="592" selection-end="592" vertical-scroll-proportion="-8.96">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="113" selection-start="762" selection-end="762" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/nginx.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="27" selection-start="91" selection-end="117" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/application.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="52" selection-start="3037" selection-end="3037" vertical-scroll-proportion="0.8725825">
+        <state line="28" column="30" selection-start="643" selection-end="643" vertical-scroll-proportion="0.49502763">
           <folding />
         </state>
       </provider>
