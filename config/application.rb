@@ -31,7 +31,7 @@ module Realestate
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-     config.i18n.default_locale = :th
+    config.i18n.default_locale = :th
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
@@ -59,12 +59,14 @@ module Realestate
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
-    #config.assets.precompile += ["redactor-rails/*"]
 
-     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
 
-     config.assets.precompile += %w( .svg .eot .woff .ttf )
-     config.assets.precompile += %w( *.css *.js )
+    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+
+    config.assets.precompile += %w( .svg .eot .woff .ttf )
+    config.assets.precompile += %w( *.css *.js )
+
+    config.assets.precompile += ["redactor-rails/*"]
 
   end
 end
