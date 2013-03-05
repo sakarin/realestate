@@ -1,5 +1,5 @@
 <%= content_tag_for :li, image do %>
-    <%= link_to "", account_listing_image_path(@listing, image), :method => :delete, :class => "delete" %>
+    <%= link_to "", account_listing_image_path(@listing, image), :method => :delete, :class => "delete_image" %>
     <div class="handle">
       <div class="imagecontainer">
         <%= image_tag(image.attachment_url(:thumb)) %>

@@ -24,15 +24,15 @@ class Account::ListingsController < Account::BaseController
     @listing.user = current_user
 
     if @listing.valid?
-
       @listing.save
+      @listing.next_step
       session[:listing_step] = @listing.current_step
 
       if params[:save_button]
-        @listing.next_step
+
         redirect_to account_listings_path
       else
-        @listing.next_step
+
         redirect_to edit_account_listing_path(@listing)
       end
     else

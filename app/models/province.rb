@@ -12,4 +12,6 @@ class Province < ActiveRecord::Base
   attr_accessible :name
   has_many :districts
   has_many :amphurs
+
+  default_scope order('name ASC')
 end

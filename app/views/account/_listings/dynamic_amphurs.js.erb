@@ -1,5 +1,0 @@
-$('#listing_amphur_id').empty();
-$('#listing_amphur_id').append("<option value=''></option>");
-<% for amphur in @amphurs %>
-    $('#listing_amphur_id').append($("<option></option>").attr("value", <%= amphur.id %>).text('<%= amphur.name %>'));
-<% end %>

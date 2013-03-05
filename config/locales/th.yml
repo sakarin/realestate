@@ -177,6 +177,7 @@ th:
           price: "ราคา"
           listing_title_th: "ชื่ออสังหาฯ"
           listing_description_th: "รายละเอียดเกี่ยวกับประกาศ"
+          listing_type: "ประเภท"
         post_group:
           name: "ชื่อ"
           slug: "slug"
