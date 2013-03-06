@@ -27,10 +27,6 @@ class Listing < ActiveRecord::Base
   belongs_to :user
 
 
-
-
-
-
   has_many :unit_features_listings
   has_many :unit_features, through: :unit_features_listings
 
