@@ -1,0 +1,5 @@
+$('#q_amphur_id_eq').empty();
+$('#q_amphur_id_eq').append("<option value=''></option>");
+<% for amphur in @amphurs %>
+$('#q_amphur_id_eq').append($("<option></option>").attr("value", <%= amphur.id %>).text('<%= amphur.name %>'));
+<% end %>

@@ -1,38 +1,27 @@
 <ul class="nav">
   <li><%= link_to t('accounts.navigation.listing'), account_listings_path %></li>
-
   <li><%= link_to t('accounts.navigation.account'), edit_user_registration_path %></li>
   <li><%= link_to t('accounts.navigation.inbox'), account_inbox_index_path %></li>
   <li><%= link_to t('accounts.navigation.support'), "" %></li>
-
 </ul>
 
+<% unless current_user.nil? -%>
+    <ul class="nav pull-right">
 
-
-<ul class="nav pull-right">
-
-  <li class="dropdown" id="nav-user">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img alt="Gravatar" src="https://secure.gravatar.com/avatar/63c1718dc9887939c9f0ea69917f69b6.png?d=mm&amp;r=R&amp;s=18" style="vertical-align:top;">
-      <%= current_user.email unless current_user.nil? %>
-      <b class="caret"></b>
-    </a>
-    <ul class="dropdown-menu">
-      <li class="">
-        <%= link_to "แก้ไขบัญชี", edit_user_registration_path %>
-      </li>
-      <li>
-        <a href="https://secure.fleetio.com/users/edit"><i class="picons-16-basic2-253"></i>
-          Edit Profile
-        </a></li>
-      <li class="divider"></li>
-      <li>
-
-        <%#= link_to "ออกจากระบบ", destroy_user_session_path, :method => 'delete' %>
-        <%= link_to 'Logout22', destroy_user_session_path, :method=>'delete' %>
+      <li class="dropdown" id="nav-user">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          <%= current_user.email unless current_user.nil? %>
+          <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          <li class="">
+            <%= link_to "แก้ไขบัญชี", edit_user_registration_path %>
+          </li>
+          <li>
+            <%= link_to "ออกจากระบบ", destroy_user_session_path, :method => :delete %>
+          </li>
+        </ul>
       </li>
     </ul>
-  </li>
-
-
-</ul>
+<% end -%>
 

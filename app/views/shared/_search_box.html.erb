@@ -1,0 +1,85 @@
+<div id="search-mainpage">
+  <div class="search-body">
+    <div class="logo-mainpage">
+      <div class="logo"><%= link_to image_tag("logo.png", :width => '165', :height => '48'), "/" %></div>
+      <div class="tab-menu">
+        <div class="tab-menu01 text-tab-menu"><a href="#">ค้นหาประกาศ</a></div>
+        <div class="tab-menu02 text-tab-menu"><a href="#">ค้นหาเชิงพาณิชย์</a></div>
+        <div class="tab-menu03 text-tab-menu"><a href="#">ค้นหาโครงการใหม่</a></div>
+      </div>
+    </div>
+    <div class="search-all">
+      <%= search_form_for [@search], :url => search_listings_path, :html => {:method => :get, :class => "f-filter"} do |f| %>
+          <div class="search-logo">
+
+            <%= image_tag "search-logo.png", :width => '69', :height => '69' %>
+            <div class="clear"></div>
+            <p class="text-search1">ค้นหาบ้าน คอนโด ทั่วไทย</p>
+
+            <p class="text-search2">สำหรับเช่า</p>
+          </div>
+          <div class="search-content">
+            <div class="row-top">
+              <div class="box-top-1">
+                <%= f.collection_select(:province_id_eq, Province.order(:name), :id, :name, {include_blank: "เลือกจังหวัด"}, {:class => 'box-border'}) %>
+              </div>
+              <div class="box-top-2">
+
+                    <%= f.select :amphur_id_eq, "", {include_blank: "เลือกอำเภอ"}, {:class => "box-border"} %>
+
+                    <%#= f.collection_select(:amphur_id_eq, Amphur.find_all_by_province_id(@listing.province_id), :id, :name, include_blank: false) %>
+
+
+              </div>
+              <div class="box-top-3">
+
+                <%= f.text_field :listing_description_th_cont, :class => "box-border-2", :placeholder => "คำค้นหา" %>
+              </div>
+            </div>
+            <div class="row-lower">
+              <p>ประกาศสำหรับ:</p>
+
+              <p>ประเภท:</p>
+
+              <p>ราคาสูงสุด:</p>
+
+              <p>จำนวนห้องนอน:</p>
+
+              <div class="clear"></div>
+              <div class="box-lower-4">
+                <%= f.select :listing_type_eq, [['ขาย', "sale"], ['เช่า', "rent"], ['ขายดาวน์', "opt"]], {include_blank: false}, {:class => "box-border-lower"} %>
+              </div>
+              <div class="box-lower-1">
+                <%= f.select(:property_type_eq, Listing::PROPERTY_TYPE.collect { |property_type| [t(property_type), property_type.to_s] }, {include_blank: "ทั้งหมด"}, {:class => "box-border-lower"}) %>
+
+              </div>
+              <div class="box-lower-2">
+                <%= f.select :price_lteq,
+                             [['฿ 500,000', "500000"], ['฿ 1,000,000', "1000000"], ['฿ 1,500,000', "1500000"], ['฿ 2,000,000', "2000000"],
+                              ['฿ 2,500,000', "2500000"], ['฿ 3,000,000', "3000000"], ['฿ 3,500,000', "3500000"], ['฿ 4,000,000', "4000000"],
+                              ['฿ 4,500,000', "4500000"], ['฿ 5,000,000', "5000000"], ['฿ 5,500,000', "5500000"], ['฿ 6,000,000', "6000000"],
+                              ['฿ 6,500,000', "6500000"], ['฿ 7,000,000', "7000000"], ['฿ 7,500,000', "7500000"], ['฿ 8,000,000', "8000000"],
+                              ['฿ 8,500,000', "2500000"], ['฿ 9,000,000', "9000000"], ['฿ 9,500,000', "9500000"], ['฿ 10,000,000', "10000000"], ['฿ 10,000,000 +', "99999999999"]],
+                             {include_blank: "ทุกราคา"}, {:class => "box-border-lower"} %>
+              </div>
+              <div class="box-lower-3">
+                <%= f.select :bedrooms_lteq,
+                             {"สตูดิโอ" => "0", "1 ห้องนอน" => "1", "2 ห้องนอน" => "2", "3 ห้องนอน" => "3", "4 ห้องนอน" => "4",
+                              "5 ห้องนอน" => "5", "6 ห้องนอน" => "6", "7 ห้องนอน" => "7", "8 ห้องนอน" => "8", "9 ห้องนอน" => "9", "10+ ห้องนอน" => "99"},
+                             {include_blank: "ทั้งหมด"}, {:class => "box-border-lower"} %>
+              </div>
+
+            </div>
+          </div>
+          <div class="search-button">
+            <%= image_tag "search-button-1.png", :width => '76', :height => '58', :class => 'search-button-1', :id => "btn-search-submit" %>
+            <%= image_tag "search-button-2.png", :width => '72', :height => '41', :class => 'search-button-2' %>
+
+          </div>
+      <% end %>
+      <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <div class="clear"></div>
+</div>

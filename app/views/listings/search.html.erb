@@ -1,0 +1,15 @@
+<%= render partial: 'shared/search_box' %>
+
+<div id="general-content" style="margin-top: 15px;">
+  <div class="general-bar">
+
+    <%= image_tag "icon-intro.png", :width => '16', :height => '16', :class => 'icon-bar' %>
+    <p>ประกาศ อสังหาฯ แนะนำทั่วไป</p>
+    <%= image_tag "icon-all.png", :width => '53', :height => '19', :class => 'general-more' %>
+  </div>
+
+  <%# Listing.all.each do |listing| %>
+  <% @listings.each do |listing| %>
+      <%= render 'listings', :listing => listing %>
+  <% end %>
+</div>

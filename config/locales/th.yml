@@ -1,4 +1,8 @@
 th:
+  unauthorized:
+    default: "คุณยังไม่ได้รับอนุญาตให้เข้าถึงหน้านี้."
+
+
   hello: "สวัสดี"
   welcome: "ยินดีต้อนรับ"
   fileupload:
@@ -147,6 +151,7 @@ th:
           password: "รหัสผ่านใหม่"
           password_confirmation: "ยืนยันรหัสผ่าน"
           current_password: "รหัสผ่านเดิม"
+          remember_me:  "จำข้อมูลฉันไว้"
 
           first_name: "ชื่อ"
           last_name: "นามสกุล"
@@ -190,5 +195,7 @@ th:
           content: "เนื้อหา"
         expert:
           name: "รายละเอียด"
+
+
 
 

@@ -2,29 +2,30 @@
 <div class="control-group">
   <label class="control-label" for="inputPassword"> จำนวนห้องนอน:</label>
   <div class="controls">
-    <%= select(:listing, :bedrooms, options_for_select(
+    <%= f.select( :bedrooms,
             {"สตูดิโอ" => "0", "1 ห้องนอน" => "1", "2 ห้องนอน" => "2", "3 ห้องนอน" => "3", "4 ห้องนอน" => "4",
-             "5 ห้องนอน" => "5", "6 ห้องนอน" => "6", "7 ห้องนอน" => "7", "8 ห้องนอน" => "8", "9 ห้องนอน" => "9", "10+ ห้องนอน" => "10"}
-    ), :prompt => t('prompt')) %>
+             "5 ห้องนอน" => "5", "6 ห้องนอน" => "6", "7 ห้องนอน" => "7", "8 ห้องนอน" => "8", "9 ห้องนอน" => "9", "10+ ห้องนอน" => "10"},
+        :prompt => t('prompt')) %>
+
   </div>
 </div>
 
 <div class="control-group">
   <label class="control-label" for="inputPassword">จำนวนห้องแม่บ้าน:</label>
   <div class="controls">
-    <%= select(:listing, :extra_rooms, options_for_select(
+    <%= f.select(:extra_rooms,
             {"สตูดิโอ" => "0", "1 ห้องนอน" => "1", "2 ห้องนอน" => "2", "3 ห้องนอน" => "3", "4 ห้องนอน" => "4",
-             "5 ห้องนอน" => "5", "6 ห้องนอน" => "6", "7 ห้องนอน" => "7", "8 ห้องนอน" => "8", "9 ห้องนอน" => "9", "10+ ห้องนอน" => "10"}
-    ), :prompt => t('prompt')) %>
+             "5 ห้องนอน" => "5", "6 ห้องนอน" => "6", "7 ห้องนอน" => "7", "8 ห้องนอน" => "8", "9 ห้องนอน" => "9", "10+ ห้องนอน" => "10"},
+     :prompt => t('prompt')) %>
   </div>
 </div>
 
 <div class="control-group">
   <label class="control-label" for="inputPassword">จำนวนห้องน้ำ:</label>
   <div class="controls">
-    <%= select(:listing, :bathrooms, options_for_select(
+    <%= select(:listing, :bathrooms,
             {"สตูดิโอ" => "0", "1 ห้องนอน" => "1", "2 ห้องนอน" => "2", "3 ห้องนอน" => "3", "4 ห้องนอน" => "4",
-             "5 ห้องนอน" => "5", "6 ห้องนอน" => "6", "7 ห้องนอน" => "7", "8 ห้องนอน" => "8", "9 ห้องนอน" => "9"}),
+             "5 ห้องนอน" => "5", "6 ห้องนอน" => "6", "7 ห้องนอน" => "7", "8 ห้องนอน" => "8", "9 ห้องนอน" => "9"},
              :prompt => t('prompt')) %>
   </div>
 </div>

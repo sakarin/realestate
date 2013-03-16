@@ -71,6 +71,7 @@ class Account::ListingsController < Account::BaseController
         redirect_to account_listings_path
       else
         @listing.next_step
+        session[:listing_step] = @listing.current_step
         redirect_to edit_account_listing_path(@listing)
       end
 

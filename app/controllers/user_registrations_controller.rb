@@ -72,7 +72,12 @@ class UserRegistrationsController  < Devise::RegistrationsController
   alias_method :facebook, :all
 
 
+  protected
 
+  # Overwriting the after inactive sign_up redirect path method
+  def after_inactive_sign_up_path_for(resource)
+    new_user_session_url
+  end
 
 
 

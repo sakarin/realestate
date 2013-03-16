@@ -1,27 +1,21 @@
 Realestate::Application.routes.draw do
 
-
-
-
-
   get "notification/edit"
 
   mount RedactorRails::Engine => '/redactor_rails'
 
   root :to => 'listings#index'
 
-
-  #devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
-  #, controllers: { omniauth_callbacks: "user_registrations", registrations: "user_registrations"  }
-
-  devise_for :users, :controllers => { :registrations => 'user_registrations' }
-
+  devise_for :users, :controllers => { :registrations => 'user_registrations', :sessions => 'sessions' }
   devise_scope :user do
-
+    get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
+  resources :users
 
   match "/dynamic_amphurs/:province_id" => "account/listings#dynamic_amphurs", :via => :post
+  match "/amphurs/:province_id" => "listings#dynamic_amphurs", :via => :post
+
   match "/dynamic_districts/:amphur_id" => "account/listings#dynamic_districts", :via => :post
 
   match "account/listings/:id/progress_trackers/:step" => "account/listings#progress_trackers", :via => :get
@@ -30,12 +24,10 @@ Realestate::Application.routes.draw do
   match "/account" => "account/listings#index", :via => :get
   match "/admin" => "admin/home#index", :via => :get
 
-
-
-
-  resources :users
-
   resources :listings do
+    collection do
+      match 'search' => 'listings#search', :via => [:get, :post], :as => :search
+    end
     resources :comments
   end
 
@@ -86,8 +78,6 @@ Realestate::Application.routes.draw do
       end
     end
 
-
-
   end
 
   namespace :account do
@@ -102,10 +92,6 @@ Realestate::Application.routes.draw do
       end
     end
 
-    # may be used
-    #resources :images
-
-
     resources :inbox do
       collection do
         post :multi_keep
@@ -113,8 +99,5 @@ Realestate::Application.routes.draw do
       end
     end
   end
-
-
-
 
 end
