@@ -5,7 +5,7 @@
       <td width="30" align="center" valign="top"><%= image_tag "icon-sale.png", :width => '14', :height => '15' %></td>
       <td width="210" valign="top">
         <span class="text-recom-1">
-          <%= link_to "#{t('listing.type.' + listing.listing_type.to_s)} - #{listing.listing_title_th}", edit_account_listing_path(listing) %>
+          <%= link_to "#{t('listing.type.' + listing.listing_type.to_s)} - #{listing.listing_title_th}", listing_path(listing) %>
         </span>
 		<span class="text-recom-2">ตึกแถว/อาคารพาณิชย์ (ขายขาด)
 											พหลโยธิน591/18 Pholyothin Rd

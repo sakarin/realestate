@@ -1,4 +1,8 @@
 th:
+  devise:
+    button:
+      submit: "เข้าสู่ระบบ"
+      registration: "สมัครสมาชิก"
   unauthorized:
     default: "คุณยังไม่ได้รับอนุญาตให้เข้าถึงหน้านี้."
 

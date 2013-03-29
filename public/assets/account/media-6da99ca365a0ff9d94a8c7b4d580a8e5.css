@@ -1,0 +1,479 @@
+.progressWrapper {
+    width: 357px;
+    overflow: hidden;
+}
+
+.progressContainer {
+    margin: 5px;
+    padding: 4px;
+    border: solid 1px #E8E8E8;
+    background-color: #F7F7F7;
+    overflow: hidden;
+}
+
+.progressName {
+    font-size: 8pt;
+    font-weight: bold;
+    color: #555;
+    width: 323px;
+    height: 14px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.progressBarInProgress, .progressBarComplete, .progressBarError {
+    font-size: 0;
+    width: 0;
+    height: 2px;
+    background-color: blue;
+    margin-top: 2px;
+}
+
+.progressBarComplete {
+    width: 100%;
+    background-color: green;
+    visibility: hidden;
+}
+
+.progressBarError {
+    width: 100%;
+    background-color: red;
+    visibility: hidden;
+}
+
+.progressBarStatus {
+    margin-top: 2px;
+    width: 337px;
+    font-size: 7pt;
+    font-family: Verdana;
+    text-align: left;
+    white-space: nowrap;
+}
+
+a.progressCancel, a.progressCancel:link, a.progressCancel:active, a.progressCancel:visited, a.progressCancel:hover {
+    font-size: 0;
+    display: block;
+    height: 14px;
+    width: 14px;
+    background-repeat: no-repeat;
+    background-position: -14px 0;
+    float: right;
+}
+
+a.progressCancel:hover {
+    background-position: 0 0;
+}
+
+#thumbs div {
+    margin: 5px;
+    width: 150px;
+    height: 200px;
+    float: left;
+    margin-bottom: 20px;
+}
+
+#thumbs div img {
+    border: none;
+    display: inline-block;
+    margin: 5px auto;
+}
+
+.thumb_icons {
+    float: left;
+}
+
+.sectiontab {
+    float: left;
+    height: 23px;
+    padding: 2px 5px 0 9px;
+    background: url(/images/ps/section_tab_left.gif) top left no-repeat;
+    font-size: 14px;
+    font-weight: bold;
+    color: #888;
+}
+
+.sectiontab_hover {
+    background: url(/images/ps/section_tab_sel_left.gif) top left no-repeat;
+}
+
+.sectiontab a {
+    font-size: 14px;
+    font-weight: bold;
+    color: #888;
+    text-decoration: none;
+}
+
+.sectiontab a:hover {
+    color: #EF0404;
+}
+
+.sectiontab img {
+    vertical-align: text-top;
+}
+
+.sectiontabEnding {
+    float: left;
+    width: 6px;
+    height: 23px;
+    margin-right: 5px;
+    background: url(/images/ps/section_tab_end.gif) top left no-repeat;
+}
+
+.sectiontab_sel {
+    float: left;
+    height: 23px;
+    padding: 2px 5px 0 9px;
+    background: url(/images/ps/section_tab_sel_left.gif) top left no-repeat;
+}
+
+.sectiontab_sel a {
+    font-size: 14px;
+    font-weight: bold;
+    color: #222;
+    text-decoration: none;
+}
+
+.sectiontab_sel img {
+    vertical-align: text-top;
+}
+
+.sectiontabEnding_sel {
+    float: left;
+    width: 6px;
+    height: 23px;
+    margin-right: 5px;
+    background: url(/images/ps/section_tab_sel_end.gif) top left no-repeat;
+}
+
+#mediathumbnails_outer {
+    float: left;
+    padding: 0;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    width: 530px;
+    height: 88px;
+    margin: 5px 0 5px 0;
+    overflow: hidden;
+    line-height: 12px;
+}
+
+#mediathumbnails {
+    width: 10000px;
+}
+
+.mediathumbnail {
+    float: left;
+    margin: 3px;
+    padding: 4px;
+    border: none;
+    font-size: 9px;
+    color: #444;
+    text-align: center;
+}
+
+.mediathumbnail img {
+    padding: 2px;
+    border: 1px solid #888;
+    background-color: #fff;
+}
+
+.mediathumbnail_sel {
+    border: 1px solid #aaa;
+    padding: 3px;
+    background-color: #ddd;
+}
+
+#mediabtnleft, #mediabtnright {
+    padding-top: 30px;
+    float: left;
+}
+
+#mediadisplay {
+    padding: 2px;
+    width: 600px;
+    min-height: 400px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 18px;
+    color: #444;
+}
+
+#docsdisplay {
+    padding-top: 20px;
+    padding-left: 30px;
+    width: 600px;
+    min-height: 400px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 18px;
+    color: #444;
+}
+
+#mediadisplay img {
+    display: block;
+    margin: 0 auto;
+}
+
+.loading {
+    background: url(/images/busy.gif) no-repeat center center;
+}
+
+#info1 {
+    position: absolute;
+    top: 400px;
+    left: 100px;
+    width: 500px;
+    padding: 10px;
+    background: white;
+    border: 1px solid black;
+}
+
+#info2 {
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    width: 500px;
+    padding: 10px;
+    background: white;
+    border: 1px solid black;
+}
+
+#jquery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 500px;
+}
+
+#jquery-lightbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1100;
+    text-align: center;
+    line-height: 0;
+}
+
+#jquery-lightbox a img {
+    border: none;
+}
+
+#lightbox-container-image-box {
+    position: relative;
+    background-color: #fff;
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+}
+
+#lightbox-container-image {
+    padding: 10px;
+}
+
+#lightbox-loading {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    height: 25%;
+    width: 100%;
+    text-align: center;
+    line-height: 0;
+}
+
+#lightbox-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+}
+
+#lightbox-container-image-box>#lightbox-nav {
+    left: 0;
+}
+
+#lightbox-nav a {
+    outline: none;
+}
+
+#lightbox-nav-btnPrev, #lightbox-nav-btnNext {
+    width: 49%;
+    height: 100%;
+    zoom: 1;
+    display: block;
+}
+
+#lightbox-nav-btnPrev {
+    left: 0;
+    float: left;
+}
+
+#lightbox-nav-btnNext {
+    right: 0;
+    float: right;
+}
+
+#lightbox-container-image-data-box {
+    font: 10px Verdana, Helvetica, sans-serif;
+    background-color: #fff;
+    margin: 0 auto;
+    line-height: 1.4em;
+    overflow: auto;
+    width: 100%;
+    padding: 0 10px 0;
+}
+
+#lightbox-container-image-data {
+    padding: 0 10px;
+    color: #666;
+}
+
+#lightbox-container-image-data #lightbox-image-details {
+    width: 70%;
+    float: left;
+    text-align: left;
+}
+
+#lightbox-image-details-caption {
+    font-weight: bold;
+}
+
+#lightbox-image-details-currentNumber {
+    display: block;
+    clear: left;
+    padding-bottom: 1.0em;
+}
+
+#lightbox-secNav-btnClose {
+    width: 66px;
+    float: right;
+    padding-bottom: .7em;
+}
+
+div.dropmenu {
+    border: 1px solid #ccc;
+    position: relative;
+}
+
+#menu_watermark {
+    z-index: 200;
+}
+
+#menu_share {
+    z-index: 150;
+}
+
+#menu_watermark, #menu_share {
+    width: 160px;
+    height: 25px;
+}
+
+#menu_watermark a.dropmenu_btn, #menu_share a.dropmenu_btn {
+    width: 160px;
+    height: 25px;
+    line-height: 25px;
+    display: block;
+    text-decoration: none;
+    text-indent: 10px;
+    z-index: 300;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: white url(/images/extranet/add.jpg) 140px center no-repeat;
+}
+
+#menu_watermark div.dropmenu_content, #menu_share div.dropmenu_content {
+    top: 24px;
+}
+
+div.dropmenu div.dropmenu_content {
+    display: none;
+    position: absolute;
+    width: 260px;
+    padding: 10px 20px 20px 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    right: -1px;
+    z-index: 250;
+}
+
+div.dropmenu_active div.dropmenu_content {
+    display: block !important;
+}
+
+#menu_watermark a.dropmenu_added, #menu_share a.dropmenu_added {
+    background: white url(/images/extranet/tick.png) 140px center no-repeat !important;
+}
+
+#thumbnails2, #thumbnails3, #thumbnails4, #thumbnails5, #thumbnails6, #thumbnails7 {
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.photolistitem {
+    position: relative;
+    display: block;
+    float: left;
+    list-style-type: none;
+    height: 210px;
+    width: 190px;
+    padding: 5px 0;
+    margin: 4px;
+    background-color: white;
+    text-align: center;
+    overflow: hidden;
+    background-color: #eee;
+}
+
+.photolistitem div.imagecontainer {
+    margin: 6px;
+}
+
+#thumbnails2 div.imagecontainer, #thumbnails4 div.imagecontainer, #thumbnails5 div.imagecontainer {
+    cursor: move;
+}
+
+div.imagecontainer img {
+    border: 1px solid #fff !important;
+}
+
+.photolistbtn {
+    position: absolute;
+    bottom: 6px;
+}
+
+li.cover_image {
+    background: #FCF8E3 !important;
+}
+
+b.cover_image {
+    color: #fa0;
+}
+
+.btnsmall {
+    float: left;
+    background: transparent url(/assets/btnleftsmall.gif) no-repeat;
+    font-family: Arial,Helvetica,sans-serif;
+    height: 18px;
+    line-height: 14px;
+    padding-top: 3px;
+    text-transform: capitalize;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.btnsmallEnding {
+    float: left;
+    background: url(/assets/btnendingsmall.gif) no-repeat;
+    width: 10px;
+    height: 20px;
+}

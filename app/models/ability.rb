@@ -32,6 +32,8 @@ class Ability
       can :manage, Listing do |listing|
         listing.try(:user) == user
       end
+
+      can :create, Listing
     end
   end
 end

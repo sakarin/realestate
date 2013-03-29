@@ -1,12 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.8'
-
-# Use unicorn as the app server
-gem 'unicorn'
-# Deploy with Capistrano
-gem 'capistrano'
-
+gem 'rails', '3.2.13'
 
 gem 'jquery-rails'
 gem 'devise'
@@ -16,10 +10,11 @@ gem "rolify"
 gem 'simple_form'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
-gem 'ransack'
+
 gem 'carrierwave'
 gem 'rmagick'
 gem 'best_in_place'
+gem 'ransack'
 gem "squeel"
 gem 'wicked'
 gem 'acts_as_list'
@@ -47,7 +42,7 @@ group :assets do
 end
 
 group :development do
-  gem 'annotate'
+  #gem 'annotate'
   gem "better_errors"
   gem 'binding_of_caller'
   gem 'sqlite3'
@@ -59,16 +54,28 @@ end
 
 group :production do
   gem "pg"
+  # Use unicorn as the app server
+  gem 'unicorn'
+  # Deploy with Capistrano
+  gem 'capistrano'
 end
 
 group :test do
   gem 'rspec-rails'
   gem 'webrat'
+
+  # See http://www.rubyinside.com/how-to-rails-3-and-rspec-2-4336.html
   gem 'spork'
-  gem 'factory_girl_rails', '1.0'
-  gem 'capybara'
+
+  gem 'factory_girl_rails', '4.0.0'
+  gem 'capybara' , :git => 'git://github.com/jnicklas/capybara.git'
   gem 'launchy'
+  gem 'email_spec'
+  gem 'database_cleaner'
+  gem 'selenium-webdriver'
 end
+
+
 
 
 

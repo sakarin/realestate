@@ -1,0 +1,88 @@
+/* line 5, ../../../app/assets/stylesheets/account/listings.css.scss */
+#images .handle {
+  font-size: 12px;
+  color: #777;
+  cursor: move;
+}
+
+/* line 11, ../../../app/assets/stylesheets/account/listings.css.scss */
+.image-name {
+  padding-top: 5px;
+  color: #333333;
+}
+
+/* line 17, ../../../app/assets/stylesheets/account/listings.css.scss */
+.image {
+  position: relative;
+  display: block;
+  float: left;
+  list-style-type: none;
+  width: 222px;
+  padding: 5px 0;
+  margin: 4px;
+  background-color: white;
+  text-align: center;
+  background: white;
+  border: 1px solid #ddd;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* line 36, ../../../app/assets/stylesheets/account/listings.css.scss */
+#images {
+  padding: 0;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* line 43, ../../../app/assets/stylesheets/account/listings.css.scss */
+.imagecontainer {
+  padding-top: 5px;
+}
+
+/* line 48, ../../../app/assets/stylesheets/account/listings.css.scss */
+#preview, #child_preview, #vtour_preview {
+  border: 1px solid #ccc;
+  padding-bottom: 12px;
+  border-radius: 4px;
+  background: #EFEFEA;
+  padding-top: 20px;
+  min-height: 100px;
+}
+
+/* line 59, ../../../app/assets/stylesheets/account/listings.css.scss */
+#calltouploadpic {
+  display: block;
+  margin: 20px auto 0;
+  text-align: center;
+  width: 320px;
+  font-smooth: always;
+}
+
+/* line 67, ../../../app/assets/stylesheets/account/listings.css.scss */
+.delete_image {
+  width: 30px;
+  height: 30px;
+  background: url("/assets/admin/icons/close_button.png") no-repeat 0 0;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  display: none;
+}
+
+/* line 77, ../../../app/assets/stylesheets/account/listings.css.scss */
+.sortable_placeholder {
+  width: 220px;
+  height: 230px;
+  border: 1px dashed #aaa;
+  background: #ddd;
+  margin: 12px 10px 0 0;
+  float: left;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* line 87, ../../../app/assets/stylesheets/account/listings.css.scss */
+#summary td.title {
+  width: 145px;
+  font-weight: bold;
+}

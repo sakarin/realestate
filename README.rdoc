@@ -1,7 +1,18 @@
 
 bundle exec rake db:test:prepare
+
+
+# How
 bundle exec rspec spec
 
 
 # gemfile
 email_spec
+
+
+How to: Start Selenium browser with custom window size
+https://makandracards.com/makandra/9773-how-to-start-selenium-browser-with-custom-window-size
+
+
+If your login works using Capybara/Rack::Test, but not in Capybara/Selenium
+http://stackoverflow.com/questions/6154687/rails-integration-test-with-selenium-as-webdriver-cant-sign-in

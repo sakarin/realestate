@@ -22,7 +22,7 @@ Realestate::Application.routes.draw do
   match "account/listings/progress_trackers/:step" => "account/listings#progress_trackers", :via => :get
 
   match "/account" => "account/listings#index", :via => :get
-  match "/admin" => "admin/home#index", :via => :get
+  match "/admin" => "admin/users#index", :via => :get
 
   resources :listings do
     collection do
@@ -33,6 +33,8 @@ Realestate::Application.routes.draw do
 
 
   namespace :admin do
+
+    #resources :home
 
     resources :users do
       collection do

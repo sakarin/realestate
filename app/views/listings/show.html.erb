@@ -1,16 +1,397 @@
-<p>ชื่ออสังหา : <%= @listing.listing_title_th %></p>
-<p>ราคา : <%= @listing.price %></p>
+<div id="search-mainpage-subpage">
+  <div class="search-body-subpage">
+    <div class="logo-mainpage">
+      <div class="logo"><%= link_to image_tag("logo2.png", :width => '229', :height => '49'), "/" %></div>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <div class="clear"></div>
+</div>
 
+<div id="all-main-content">
+<div id="intro-project-direc-sub">
+  <div class="head-intro-direc-sub">
+    <div class="head-home">
+      <h1>โครงการคอนโด</h1>
 
-<%= simple_form_for [@commentable, @comment], :html => { :class => 'form-horizontal' } do |f| %>
-    <fieldset>
-      <%= f.input :name %>
-      <%= f.input :telephone %>
-      <%= f.input :email %>
-      <%= f.input :title %>
-      <%= f.input :comment, :as => :text %>
+      <div class="navi">
+        โครงการคอนโด < หน้าหลัก
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+<div id="category">
+<div class="category-left" style="margin:-15px 0 0 0;">
+<div class="allteb-agent">
+  <div class="category-tab03"><p><a href="#">ข้อมูลเบื้องต้น</a></p></div>
+  <div class="category-content">
+    <table width="599" border="0" align="center" cellpadding="0" cellspacing="0" style="margin:15px 15px 15px 15px;">
+      <tr>
+        <td width="300" valign="top" bgcolor="#e5e5e5" style="padding:15px 5px 15px 5px;">
+          <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="100" valign="top"><%= image_tag "agent_profile.png", :width => '94', :height => '92' %></td>
+              <td valign="top">
+                <p class="name_profile">มนสิชา</p>
 
+                <p class="position_profile" style="margin:5px 0 0 0;">บริษัท ท๊อป โบรกเกอร์ จำกัด</p>
 
-      <%= f.submit nil, :class => 'btn btn-primary' %>
-    </fieldset>
-<% end %>
+                <p class="position_profile" style="margin:0 0 5px 0;">โทร: 081-937-3268
+                  or 081-937-3268</p></td>
+            </tr>
+            <tr>
+              <td height="40" valign="top">
+                <%= image_tag "contact.png", :width => '83', :height => '25', :style => "margin:5px 0 0 5px;" %></td>
+              <td valign="top" style="padding:5px 0 0 0;">
+                <div class="gotoweb">ไปยังเว็บไซต์ผู้ลงโฆษณานี้</div>
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td width="15"></td>
+        <td valign="top">
+          <p class="position_profile2" style="float:right; margin:5px 2px 0 0;"> ม.เพชรมณี ซ.ราษฎร์อุทิศ 18 บ้านเดี่ยว 2
+            ชั้น 114 ตร.ว. ถ.สุวินทวงศ์ เขตมีนบุรี กรุงเทพ สภาพใหม่ แต่งสวย บ้านเดี่ยว ขาย</p>
+
+          <p class="position_profile">
+            <br>
+            <br>
+            <br>
+            <br>
+            ID: 566888<br>
+            บ้านเดี่ยว
+            ราษฎร์อุทิศ 18 สุวินทวงศ์, มีนบุรี, กรุงเทพ<br>
+            1 งาน 14 ตารางวา (ที่ดิน)<br>
+            4 ห้องนอน 4 ห้องน้ำ <br>
+            ลงประกาศเมือ: 13 มีนาคม 2556
+          </p>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="clear"></div>
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="120" height="45"><%= image_tag "b1.png", :width => '115', :height => '21' %></td>
+      <td width="120"><%= image_tag "b2.png", :width => '115', :height => '21' %></td>
+      <td width="120"><%= image_tag "b3.png", :width => '115', :height => '21' %></td>
+      <td><%= image_tag "b4.png", :width => '115', :height => '21' %></td>
+    </tr>
+  </table>
+</div>
+<div class="clear"></div>
+<div class="allteb-agent">
+  <div class="category-tab03"><p><a href="#">ภาพถ่ายและวีดีโอ</a></p></div>
+  <div class="category-content">
+    <table width="589" border="0" align="center" cellpadding="0" cellspacing="0" style="margin:15px 0 0 18px;">
+      <tr>
+        <td width="58" height="18" align="center" class="text-recom-2" style="background-image:url(<%= asset_path "pic_count.png" %>); background-repeat:no-repeat; text-align:center;">20
+          รูป
+        </td>
+        <td>&nbsp;</td>
+        <td width="50" height="18" class="text-recom-2" style="background-image:url(<%= asset_path "pic_count2.png" %>); background-repeat:no-repeat; text-align:center; padding:0 0 0 8px;">ขยาย</td>
+      </tr>
+    </table>
+    <table width="589" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td valign="top" style="padding:15px 0 0 0;">
+
+          <%= image_tag "Property-Detail_03.jpg", :width => '589', :height => '325' %>
+        </td>
+      </tr>
+    </table>
+    <table width="613" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td height="70" align="center" valign="middle">
+          <%= image_tag "Property-Detail_06.jpg", :width => '78', :height => '52' %>
+        </td>
+        <td align="center" valign="middle"><%= image_tag "Property-Detail_07.jpg", :width => '78', :height => '52' %></td>
+        <td align="center" valign="middle"><%= image_tag "Property-Detail_07-05.jpg", :width => '78', :height => '52' %></td>
+        <td align="center" valign="middle"><%= image_tag "Property-Detail_06.jpg", :width => '78', :height => '52' %></td>
+        <td align="center" valign="middle"><%= image_tag "Property-Detail_07.jpg", :width => '78', :height => '52' %></td>
+        <td align="center" valign="middle"><%= image_tag "Property-Detail_08.jpg", :width => '78', :height => '52' %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="clear"></div>
+</div>
+<div class="allteb-agent" style="margin:15px 0 0 0;">
+  <div class="category-tab03"><p><a href="#">รายละเอียด</a></p></div>
+  <div class="category-content">
+    <table width="599" border="0" align="center" cellpadding="0" cellspacing="0" style="margin:15px 15px 15px 15px;">
+      <tr>
+        <td valign="top">
+
+        </td>
+      </tr>
+    </table>
+    <table width="600" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="170" valign="top" class="position_profile">ที่อยู่ :</td>
+        <td valign="top">&nbsp;</td>
+        <td valign="top"><%= image_tag "map2_26.png", :width => '500', :height => '100' %></td>
+      </tr>
+      <tr>
+        <td height="25" valign="top" class="position_profile">ขนาด :</td>
+        <td valign="top">&nbsp;</td>
+        <td valign="top" class="position_profile">1 งาน 14 ตารางวา (ที่ดิน)</td>
+      </tr>
+      <tr>
+        <td height="25" valign="top" class="position_profile">ราคา :</td>
+        <td valign="top">&nbsp;</td>
+        <td valign="top" class="position_profile">6,500,000 (บาท)</td>
+      </tr>
+      <tr>
+        <td valign="top" class="position_profile">ข้อมูลเพิ่มเติม :</td>
+        <td valign="top">&nbsp;</td>
+        <td valign="top" class="position_profile">ชื่อโครงการ: เพชรมณี<br>
+          ประเภทอสังหาฯ: บ้านเดี่ยว<br>
+          ราคา: 6,500,000 บาท <br>
+          สภาพ: สอบถาม
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="clear"></div>
+</div>
+<div class="allteb-agent" style="margin:15px 0 0 0;">
+  <div class="category-tab03"><p><a href="#">รายละเอียดเพิ่มเติม</a></p></div>
+  <div class="category-content">
+    <table width="599" border="0" align="center" cellpadding="0" cellspacing="0" style="margin:15px 15px 15px 15px;">
+      <tr>
+        <td valign="top">
+          <p class="position_profile">
+            ม.เพชรมณี ซ.ราษฎร์อุทิศ 18 บ้านเดี่ยว 2 ชั้น 114 ตร.ว. ถ.สุวินทวงศ์ เขตมีนบุรี กรุงเทพ สภาพใหม่ แต่งสวย 4
+            นอน 4 น้ำ จัดสวนสวย พร้อมอ่างจากุชชี่และแท๊งค์น้ำ ใกล้ถ.วงแหวน-ร.ร.นานาชาติ-สนามบินสุวรรณภูมิ
+
+            <br>
+            <br>
+            ราคา 6.5 ล้านบาท
+            <br>
+            สนใจติดต่อ คุณมนสิชา โทร. 081-937-3268 </p>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="clear"></div>
+</div>
+<div class="clear"></div>
+<div class="allteb-agent" style="margin:15px 0 0 0;">
+  <div class="category-tab03"><p><a href="#">ติดต่อเจ้าของประกาศ</a></p></div>
+  <div class="category-content">
+    <table width="600" border="0" align="center" cellpadding="0" cellspacing="0" class="text-content-agent" style="padding:15px;">
+      <tr>
+        <td width="237" align="right" valign="top">ฉันต้องการให้ตัวแทนติดต่อกลับ, เนื่องจาก</td>
+        <td width="15" valign="top">&nbsp;</td>
+        <td height="25" valign="top"><select name="select6" id="select6" class="textbox-egent">
+        </select></td>
+      </tr>
+      <tr>
+        <td align="right" valign="top"></td>
+        <td valign="top"></td>
+        <td height="5" valign="top"></td>
+      </tr>
+      <tr>
+        <td align="right" valign="top">ฉันมีแผนที่จะทำเช่นนี้</td>
+        <td valign="top">&nbsp;</td>
+        <td height="25" valign="top"><select name="select7" id="select7" class="textbox-egent">
+        </select></td>
+      </tr>
+      <tr>
+        <td align="right" valign="top"></td>
+        <td valign="top"></td>
+        <td height="5" valign="top"></td>
+      </tr>
+      <tr>
+        <td align="right" valign="top">คำนำหน้า</td>
+        <td valign="top">&nbsp;</td>
+        <td height="25" valign="top"><select name="select8" id="select8" class="textbox-egent">
+        </select></td>
+      </tr>
+      <tr>
+        <td align="right" valign="top"></td>
+        <td valign="top"></td>
+        <td height="5" valign="top"></td>
+      </tr>
+      <tr>
+        <td align="right" valign="top">ชื่อ - นามสกุล</td>
+        <td valign="top">&nbsp;</td>
+        <td height="25" valign="top"><input name="textfield6" type="text" class="textbox-search" id="textfield6"></td>
+      </tr>
+      <tr>
+        <td align="right" valign="top"></td>
+        <td valign="top"></td>
+        <td height="5" valign="top"></td>
+      </tr>
+      <tr>
+        <td align="right" valign="top">เบอร์โทรศัพท์ของฉัน
+          (ต้องการการติดต่อกลับ)
+        </td>
+        <td valign="top">&nbsp;</td>
+        <td height="25" valign="top"><input name="textfield7" type="text" class="textbox-search" id="textfield7"></td>
+      </tr>
+      <tr>
+        <td align="right" valign="top"></td>
+        <td valign="top"></td>
+        <td height="5" valign="top"></td>
+      </tr>
+      <tr>
+        <td align="right" valign="top">อีเมลของฉัน</td>
+        <td valign="top">&nbsp;</td>
+        <td height="25" valign="top"><input name="textfield8" type="text" class="textbox-search" id="textfield8"></td>
+      </tr>
+      <tr>
+        <td align="right" valign="top"></td>
+        <td valign="top"></td>
+        <td height="5" valign="top"></td>
+      </tr>
+      <tr>
+        <td align="right" valign="top">ฉันมีคำถามเพิ่มเติม</td>
+        <td valign="top">&nbsp;</td>
+        <td height="25" valign="top">
+          <textarea name="textfield9" rows="6" class="textbox-search" id="textfield9"></textarea></td>
+      </tr>
+    </table>
+    <table width="570" border="0" align="center" cellpadding="0" cellspacing="0" class="text-content-agent">
+      <tr>
+        <td width="30" valign="top"><input type="checkbox" name="checkbox" id="checkbox"></td>
+        <td valign="top">กรุณาแจ้งฉันเมื่อมีการอัพเดตข้อเสนอจากพาร์ทเนอร์ทางจดหมายข่าวรายเดือน<br></td>
+      </tr>
+      <tr>
+        <td valign="top"><input type="checkbox" name="checkbox2" id="checkbox2"></td>
+        <td valign="top">สมัครสมาชิกเพื่อรับข่าวสารที่ให้บริการ รับข่าวสารรายวัน, ทุกวันจันทร์-วันศุกร์ เวลา 14.00 น.
+        </td>
+      </tr>
+    </table>
+    <table width="600" border="0" align="center" cellpadding="0" cellspacing="0" class="text-content-agent" style="padding:15px;">
+      <tr>
+        <td width="237" align="right" valign="top"></td>
+        <td width="15" valign="top"></td>
+        <td height="5" valign="top"></td>
+      </tr>
+      <tr>
+        <td align="right" valign="top">&nbsp;</td>
+        <td valign="top">&nbsp;</td>
+        <td height="40" valign="middle">
+          <%= image_tag "Contact-99_11.png", :width => '83', :height => '25' %>
+          <%= image_tag "Contact-99_13.png", :width => '84', :height => '25' %>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="category-right" style="margin:-15px 0 0 0;">
+
+  <%= image_tag "web-banner02.jpg", :width => '300', :height => '127', :style => "margin:0 0 15px 0;" %>
+
+  <div class="general-search">
+    <div class="general-bar">
+      <p>รายการประกาศขายและให้เช่า</p>
+    </div>
+    <div class="clear"></div>
+    <table width="270" border="0" align="center" cellpadding="0" cellspacing="0" style="padding:10px 0 0 0;">
+      <tr>
+        <td valign="top" style="padding:5px 0 0 0;">
+          <%= image_tag "pic-general-2.jpg", :width => '146', :height => '66' %>
+        </td>
+        <td width="30" align="center" valign="top" style="padding:5px 0 0 0;">
+          <%= image_tag "map-direc.png", :width => '10', :height => '14' %>
+        </td>
+        <td width="100" align="left" valign="top">
+          <span class="text-recom-1">ขาย - ขายอาคารพาณิชย์ 4 ห้อง</span> <span class="text-recom-2">ตึกแถว/อาคารพาณิชย์ (ขายขาด)
+						</span></td>
+      </tr>
+    </table>
+    <table width="270" border="0" align="center" cellpadding="0" cellspacing="0" style="padding:10px 0 0 0;">
+      <tr>
+        <td valign="top" style="padding:5px 0 0 0;">
+          <%= image_tag "pic-general-2.jpg", :width => '146', :height => '66' %>
+        </td>
+        <td width="30" align="center" valign="top" style="padding:5px 0 0 0;">
+          <%= image_tag "map-direc.png", :width => '10', :height => '14' %>
+        </td>
+        <td width="100" align="left" valign="top">
+          <span class="text-recom-1">ขาย - ขายอาคารพาณิชย์ 4 ห้อง</span> <span class="text-recom-2">ตึกแถว/อาคารพาณิชย์ (ขายขาด)
+						</span></td>
+      </tr>
+    </table>
+    <table width="270" border="0" align="center" cellpadding="0" cellspacing="0" style="padding:10px 0 0 0;">
+      <tr>
+        <td valign="top" style="padding:5px 0 0 0;">
+          <%= image_tag "pic-general-2.jpg", :width => '146', :height => '66' %>
+        </td>
+        <td width="30" align="center" valign="top" style="padding:5px 0 0 0;">
+          <%= image_tag "map-direc.png", :width => '10', :height => '14' %>
+        </td>
+        <td width="100" align="left" valign="top">
+          <span class="text-recom-1">ขาย - ขายอาคารพาณิชย์ 4 ห้อง</span> <span class="text-recom-2">ตึกแถว/อาคารพาณิชย์ (ขายขาด)
+						</span></td>
+      </tr>
+    </table>
+    <table width="270" border="0" align="center" cellpadding="0" cellspacing="0" style="padding:10px 0 0 0;">
+      <tr>
+        <td valign="top" style="padding:5px 0 0 0;">
+          <%= image_tag "pic-general-2.jpg", :width => '146', :height => '66' %>
+        </td>
+        <td width="30" align="center" valign="top" style="padding:5px 0 0 0;">
+          <%= image_tag "map-direc.png", :width => '10', :height => '14' %>
+        </td>
+        <td width="100" align="left" valign="top">
+          <span class="text-recom-1">ขาย - ขายอาคารพาณิชย์ 4 ห้อง</span> <span class="text-recom-2">ตึกแถว/อาคารพาณิชย์ (ขายขาด)
+						</span></td>
+      </tr>
+    </table>
+    <table width="270" border="0" align="center" cellpadding="0" cellspacing="0" style="padding:10px 0 0 0;">
+      <tr>
+        <td valign="top" style="padding:5px 0 0 0;">
+          <%= image_tag "pic-general-2.jpg", :width => '146', :height => '66' %>
+        </td>
+        <td width="30" align="center" valign="top" style="padding:5px 0 0 0;">
+          <%= image_tag "map-direc.png", :width => '10', :height => '14' %>
+        </td>
+        <td width="100" align="left" valign="top">
+          <span class="text-recom-1">ขาย - ขายอาคารพาณิชย์ 4 ห้อง</span> <span class="text-recom-2">ตึกแถว/อาคารพาณิชย์ (ขายขาด)
+						</span></td>
+      </tr>
+    </table>
+    <table width="270" border="0" align="center" cellpadding="0" cellspacing="0" style="padding:10px 0 0 0;">
+      <tr>
+        <td valign="top" style="padding:5px 0 0 0;">
+          <%= image_tag "pic-general-2.jpg", :width => '146', :height => '66' %>
+        </td>
+        <td width="30" align="center" valign="top" style="padding:5px 0 0 0;">
+          <%= image_tag "map-direc.png", :width => '10', :height => '14' %>
+        </td>
+        <td width="100" align="left" valign="top">
+          <span class="text-recom-1">ขาย - ขายอาคารพาณิชย์ 4 ห้อง</span> <span class="text-recom-2">ตึกแถว/อาคารพาณิชย์ (ขายขาด)
+						</span></td>
+      </tr>
+    </table>
+    <table width="270" border="0" align="center" cellpadding="0" cellspacing="0" style="padding:10px 0 0 0;">
+      <tr>
+        <td valign="top" style="padding:5px 0 0 0;">
+          <%= image_tag "pic-general-2.jpg", :width => '146', :height => '66' %>
+        </td>
+        <td width="30" align="center" valign="top" style="padding:5px 0 0 0;">
+          <%= image_tag "map-direc.png", :width => '10', :height => '14' %>
+        </td>
+        <td width="100" align="left" valign="top">
+          <span class="text-recom-1">ขาย - ขายอาคารพาณิชย์ 4 ห้อง</span> <span class="text-recom-2">ตึกแถว/อาคารพาณิชย์ (ขายขาด)
+						</span></td>
+      </tr>
+    </table>
+    <div class="clear"></div>
+    <br>
+    <br>
+
+  </div>
+  <div class="clear"></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="clear"></div>
+</div>
