@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
+gem 'rails', '3.2.12'
 
-gem 'jquery-rails'
+gem 'jquery-rails', '2.1.0'
 gem 'devise'
 gem 'omniauth-facebook'
 gem "cancan"
@@ -11,7 +11,7 @@ gem 'simple_form'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 
-gem 'carrierwave'
+gem 'carrierwave', '0.6.2'
 gem 'rmagick'
 gem 'best_in_place'
 gem 'ransack'
@@ -42,7 +42,7 @@ group :assets do
 end
 
 group :development do
-  #gem 'annotate'
+  gem 'annotate'
   gem "better_errors"
   gem 'binding_of_caller'
   gem 'sqlite3'
@@ -73,6 +73,7 @@ group :test do
   gem 'email_spec'
   gem 'database_cleaner'
   gem 'selenium-webdriver'
+  gem "guard-rspec"
 end
 
 

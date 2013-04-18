@@ -1,13 +1,12 @@
 class Account::ListingsController < Account::BaseController
   load_and_authorize_resource
 
-  #before_filter :find_resource, only: [:edit, :update]
-
   def index
     session[:listing_params] = nil
     session[:listing_step] = nil
 
-    @search = Listing.search(params[:q])
+    #@search = Listing.where(:user_id => @current_user.id).search(params[:q])
+    @search = Listing.where(:user_id => @current_user.id).search(params[:q])
     @listings = @search.result.paginate(:page => params[:page], :per_page => 10)
   end
 

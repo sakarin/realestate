@@ -67,7 +67,7 @@
 
   <div class="controls">
     <% if @listing.province_id.blank? %>
-        <%= select_tag "listing_amphur_id", "<option></option>".html_safe %>
+        <%= select_tag "listing[amphur_id]", "<option></option>".html_safe %>
     <% else %>
         <%= f.collection_select(:amphur_id, Amphur.find_all_by_province_id(@listing.province_id), :id, :name, include_blank: false) %>
     <% end %>
@@ -80,7 +80,7 @@
 
   <div class="controls">
     <% if @listing.amphur_id.blank? %>
-        <%= select_tag "listing_district_id", "<option></option>".html_safe %>
+        <%= select_tag "listing[district_id]", "<option></option>".html_safe %>
     <% else %>
         <%= f.collection_select(:district_id, District.find_all_by_amphur_id(@listing.amphur_id), :id, :name, include_blank: false) %>
     <% end %>

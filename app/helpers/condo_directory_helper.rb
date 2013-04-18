@@ -1,0 +1,2 @@
+module CondoDirectoryHelper
+end

@@ -18,9 +18,23 @@
   <div class="main-menu">
     <div class="menu">
       <ul>
-        <li class="main-menu01"><a href="#">ค้นหาประกาศ</a></li>
-        <li class="main-menu02"><a href="#">โครงการคอนโด</a></li>
-        <li class="main-menu03"><a href="#">โครงการใหม่</a></li>
+        <li class="main-menu01"><%= link_to "ค้นหาประกาศ", root_path %></li>
+
+
+        <% if current == 'condo' %>
+            <li class="main-menu02-present">
+        <% else %>
+            <li class="main-menu02">
+        <% end %>
+        <%= link_to "โครงการคอนโด", condo_directory_index_path %></li>
+        <% if current == 'new-property' %>
+            <li class="main-menu03-present">
+        <% else %>
+            <li class="main-menu03">
+        <% end %>
+
+        <%= link_to "โครงการใหม่" ,new_property_index_path %></li>
+
         <li class="main-menu04"><a href="#">ต่างประเทศ</a></li>
         <li class="main-menu05"><a href="#">ค้นหาตัวแทน</a></li>
         <li class="main-menu06"><a href="#">ข่าว/บทความ</a></li>

@@ -1,3 +1,53 @@
+# == Schema Information
+#
+# Table name: listings
+#
+#  id                     :integer          not null, primary key
+#  listing_type           :string(255)
+#  property_type          :string(255)
+#  listing_title_th       :string(255)
+#  listing_description_th :string(255)
+#  amphur_id              :integer
+#  district_id            :integer
+#  province_id            :integer
+#  property_name          :string(255)
+#  street_number          :string(255)
+#  street_name            :string(255)
+#  post_code              :string(255)
+#  price                  :integer
+#  price_type             :string(255)
+#  tenure                 :string(255)
+#  lat_value              :string(255)
+#  lon_value              :string(255)
+#  floorarea              :integer
+#  floorsize_x            :integer
+#  floorsize_y            :integer
+#  landarea_rai           :integer
+#  landarea_ngaan         :integer
+#  landarea_sqw           :integer
+#  landsize_x             :integer
+#  landsize_y             :integer
+#  bedrooms               :string(255)
+#  extra_rooms            :string(255)
+#  bathrooms              :string(255)
+#  number_of_floors       :string(255)
+#  floor_position         :string(255)
+#  furnishing             :string(255)
+#  facing                 :string(255)
+#  user_id                :integer
+#  status                 :string(255)
+#  published_date         :datetime
+#  expired_date           :datetime
+#  notepad                :string(255)
+#  comment                :string(255)
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  state                  :string(255)
+#  slug                   :string(255)
+#  make_permalink         :string(255)
+#  permalink              :string(255)
+#
+
 # ประกาศมีอายุ 90 วันนับจากวันลงประกาศหรือวันที่ต่ออายุล่าสุด โดยระบบจะแจ้งเตือนทางอีเมลก่อนประกาศหมดอายุ
 # ระบบอนุญาตให้ต่ออายุหรือเลื่อนประกาศได้สัปดาห์ละ 1 ครั้ง
 #

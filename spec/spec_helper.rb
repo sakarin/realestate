@@ -19,7 +19,6 @@ Spork.prefork do
   Warden.test_mode!
 
 
-
   RSpec.configure do |config|
     config.before(:each) do
       begin
@@ -31,8 +30,6 @@ Spork.prefork do
 
     config.include(EmailSpec::Helpers)
     config.include(EmailSpec::Matchers)
-
-
 
     config.mock_with :rspec
 

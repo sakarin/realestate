@@ -18,8 +18,7 @@ class Account::ImagesController < Account::BaseController
 
     @listing = Listing.find(params[:listing_id])
 
-    @image = Image.new(params[:image])
-    #@image.session_id= session[:session_id]
+    @image = Image.create(params[:image])
     @image.listing = @listing
     @image.save
 

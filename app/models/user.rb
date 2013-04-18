@@ -39,6 +39,9 @@
 #  service_and_expert     :string(255)
 #  web_site               :string(255)
 #  agency_logo            :string(255)
+#  notice_news            :boolean
+#  notice_property        :boolean
+#  notice_new_property    :boolean
 #
 
 class User < ActiveRecord::Base

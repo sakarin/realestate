@@ -80,7 +80,7 @@ jQuery ->
     $('#listing_search').submit()
 
 
-  $(".image").live "mouseover mouseout", (event) ->
+  $(".image").bind "mouseover mouseout", (event) ->
     if event.type is "mouseover"
       $(this).find("a:first").show()
     else

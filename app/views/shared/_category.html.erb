@@ -1,7 +1,24 @@
+<script type="text/javascript">
+    function gettab(tab_menu) {
+        var tab = tab_menu;
+        for (i = 1; i <= 2; i++) {
+            if (tab == i) {
+                document.getElementById("category-content-tab" + i).style.display = 'block';
+            } else {
+                document.getElementById("category-content-tab" + i).style.display = 'none';
+            }
+        }
+
+    }
+</script>
+
 <div id="category">
 <div class="category-left">
-<div class="category-tab01"><p><a href="#">ประกาศตามทำเลในกรุงเทพมหานคร</a></p></div>
-<div class="category-tab02"><p><a href="#">ทำเลเด่นในพื้นที่ประเทศไทย</a></p></div>
+<div class="category-tab01"><p><a href="javascript:gettab(1);" >ประกาศตามทำเลในกรุงเทพมหานคร</a></p></div>
+<div class="category-tab02"><p><a href="javascript:gettab(2);">ทำเลเด่นในพื้นที่ประเทศไทย</a></p></div>
+
+
+<div id="category-content-tab1" style="display: block;">
 <div class="category-content">
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
@@ -56,7 +73,10 @@
     </td>
   </tr>
 </table>
-<div style="width:95%; height:1px; background-color:#c4c4c4; margin:10px 0 10px 15px;"></div>
+
+<div style="width:95%; height:1px; background-color:#c4c4c4; margin:10px 0 10px 15px;">
+
+</div>
 <table width="598" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td>
@@ -251,6 +271,15 @@
 </table>
 </div>
 </div>
+</div>
+<div id="category-content-tab2" style="display: none;">
+  <div class="category-content">
+     xxxxx
+  </div>
+</div>
+
+
+
 <div class="category-right">
   <%= link_to image_tag("regis.jpg", :width => '230', :height => '53'), new_user_registration_path %>
   <%= link_to image_tag("ads-free.jpg", :width => '230', :height => '48'), new_user_registration_path %>

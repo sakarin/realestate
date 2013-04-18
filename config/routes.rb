@@ -1,5 +1,7 @@
 Realestate::Application.routes.draw do
 
+
+
   get "notification/edit"
 
   mount RedactorRails::Engine => '/redactor_rails'
@@ -30,6 +32,9 @@ Realestate::Application.routes.draw do
     end
     resources :comments
   end
+
+  resources :condo_directory
+  resources :new_property
 
 
   namespace :admin do
