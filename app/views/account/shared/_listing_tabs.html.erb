@@ -1,0 +1,11 @@
+<ul id="tabs" class="nav nav-tabs">
+  <li<%== ' class="active"' if current == 'show' %>>
+    <%= link_to t('accounts.listing.tabs.listings_active'), account_listings_path %>
+  </li>
+  <li<%== ' class="active"' if current == 'draft' %>>
+    <%= link_to t('accounts.listing.tabs.listings_drafts'), draft_account_listings_path %></li>
+  <li<%== ' class="active"' if current == 'history' %>>
+    <%= link_to t('accounts.listing.tabs.listings_history'), history_account_listings_path %></li>
+  <li<%== ' class="active"' if current == 'exclusive' %>>
+    <%= link_to t('accounts.listing.tabs.listings_exclusive'), exclusive_account_listings_path %></li>
+</ul>

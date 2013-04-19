@@ -35,5 +35,6 @@ class Ability
 
       can :create, Listing
     end
+
   end
 end

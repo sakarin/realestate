@@ -1,14 +1,28 @@
 class Account::ListingsController < Account::BaseController
   load_and_authorize_resource
 
-  def index
-    session[:listing_params] = nil
-    session[:listing_step] = nil
+  before_filter :clear_session, :only => [:index, :draft, :history, :exclusive]
 
-    #@search = Listing.where(:user_id => @current_user.id).search(params[:q])
-    @search = Listing.where(:user_id => @current_user.id).search(params[:q])
+  def index
+    @search = Listing.where(:user_id => @current_user.id, :state => 'show').search(params[:q])
     @listings = @search.result.paginate(:page => params[:page], :per_page => 10)
   end
+
+  def draft
+    @search = Listing.where(:user_id => @current_user.id, :state => 'draft').search(params[:q])
+    @listings = @search.result.paginate(:page => params[:page], :per_page => 10)
+  end
+
+  def history
+    @search = Listing.where(:user_id => @current_user.id, :state => 'history').search(params[:q])
+    @listings = @search.result.paginate(:page => params[:page], :per_page => 10)
+  end
+
+  def exclusive
+    @search = Listing.where(:user_id => @current_user.id, :state => 'exclusive').search(params[:q])
+    @listings = @search.result.paginate(:page => params[:page], :per_page => 10)
+  end
+
 
   def new
     session[:listing_params] ||= {}
@@ -109,6 +123,14 @@ class Account::ListingsController < Account::BaseController
     respond_to do |format|
       format.js
     end
+  end
+
+  private
+
+  def clear_session
+    session[:listing_params] = nil
+    session[:listing_step] = nil
+
   end
 
 

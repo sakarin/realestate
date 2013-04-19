@@ -7,18 +7,18 @@
     <div id="content">
       <%= search_form_for [:account, @search], :html => {:class => "f-filter"} do |f| %>
 
-          <%= render :partial => "account/shared/listing_tabs", :locals => { :current => 'show' } %>
+          <%= render :partial => "account/shared/listing_tabs", :locals => { :current => 'history' } %>
 
-      <%= link_to t('accounts.listing.buttons.new'), new_account_listing_path, :class => "btn btn-success floatright" %>
+          <%= link_to t('accounts.listing.buttons.new'), new_account_listing_path, :class => "btn btn-success floatright" %>
 
-      <h3>ประกาศฉบับร่าง (0)</h3>
+          <h3>ประกาศฉบับร่าง (0)</h3>
 
-      <div class="alert alert-block">
-        <img src="http://cdn-th1.pgimgs.com/images/extranet/information.png" alt="information">ประกาศมีอายุ 60
-        วันนับจากวันลงประกาศหรือวันที่ต่ออายุล่าสุด โดยระบบจะแจ้งเตือนทางอีเมลก่อนประกาศหมดอายุ<br>ระบบอนุญาตให้ต่ออายุหรือเลื่อนประกาศได้สัปดาห์ละ
-        1 ครั้ง
-      </div>
-      <div class="clearboth"></div>
+          <div class="alert alert-block">
+            <img src="http://cdn-th1.pgimgs.com/images/extranet/information.png" alt="information">ประกาศมีอายุ 60
+            วันนับจากวันลงประกาศหรือวันที่ต่ออายุล่าสุด โดยระบบจะแจ้งเตือนทางอีเมลก่อนประกาศหมดอายุ<br>ระบบอนุญาตให้ต่ออายุหรือเลื่อนประกาศได้สัปดาห์ละ
+            1 ครั้ง
+          </div>
+          <div class="clearboth"></div>
 
 
           <div class="btn-group floatleft">

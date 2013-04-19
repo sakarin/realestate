@@ -7,7 +7,7 @@
     <div id="content">
       <%= search_form_for [:account, @search], :html => {:class => "f-filter"} do |f| %>
 
-          <%= render :partial => "account/shared/listing_tabs", :locals => { :current => 'show' } %>
+          <%= render :partial => "account/shared/listing_tabs", :locals => { :current => 'draft' } %>
 
       <%= link_to t('accounts.listing.buttons.new'), new_account_listing_path, :class => "btn btn-success floatright" %>
 

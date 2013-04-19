@@ -16,3 +16,34 @@ https://makandracards.com/makandra/9773-how-to-start-selenium-browser-with-custo
 
 If your login works using Capybara/Rack::Test, but not in Capybara/Selenium
 http://stackoverflow.com/questions/6154687/rails-integration-test-with-selenium-as-webdriver-cant-sign-in
+
+
+Deploy
+------------------------
+rails new blog -d postgresql
+rails g scaffold article name content:text
+
+# setup Git
+mate .gitignore
+cp config/database.yml config/database.example.yml
+git init
+git add .
+git commit -m "initial commit"
+git remote add origin git@github.com:ryanb/blog.git
+git push
+
+# add Capistrano, Unicorn, and nginx config
+bundle
+capify .
+chmod +x config/unicorn_init.sh
+git add .
+git commit -m "deployment configs"
+
+# ssh setup
+cat ~/.ssh/id_rsa.pub | ssh deployer@72.14.183.209 'cat >> ~/.ssh/authorized_keys'
+ssh-add # -K on Mac OS X
+
+# deployment
+cap deploy:setup
+# edit /home/deployer/apps/blog/shared/config/database.yml on server
+cap deploy:cold

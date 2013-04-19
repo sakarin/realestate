@@ -126,6 +126,10 @@ class Listing < ActiveRecord::Base
       transition :from => 'show', :to => 'hidden'
       transition :from => 'complete', :to => 'hidden'
     end
+    event :exclusive do
+      transition :from => 'show', :to => 'exclusive'
+      transition :from => 'complete', :to => 'exclusive'
+    end
     #after_transition :to => 'shipped', :do => :after_ship
   end
 
