@@ -1,0 +1,23 @@
+<div class="btn-group floatleft">
+  <% if params[:q] == nil %>
+      <%= link_to "ทั้งหมด", params.merge({:q => {:listing_type_does_not_equal => ''}}), {:class => 'btn active'} %>
+  <% elsif params[:q] != nil && params[:q][:listing_type_cont] == nil %>
+      <%= link_to "ทั้งหมด", params.merge({:q => {:listing_type_does_not_equal => ''}}), {:class => 'btn active'} %>
+  <% else  %>
+      <%= link_to "ทั้งหมด", params.merge({:q => {:listing_type_does_not_equal => ''}}), {:class => 'btn'} %>
+  <% end %>
+
+  <% if params[:q] != nil && params[:q][:listing_type_cont] == 'sale' %>
+      <%= link_to "ขาย", params.merge({:q => {:listing_type_cont => 'sale'}}), {:class => 'btn active'} %>
+  <% else %>
+      <%= link_to "ขาย", params.merge({:q => {:listing_type_cont => 'sale'}}), {:class => 'btn'} %>
+  <% end %>
+
+  <% if params[:q] != nil && params[:q][:listing_type_cont] == 'rent' %>
+      <%= link_to "สำหรับเช่า", params.merge({:q => {:listing_type_cont => 'rent'}}), {:class => 'btn active'} %>
+  <% else %>
+      <%= link_to "สำหรับเช่า", params.merge({:q => {:listing_type_cont => 'rent'}}), {:class => 'btn'} %>
+  <% end %>
+
+</div>
+<div class="clearboth"></div>

@@ -1,9 +1,12 @@
 <table width="925" border="0" cellpadding="0" cellspacing="0" class="listing-item">
-    <tr>
-      <td width="170" valign="top">
-        <%= link_to image_tag(listing.images.first.attachment_url(:thumb), :width => '146', :height => '66'), listing.images.first if listing.images.first.attachment? %></td>
-      <td width="30" align="center" valign="top"><%= image_tag "icon-sale.png", :width => '14', :height => '15' %></td>
-      <td width="210" valign="top">
+  <tr>
+    <td width="170" valign="top">
+      <% if !listing.images.first.nil? and listing.images.first.attachment? %>
+          <%= link_to image_tag(listing.images.first.attachment_url(:thumb), :width => '146', :height => '66'), listing.images.first %>
+      <% end %>
+    </td>
+    <td width="30" align="center" valign="top"><%= image_tag "icon-sale.png", :width => '14', :height => '15' %></td>
+    <td width="210" valign="top">
         <span class="text-recom-1">
           <%= link_to "#{t('listing.type.' + listing.listing_type.to_s)} - #{listing.listing_title_th}", listing_path(listing) %>
         </span>
@@ -11,16 +14,19 @@
 											พหลโยธิน591/18 Pholyothin Rd
 								ปากเพรียว, เมืองสระบุรี, สระบุรี
         </span>
-      </td>
-      <td width="30" align="center" valign="top"><%= image_tag "icon-money.png", :width => '12', :height => '13' %></td>
-      <td width="189" valign="top" class="text-recom-1" style="border-right:solid 1px #cbcbcb;"><%= number_to_currency listing.price, :precision => 0 %><br/>
-        ที่ดิน : 1 งาน 60 ตารางวา<br/>
-        พื้นที่ใช้สอย : 640 ตารางเมตร
-      </td>
-      <td width="30" align="center" valign="top" class="text-recom-2"><%= image_tag "icon-man.png", :width => '12', :height => '12' %></td>
-      <td width="266" valign="top" class="text-recom-2"><%= "#{listing.user.first_name} #{listing.user.last_name}" %> โทร <%= "#{listing.user.telephone1}" %><br/>
-        <span class="text-recom-3">ลงประกาศเมื่อ <%= I18n.l(listing.created_at, :format => :short)  %></span><br/>
-        <span class="text-recom-4">ติดต่อผู้ลงประกาศ     เก็บไว้ดูภายหลัง</span><br/>
-        <br/></td>
-    </tr>
+    </td>
+    <td width="30" align="center" valign="top"><%= image_tag "icon-money.png", :width => '12', :height => '13' %></td>
+    <td width="189" valign="top" class="text-recom-1" style="border-right:solid 1px #cbcbcb;"><%= number_to_currency listing.price, :precision => 0 %>
+      <br/>
+      ที่ดิน : 1 งาน 60 ตารางวา<br/>
+      พื้นที่ใช้สอย : 640 ตารางเมตร
+    </td>
+    <td width="30" align="center" valign="top" class="text-recom-2"><%= image_tag "icon-man.png", :width => '12', :height => '12' %></td>
+    <td width="266" valign="top" class="text-recom-2"><%= "#{listing.user.first_name} #{listing.user.last_name}" %>
+      โทร <%= "#{listing.user.telephone1}" %>
+      <br/>
+      <span class="text-recom-3">ลงประกาศเมื่อ <%= I18n.l(listing.created_at, :format => :short) %></span><br/>
+      <span class="text-recom-4">ติดต่อผู้ลงประกาศ     เก็บไว้ดูภายหลัง</span><br/>
+      <br/></td>
+  </tr>
 </table>

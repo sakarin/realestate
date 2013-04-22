@@ -1,3 +1,4 @@
+<%= render :partial => 'shared/head', :locals => { :current => 'home' } %>
 <%= render partial: 'shared/search_box' %>
 
 <div id="general-content" style="margin-top: 15px;">
@@ -8,7 +9,7 @@
     <%= image_tag "icon-all.png", :width => '53', :height => '19', :class => 'general-more' %>
   </div>
 
-  <%# Listing.all.each do |listing| %>
+
   <% @listings.each do |listing| %>
       <%= render 'listings', :listing => listing %>
   <% end %>

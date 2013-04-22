@@ -7,9 +7,9 @@
     </div>
     <ul class="small-menu">
 
-      <li><a href="#">ตัวแทนอสังหาฯ</a></li>
+      <li><%= link_to "ตัวแทนอสังหาฯ", price_agents_path %></li>
       <li><%= image_tag "top-small-menu.gif", :width => '2', :height => '12' %></li>
-      <li><a href="#">โฆษณากับเรา</a></li>
+      <li><%= link_to "โฆษณากับเรา", banners_path %></li>
       <li><%= image_tag "top-small-menu.gif", :width => '2', :height => '12' %></li>
       <li><%= link_to "เข้าสู่ระบบ", new_user_session_path %></li>
     </ul>
@@ -36,9 +36,26 @@
         <%= link_to "โครงการใหม่" ,new_property_index_path %></li>
 
         <li class="main-menu04"><a href="#">ต่างประเทศ</a></li>
-        <li class="main-menu05"><a href="#">ค้นหาตัวแทน</a></li>
-        <li class="main-menu06"><a href="#">ข่าว/บทความ</a></li>
-        <li class="main-menu07"><a href="#">คู่มือซื้อขาย</a></li>
+        <% if current == 'agent' %>
+            <li class="main-menu05-present">
+        <% else %>
+            <li class="main-menu05">
+        <% end %>
+        <%= link_to "ค้นหาตัวแทน", agents_path %></li>
+
+        <% if current == 'news' %>
+            <li class="main-menu06-present">
+        <% else %>
+            <li class="main-menu06">
+        <% end %>
+        <%= link_to "ข่าว/บทความ", news_index_path %></li>
+
+        <% if current == 'resources' %>
+            <li class="main-menu07-present">
+        <% else %>
+            <li class="main-menu07">
+        <% end %>
+        <%= link_to "คู่มือซื้อขาย", resources_path %></li>
       </ul>
     </div>
     <div class="flag">

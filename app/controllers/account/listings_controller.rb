@@ -125,6 +125,18 @@ class Account::ListingsController < Account::BaseController
     end
   end
 
+  def destroy
+    @listing = Listing.find(params[:id])
+    @listing.destroy
+
+    redirect_to :back
+
+    #respond_to do |format|
+    #  format.html { redirect_to admin_posts_url }
+    #  format.json { head :no_content }
+    #end
+  end
+
   private
 
   def clear_session

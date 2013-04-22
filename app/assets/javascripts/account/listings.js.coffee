@@ -89,19 +89,6 @@ jQuery ->
 
 
 
-  $("#listings-index-tab-link1").bind 'click', (event) =>
-    window.location.href  = "/account/listings?q%5Bstate_cont%5D=show"
-
-  $("#listings-index-tab-link2").bind 'click', (event) =>
-    window.location.href = "/account/listings?q%5Bstate_cont%5D=draft"
-
-  $("#listings-index-tab-link3").bind 'click', (event) =>
-    window.location.href = "/account/listings?q%5Bstate_cont%5D=hidden"
-
-  $("#listings-index-tab-link4").bind 'click', (event) =>
-    window.location.href = "/account/listings?q%5Bstate_cont%5D=exclusive"
-
-
 
 
 

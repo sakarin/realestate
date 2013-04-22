@@ -21,11 +21,7 @@
       <div class="clearboth"></div>
 
 
-          <div class="btn-group floatleft">
-            <%= link_to "ทั้งหมด", params.merge({:q => {:listing_type_does_not_equal => ''}}), {:class => 'btn active'} %>
-            <%= link_to "ขาย", params.merge({:q => {:listing_type_cont => 'sale'}}), {:class => 'btn'} %>
-            <%= link_to "สำหรับเช่า", params.merge({:q => {:listing_type_cont => 'rent'}}), {:class => 'btn'} %>
-          </div>
+          <%= render :partial => "toolbox" %>
 
           <div class="floatright">
             <%= f.select(:property_type_cont, Listing::PROPERTY_TYPE.collect { |property_type| [t(property_type), property_type.to_s] }, {:prompt => "ทั้งหมด"}) %>
