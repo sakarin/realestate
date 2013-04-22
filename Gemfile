@@ -36,7 +36,7 @@ group :assets do
 
   #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
   gem "less-rails"
-  gem 'twitter-bootstrap-rails', '2.0.9'
+  gem 'twitter-bootstrap-rails', '2.1.3'
   gem 'uglifier', '>= 1.0.3'
   gem 'jquery-fileupload-rails'
 end
