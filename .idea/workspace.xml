@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb86d650-604e-46f3-b4ec-a83fca82982e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/production.rb" afterPath="$PROJECT_DIR$/config/environments/production.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/bootstrap_and_overrides.css.less" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bootstrap_and_overrides.css.less" />
     </list>
     <ignored path="realestate.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,7 +26,7 @@
     <file path="/edit.html.erb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1365517131190" ignored="false" />
     <file path="/_summary_step.html.erb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1362532827151" ignored="false" />
     <file path="/20130220172640_add_state_to_listing.rb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1361381222720" ignored="false" />
-    <file path="/a.dummy" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1366606503566" ignored="false" />
+    <file path="/a.dummy" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1366606749707" ignored="false" />
     <file path="/_image.html.erb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1362477352243" ignored="false" />
     <file path="/listings.css.scss" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1362532792020" ignored="false" />
     <file path="/application.css.less.erb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1361668795700" ignored="false" />
@@ -297,10 +297,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="production.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="production.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="30" selection-start="712" selection-end="712" vertical-scroll-proportion="0.40570524">
+            <state line="18" column="59" selection-start="644" selection-end="644" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bootstrap_and_overrides.css.less" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/bootstrap_and_overrides.css.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="0" selection-start="110" selection-end="110" vertical-scroll-proportion="0.17749603">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/assets/application.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3612" column="26" selection-start="93084" selection-end="93084" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -327,8 +345,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/controllers/agents_controller.rb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/agent.css.scss" />
         <option value="$PROJECT_DIR$/app/views/agents/price.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/agent.css.scss.erb" />
         <option value="$PROJECT_DIR$/app/views/resources/index.html.erb" />
@@ -343,6 +359,8 @@
         <option value="$PROJECT_DIR$/app/views/listings/search.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/base.css.less.erb" />
         <option value="$PROJECT_DIR$/config/environments/production.rb" />
+        <option value="$PROJECT_DIR$/public/assets/application.css" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/bootstrap_and_overrides.css.less" />
       </list>
     </option>
   </component>
@@ -1218,20 +1236,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/listings/_listings.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="50" selection-start="604" selection-end="604" vertical-scroll-proportion="-6.4">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/image.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="21" selection-start="46" selection-end="46" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/listings/search.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="0" selection-start="437" selection-end="437" vertical-scroll-proportion="-7.04">
@@ -1325,7 +1329,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="30" selection-start="712" selection-end="712" vertical-scroll-proportion="0.40570524">
+        <state line="18" column="59" selection-start="644" selection-end="644" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/application.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3612" column="26" selection-start="93084" selection-end="93084" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/bootstrap_and_overrides.css.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="110" selection-end="110" vertical-scroll-proportion="0.17749603">
           <folding />
         </state>
       </provider>
