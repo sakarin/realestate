@@ -70,6 +70,7 @@ module Realestate
     config.assets.precompile += %w( *.css *.js )
 
     config.assets.precompile += ["redactor-rails/*"]
+    config.assets.precompile += ["uploads/*"]
 
   end
 end
