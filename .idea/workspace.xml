@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb86d650-604e-46f3-b4ec-a83fca82982e" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/application.rb" afterPath="$PROJECT_DIR$/config/application.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/deploy.rb" afterPath="$PROJECT_DIR$/config/deploy.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="realestate.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,7 +40,7 @@
     <file path="/post.rb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1361891199232" ignored="false" />
     <file path="/production.rb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1366606624147" ignored="false" />
     <file path="/Gemfile" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1366607138175" ignored="false" />
-    <file path="/application.rb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1367189176546" ignored="false" />
+    <file path="/application.rb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1367193117076" ignored="false" />
     <file path="/Capfile" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1362106367808" ignored="false" />
     <file path="/database.yml" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1362106799927" ignored="false" />
     <file path="/unicorn.rb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1362279102302" ignored="false" />
@@ -49,7 +50,7 @@
     <file path="/thailand_area.rb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1362364775716" ignored="false" />
     <file path="/amphur.rb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1366928681272" ignored="false" />
     <file path="/province.rb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1366928690456" ignored="false" />
-    <file path="/.gitignore" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1362478166764" ignored="false" />
+    <file path="/.gitignore" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1367193069674" ignored="false" />
     <file path="/amphurs_controller.rb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1362649492151" ignored="false" />
     <file path="/search.html.erb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1363607935324" ignored="false" />
     <file path="/_listings.html.erb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1367184357807" ignored="false" />
@@ -305,19 +306,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/listings/show.html.erb">
+      <file leaf-file-name="deploy.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/deploy.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="448" column="67" selection-start="18977" selection-end="18977" vertical-scroll-proportion="1.9607843">
+            <state line="80" column="7" selection-start="2648" selection-end="2648" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="deploy.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/config/deploy.rb">
+      <file leaf-file-name=".gitignore" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="38" selection-start="2313" selection-end="2313" vertical-scroll-proportion="0.66421825">
+            <state line="23" column="30" selection-start="519" selection-end="519" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -377,10 +378,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="application.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/application.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="69" selection-start="3222" selection-end="3222" vertical-scroll-proportion="0.0">
+            <state line="71" column="62" selection-start="3205" selection-end="3205" vertical-scroll-proportion="0.83210915">
               <folding />
             </state>
           </provider>
@@ -416,7 +417,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/config/locales/th.yml" />
         <option value="$PROJECT_DIR$/app/views/account/listings/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/account/listings/draft.html.erb" />
         <option value="$PROJECT_DIR$/app/views/account/listings/exclusive.html.erb" />
@@ -430,8 +430,9 @@
         <option value="$PROJECT_DIR$/db/clear_seed.rb" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/app/views/listings/show.html.erb" />
-        <option value="$PROJECT_DIR$/config/application.rb" />
         <option value="$PROJECT_DIR$/config/deploy.rb" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/config/application.rb" />
       </list>
     </option>
   </component>
@@ -1354,13 +1355,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="20" selection-start="1017" selection-end="1017" vertical-scroll-proportion="0.85624343">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.rdoc">
       <provider selected="true" editor-type-id="text-editor">
         <state line="51" column="14" selection-start="1120" selection-end="1133" vertical-scroll-proportion="0.85624343">
@@ -1415,13 +1409,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/application.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="69" selection-start="3222" selection-end="3222" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/redactor-rails-0.3.2/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -1459,7 +1446,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/deploy.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="38" selection-start="2313" selection-end="2313" vertical-scroll-proportion="0.66421825">
+        <state line="80" column="7" selection-start="2648" selection-end="2648" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="30" selection-start="519" selection-end="519" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/application.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="62" selection-start="3205" selection-end="3205" vertical-scroll-proportion="0.83210915">
           <folding />
         </state>
       </provider>

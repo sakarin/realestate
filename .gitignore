@@ -17,6 +17,7 @@
 
 /config/database.yml
 
-/public/uploads
+/public/uploads/image/*
+/public/uploads/redactor_rails/*
 
 
