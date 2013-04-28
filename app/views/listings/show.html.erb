@@ -58,7 +58,7 @@
           <p class="position_profile"><%= t(@listing.property_type) %></p>
           <p class="position_profile"><%= listing_address(@listing) %></p>
           <p class="position_profile"><%= "#{@listing.floorsize_x} x #{@listing.floorsize_y} เมตร" %> </p>
-          <p class="position_profile"><%= t(@listing.tenure) %></p>
+          <p class="position_profile"><%= t(@listing.tenure) unless @listing.tenure.blank? %></p>
           <p class="position_profile"><%= "#{@listing.bedrooms} ห้องนอน" unless @listing.bedrooms.blank? %>  <%= "#{ @listing.bathrooms} ห้องน้ำ" unless @listing.bathrooms.blank? %> </p>
           <p class="position_profile">ลงประกาศเมือ: 27 เมษายน 2556</p>
           <p class="position_profile"><%= number_with_delimiter @listing.price %> <%= t(@listing.price_type) %></p>
@@ -91,6 +91,7 @@
         <td width="50" height="18" class="text-recom-2" style="background-image:url(<%= asset_path "pic_count2.png" %>); background-repeat:no-repeat; text-align:center; padding:0 0 0 8px;">ขยาย</td>
       </tr>
     </table>
+    <% unless @listing.images.blank?  %>
     <table width="589" border="0" align="center" cellpadding="0" cellspacing="0">
       <tr>
         <td valign="top" style="padding:15px 0 0 0;">
@@ -111,6 +112,7 @@
         <td align="center" valign="middle"><%= image_tag "Property-Detail_08.jpg", :width => '78', :height => '52' %></td>
       </tr>
     </table>
+    <% end %>
   </div>
   <div class="clear"></div>
 </div>
@@ -159,7 +161,7 @@
         <td height="25" valign="top" class="position_profile"><b>การครอบครอง: </b></td>
         <td valign="top">&nbsp;</td>
         <td valign="top" class="position_profile">
-          <%= t(@listing.tenure) %><br>
+          <%= t(@listing.tenure) unless @listing.tenure %><br>
         </td>
       </tr>
       <tr>
@@ -208,14 +210,14 @@
         <td height="25" valign="top" class="position_profile"><b>หันไปทาง:</b></td>
         <td valign="top">&nbsp;</td>
         <td valign="top" class="position_profile">
-          <%= t("accounts.listing.collect.facing.#{@listing.facing.downcase}") %><br>
+          <%= t("accounts.listing.collect.facing.#{@listing.facing.downcase}") unless @listing.facing.blank? %><br>
         </td>
       </tr>
       <tr>
         <td height="25" valign="top" class="position_profile"><b>เฟอร์นิเจอร์:</b></td>
         <td valign="top">&nbsp;</td>
         <td valign="top" class="position_profile">
-          <%= t("accounts.listing.collect.furnishing.#{@listing.furnishing.downcase}")%><br>
+          <%= t("accounts.listing.collect.furnishing.#{@listing.furnishing.downcase}") unless @listing.furnishing.blank? %><br>
         </td>
       </tr>
       <tr>

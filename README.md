@@ -47,3 +47,7 @@ Terminate the processes with pids 1412 and 1157:
 ```shell
 $ kill 1412 1157
 ```
+
+Deploy
+1. kill process unicorn 0
+2. cap deploy:cold
