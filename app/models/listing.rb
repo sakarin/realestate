@@ -68,7 +68,7 @@ class Listing < ActiveRecord::Base
   FACING = [:NORTH, :NEAST, :NWEST, :EAST, :WEST, :SEAST, :SWEST, :SOUTH]
 
 
-  attr_accessible :listing_type, :property_type, :listing_title_th, :listing_description_th, :slug
+  attr_accessible :number, :listing_type, :property_type, :listing_title_th, :listing_description_th, :slug
   attr_accessible :amphur_id, :district_id, :province_id
   attr_accessible :property_name, :street_number, :street_name, :post_code
   attr_accessible :price, :price_type, :tenure
@@ -77,10 +77,14 @@ class Listing < ActiveRecord::Base
 
   attr_accessible :unit_feature_ids, :furniture_ids, :free_space_ids, :facility_ids
   attr_accessible :bedrooms, :extra_rooms, :bathrooms, :number_of_floors, :floor_position, :furnishing, :facing
+  attr_accessible :published_at
 
   # url friendly (see https://github.com/kaiuhl/pretty-param for details)
   has_pretty_param :slug
 
+  belongs_to :district
+  belongs_to :amphur
+  belongs_to :province
 
   has_many :images, :order => "position"
 
@@ -102,16 +106,21 @@ class Listing < ActiveRecord::Base
   has_many :comments, as: :commentable
 
   validates_presence_of :listing_title_th, :listing_type, :price
+  validates_presence_of :amphur_id, :district_id, :province_id
+  #validates_presence_of :floorarea
   #validates :permalink, :presence => true
 
   attr_writer :current_step
 
 
   scope :with_state, lambda { |s| where(:state => s) }
-  scope :unread, with_state('complete')
-  scope :read, with_state('show')
-  scope :read, with_state('hidden')
-  scope :read, with_state('draft')
+
+  scope :show, with_state('show')
+  scope :hidden, with_state('hidden')
+  scope :draft, with_state('draft')
+  scope :exclusive, with_state('exclusive')
+
+  #scope :number_of_draft, lambda { ||}
 
   # shipment state machine (see http://github.com/pluginaweek/state_machine/tree/master for details)
   state_machine :initial => 'draft', :use_transactions => false do
@@ -130,13 +139,31 @@ class Listing < ActiveRecord::Base
       transition :from => 'show', :to => 'exclusive'
       transition :from => 'complete', :to => 'exclusive'
     end
-    #after_transition :to => 'shipped', :do => :after_ship
+    after_transition :to => 'show', :do => :after_show
   end
+
+
+
+  before_validation :generate_number #, :on => :create
 
   before_validation :generate_slug
 
+  def generate_number
+    record = true
+    while record
+      random = "#{Array.new(6){rand(6)}.join}"
+      record = self.class.where(:number => random).first
+    end
+    self.number = random if self.number.blank?
+    self.number
+  end
+
   def generate_slug
     self.slug ||= listing_title_th
+  end
+
+  def after_show
+    selt.published_at = Date.now
   end
 
 

@@ -61,7 +61,7 @@ class User < ActiveRecord::Base
   attr_accessible :province_id, :country, :birth_date
 
   # Premium Agency
-  attr_accessible :introduction, :service_and_expert, :web_site, :agency_logo
+  attr_accessible :introduction, :service_and_expert, :web_site, :agency_logo, :company
   attr_accessible :notice_news, :notice_property, :notice_new_property
 
   attr_accessible :expert_ids

@@ -54,15 +54,18 @@
   </div>
 </div>
 
-<div class="control-group" id="province-group">
-  <label class="control-label" for="inputPassword"> จังหวัด:</label>
+<div class="control-group string required listing_province_id" id="province-group">
+
+  <label class="string required control-label" for="listing_province_id"><abbr title="ต้องกรอก">*</abbr>
+    จังหวัด:</label>
 
   <div class="controls">
     <%= f.collection_select(:province_id, Province.order(:name), :id, :name, include_blank: true) %>
+
   </div>
 </div>
 
-<div class="control-group" id="amphur-group">
+<div class="control-group string required listing_province_id" id="amphur-group">
   <label class="control-label" for="inputPassword"> อำเภอ:</label>
 
   <div class="controls">
@@ -91,6 +94,7 @@
 
 
 <%= render 'map', :f => f %>
+<%#= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}" %>
 
 
 
@@ -100,7 +104,7 @@
   <label class="control-label" for="inputPassword"> หน่วย:</label>
 
   <div class="controls">
-    <%#= f.text_field :price %> <%= select(:listing, :price_type, Listing::PRICE_TYPE.collect { |price_type| [t(price_type), price_type.to_s] }) %>
+    <%= f.select(:price_type, Listing::PRICE_TYPE.collect { |price_type| [t(price_type), price_type.to_s] }) %>
   </div>
 </div>
 
@@ -108,7 +112,7 @@
   <label class="control-label" for="inputPassword"> การครอบครอง:</label>
 
   <div class="controls">
-    <%= select(:listing, :tenure, Listing::TENURE.collect { |tenure| [t(tenure), tenure.to_s] }) %>
+    <%= f.select(:tenure, Listing::TENURE.collect { |tenure| [t(tenure), tenure.to_s] }, {:include_blank => true}) %>
   </div>
 </div>
 
@@ -130,23 +134,27 @@
   </div>
 </div>
 
-<div class="control-group">
-  <label class="control-label" for="inputPassword"> จำนวนที่ดิน:</label>
+<div id="land_area_row">
 
-  <div class="controls">
-    <%= f.text_field :landarea_rai, :class => "input-mini" %>
-    ไร่  <%= f.text_field :landarea_ngaan, :class => "input-mini" %>
-    งาน <%= f.text_field :landarea_sqw, :class => "input-mini" %> ตารางวา
+  <div class="control-group">
+    <label class="control-label" for="inputPassword"> จำนวนที่ดิน:</label>
+
+    <div class="controls">
+      <%= f.text_field :landarea_rai, :class => "input-mini" %>
+      ไร่  <%= f.text_field :landarea_ngaan, :class => "input-mini" %>
+      งาน <%= f.text_field :landarea_sqw, :class => "input-mini" %> ตารางวา
+    </div>
   </div>
-</div>
 
-<div class="control-group">
-  <label class="control-label" for="inputPassword"> ขนาดที่ดิน:</label>
+  <div class="control-group">
+    <label class="control-label" for="inputPassword"> ขนาดที่ดิน:</label>
 
-  <div class="controls">
-    <%= f.text_field :landsize_x, :class => "input-mini" %> x  <%= f.text_field :landsize_y, :class => "input-mini" %>
-    เมตร
+    <div class="controls">
+      <%= f.text_field :landsize_x, :class => "input-mini" %> x  <%= f.text_field :landsize_y, :class => "input-mini" %>
+      เมตร
+    </div>
   </div>
+
 </div>
 
 

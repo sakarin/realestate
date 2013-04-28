@@ -10,4 +10,16 @@ module ApplicationHelper
     HTML
     html.html_safe
   end
+
+  def listing_title(listing)
+    "#{t("listing.type.#{listing.listing_type}")} - #{t(listing.property_type)}  #{listing.listing_title_th}"
+  end
+
+  def listing_address(listing)
+    "#{listing.street_number} #{listing.street_name} #{listing.district.name} #{listing.amphur.name} #{listing.province.name} #{listing.post_code} "
+  end
+
+  def listing_area(listing)
+
+  end
 end

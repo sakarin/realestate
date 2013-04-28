@@ -12,7 +12,38 @@ Fix with Downgrade to Rails 3.2.12
 
 
 bundle exec rake assets:precompile RAILS_ENV=development
-rake assets:clean RAILS_ENV=development
+bundle exec rake assets:clean RAILS_ENV=development
 
 Deploy
 ------
+```shell
+cap deploy:setup
+```
+# edit /home/deployer/apps/blog/shared/config/database.yml on server
+
+```shell
+cap deploy:cold
+
+
+```shell
+sudo service nginx restart
+```
+
+----------------------------------------------------------
+#- issue
+----------------------------------------------------------
+/etc/init.d/unicorn_realestate: 24: kill: No such process
+
+Killing processes in UNIX
+-------------------------
+If you do not know the PID of a process, you can learn it by issuing a process status command, ps.
+
+```shell
+ps aux | grep unicorn
+```
+
+Terminate the processes with pids 1412 and 1157:
+
+```shell
+$ kill 1412 1157
+```

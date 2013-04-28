@@ -15,5 +15,7 @@ class District < ActiveRecord::Base
   belongs_to :province
   belongs_to :amphur
 
+  has_one :listing
+
   default_scope order('name ASC')
 end

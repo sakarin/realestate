@@ -11,13 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130304023220) do
-
-  create_table "_experts", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+ActiveRecord::Schema.define(:version => 20130428191851) do
 
   create_table "amphurs", :force => true do |t|
     t.string  "code"
@@ -159,6 +153,8 @@ ActiveRecord::Schema.define(:version => 20130304023220) do
     t.string   "slug"
     t.string   "make_permalink"
     t.string   "permalink"
+    t.string   "number"
+    t.datetime "published_at"
   end
 
   add_index "listings", ["make_permalink"], :name => "index_listings_on_make_permalink"
@@ -293,6 +289,7 @@ ActiveRecord::Schema.define(:version => 20130304023220) do
     t.boolean  "notice_news"
     t.boolean  "notice_property"
     t.boolean  "notice_new_property"
+    t.string   "company"
   end
 
   create_table "users_roles", :id => false, :force => true do |t|

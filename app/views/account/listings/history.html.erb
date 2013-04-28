@@ -11,14 +11,9 @@
 
           <%= link_to t('accounts.listing.buttons.new'), new_account_listing_path, :class => "btn btn-success floatright" %>
 
-          <h3>ประกาศฉบับร่าง (0)</h3>
+          <h3><%= t('accounts.listing.tabs.listings_history') %> (<%= @listings.count  %>)</h3>
 
-          <div class="alert alert-block">
-            <img src="http://cdn-th1.pgimgs.com/images/extranet/information.png" alt="information">ประกาศมีอายุ 60
-            วันนับจากวันลงประกาศหรือวันที่ต่ออายุล่าสุด โดยระบบจะแจ้งเตือนทางอีเมลก่อนประกาศหมดอายุ<br>ระบบอนุญาตให้ต่ออายุหรือเลื่อนประกาศได้สัปดาห์ละ
-            1 ครั้ง
-          </div>
-          <div class="clearboth"></div>
+          <%= render :partial => "account/listings/shared/notice" %>
 
 
           <%= render :partial => "toolbox" %>
@@ -32,7 +27,7 @@
 
       <div class="clearboth"></div>
 
-      <form action="" method="POST">
+      <%= form_tag multi_destroy_account_listings_path do %>
         <table cellpadding="0" cellspacing="0" class="blue">
           <thead>
           <tr>
@@ -58,7 +53,7 @@
                 <td>
                   <%= check_box_tag "listing_ids[]", listing.id, false, :class => "listing_id_checkbox" %>
                 </td>
-                <td><%= link_to "#{listing.id}", edit_account_listing_path(listing) %></td>
+                <td><%= link_to "#{listing.number}", edit_account_listing_path(listing) %></td>
                 <td style="text-align:left">
                   <%= link_to "#{t('listing.type.' + listing.listing_type.to_s)} - #{listing.listing_title_th}", edit_account_listing_path(listing) %>
                 </td>
@@ -83,7 +78,7 @@
           <%= submit_tag t('buttons.multi_delete'), :class => 'btn btn-danger' %>
         </div>
 
-      </form>
+      <% end %>
     </div>
   </div>
 </div>

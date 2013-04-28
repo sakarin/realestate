@@ -3,6 +3,13 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 jQuery ->
+  # On ready
+  if $("#listing_property_type").val() == 'condo' || $("#listing_property_type").val() == 'apartment'
+    $("#land_area_row").hide()
+  else
+    $("#land_area_row").show()
+
+
   $('#new_image').fileupload
     dataType: "script"
     add: (e, data) ->
@@ -85,6 +92,16 @@ jQuery ->
       $(this).find("a:first").show()
     else
       $(this).find("a:first").hide()
+
+  $("#listing_property_type").change ->
+    if $("#listing_property_type").val() == 'condo' || $("#listing_property_type").val() == 'apartment'
+
+
+      $("#land_area_row").hide()
+    else
+      $("#land_area_row").show()
+
+
 
 
 

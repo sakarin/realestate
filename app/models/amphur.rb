@@ -14,6 +14,7 @@ class Amphur < ActiveRecord::Base
   attr_accessible :name
   has_many :districts
   belongs_to :province
+  has_one :listing
 
   default_scope order('name ASC')
 

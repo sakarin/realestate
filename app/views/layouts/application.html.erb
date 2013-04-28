@@ -15,8 +15,9 @@
   <%= stylesheet_link_tag "font_end/application", :media => "all" %>
 
 
+  <%= yield(:head) %>
 </head>
-<body>
+<body class="<%= controller_name %> <%= action_name %>">
 <div id="mainpage">
 
   <%= render 'layouts/messages' %>

@@ -47,3 +47,6 @@ ssh-add # -K on Mac OS X
 cap deploy:setup
 # edit /home/deployer/apps/blog/shared/config/database.yml on server
 cap deploy:cold
+
+The PostgreSQL Database
+su - postgres

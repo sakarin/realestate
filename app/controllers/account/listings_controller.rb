@@ -129,12 +129,26 @@ class Account::ListingsController < Account::BaseController
     @listing = Listing.find(params[:id])
     @listing.destroy
 
-    redirect_to :back
+    begin
+      redirect_to :back
+    rescue
+      redirect_to account_listings_path
+    end
+  end
 
-    #respond_to do |format|
-    #  format.html { redirect_to admin_posts_url }
-    #  format.json { head :no_content }
-    #end
+  def multi_destroy
+    unless params[:listing_ids].nil?
+      @listings = Listing.find(params[:listing_ids])
+      @listings.each { |listing| listing.destroy }
+    end
+
+    begin
+      redirect_to :back
+    rescue
+      redirect_to account_listings_path
+    end
+
+
   end
 
   private

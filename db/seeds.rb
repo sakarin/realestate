@@ -12,8 +12,10 @@ Role.create([
                 { :name => 'trial' },
                 { :name => 'starter' },
                 { :name => 'premium' },
-                { :name => 'platinum' }
-            ], :without_protection => true)
+                { :name => 'platinum' },
+                { :name => 'sponsor' }
+            ], :without_protection => true) if Role.where(:name => "admin").blank?
+
 puts 'SETTING UP DEFAULT USER LOGIN'
 user = User.create! :email => 'admin@example.com', :password => 'admin123', :password_confirmation => 'admin123', :confirmed_at => Time.now
 user.add_role :admin

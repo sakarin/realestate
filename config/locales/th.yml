@@ -32,7 +32,11 @@ th:
       buttons:
         new: "สร้างประกาศใหม่"
         cancel: "ยกเลิกประกาศที่เลือก"
-
+      state:
+        show: "ประกาศปัจจุบัน"
+        draft: "ประกาศฉบับร่าง"
+        history: "ประกาศเก่า"
+        exclusive: "ประกาศพิเศษ"
       collect:
         furnishing:
           unfur: "ไม่มี"
@@ -67,6 +71,7 @@ th:
     created: "ถูกเพิ่มแล้ว"
     users:
       new: "เพิ่มผู้ใช้"
+      updated: 'คุณอัปเดตบัญชีของคุณประสบความสำเร็จ'
     unit_features:
       new: "เพิ่มคุณสมบัติพิเศษ"
       created: "คุณได้ทำการสร้างคุณสมบัติพิเศษสำเร็จแล้ว."
@@ -159,6 +164,7 @@ th:
           current_password: "รหัสผ่านเดิม"
           remember_me:  "จำข้อมูลฉันไว้"
 
+          company: "บริษัท"
           first_name: "ชื่อ"
           last_name: "นามสกุล"
           telephone1: "หมายเลขโทรศัพท์มือถือ"

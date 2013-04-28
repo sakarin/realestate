@@ -5,7 +5,7 @@
     <%= f.select( :bedrooms,
             {"สตูดิโอ" => "0", "1 ห้องนอน" => "1", "2 ห้องนอน" => "2", "3 ห้องนอน" => "3", "4 ห้องนอน" => "4",
              "5 ห้องนอน" => "5", "6 ห้องนอน" => "6", "7 ห้องนอน" => "7", "8 ห้องนอน" => "8", "9 ห้องนอน" => "9", "10+ ห้องนอน" => "10"},
-        :prompt => t('prompt')) %>
+            :include_blank => "") %>
 
   </div>
 </div>
@@ -16,7 +16,7 @@
     <%= f.select(:extra_rooms,
             {"สตูดิโอ" => "0", "1 ห้องนอน" => "1", "2 ห้องนอน" => "2", "3 ห้องนอน" => "3", "4 ห้องนอน" => "4",
              "5 ห้องนอน" => "5", "6 ห้องนอน" => "6", "7 ห้องนอน" => "7", "8 ห้องนอน" => "8", "9 ห้องนอน" => "9", "10+ ห้องนอน" => "10"},
-     :prompt => t('prompt')) %>
+             :include_blank => "") %>
   </div>
 </div>
 
@@ -26,35 +26,35 @@
     <%= select(:listing, :bathrooms,
             {"สตูดิโอ" => "0", "1 ห้องนอน" => "1", "2 ห้องนอน" => "2", "3 ห้องนอน" => "3", "4 ห้องนอน" => "4",
              "5 ห้องนอน" => "5", "6 ห้องนอน" => "6", "7 ห้องนอน" => "7", "8 ห้องนอน" => "8", "9 ห้องนอน" => "9"},
-             :prompt => t('prompt')) %>
+             :include_blank => "") %>
   </div>
 </div>
 
 <div class="control-group">
   <label class="control-label" for="inputPassword">จำนวนชั้น:</label>
   <div class="controls">
-    <%= select(:listing, :number_of_floors, (1..50), :prompt => t('prompt') ) %>
+    <%= select(:listing, :number_of_floors, (1..50), :include_blank => "") %>
   </div>
 </div>
 
 <div class="control-group">
   <label class="control-label" for="inputPassword">อยู่ชั้น:</label>
   <div class="controls">
-    <%= select(:listing, :floor_position, (1..50), :prompt => t('prompt') ) %>
+    <%= select(:listing, :floor_position, (1..50), :include_blank => "") %>
   </div>
 </div>
 
 <div class="control-group">
   <label class="control-label" for="inputPassword">เฟอร์นิเจอร์:</label>
   <div class="controls">
-    <%= select(:listing, :furnishing, Listing::FURNISHING.collect { |furnishing| [t("account.listing.collect.furnishing.#{furnishing.downcase}"), furnishing.to_s] }, :prompt => t('prompt')) %>
+    <%= select(:listing, :furnishing, Listing::FURNISHING.collect { |furnishing| [t("accounts.listing.collect.furnishing.#{furnishing.downcase}"), furnishing.to_s] }, :include_blank => "") %>
   </div>
 </div>
 
 <div class="control-group">
   <label class="control-label" for="inputPassword">หันหน้าไปทาง (หน้าประตู):</label>
   <div class="controls">
-    <%= select(:listing, :facing, Listing::FACING.collect { |facing| [t("account.listing.collect.facing.#{facing.downcase}"), facing.to_s] }, :prompt => t('prompt')) %>
+    <%= select(:listing, :facing, Listing::FACING.collect { |facing| [t("accounts.listing.collect.facing.#{facing.downcase}"), facing.to_s] }, :include_blank => "") %>
   </div>
 </div>
 

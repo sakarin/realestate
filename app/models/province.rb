@@ -13,5 +13,7 @@ class Province < ActiveRecord::Base
   has_many :districts
   has_many :amphurs
 
+  has_one :listing
+
   default_scope order('name ASC')
 end

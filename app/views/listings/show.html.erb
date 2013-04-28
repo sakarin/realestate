@@ -12,7 +12,7 @@
 <div id="intro-project-direc-sub">
   <div class="head-intro-direc-sub">
     <div class="head-home">
-      <h1>โครงการคอนโด</h1>
+      <h1><%= listing_title(@listing) %></h1>
 
       <div class="navi">
         โครงการคอนโด < หน้าหลัก
@@ -34,39 +34,36 @@
             <tr>
               <td width="100" valign="top"><%= image_tag "agent_profile.png", :width => '94', :height => '92' %></td>
               <td valign="top">
-                <p class="name_profile">มนสิชา</p>
+                <p class="name_profile"><%= "#{@listing.user.first_name} #{@listing.user.last_name}" %></p>
 
-                <p class="position_profile" style="margin:5px 0 0 0;">บริษัท ท๊อป โบรกเกอร์ จำกัด</p>
+                <p class="position_profile" style="margin:5px 0 0 0;"><%= @listing.user.company %></p>
 
-                <p class="position_profile" style="margin:0 0 5px 0;">โทร: 081-937-3268
-                  or 081-937-3268</p></td>
+                <p class="position_profile" style="margin:0 0 5px 0;">
+                  โทร: <%= "#{@listing.user.telephone1}" %> <%= "หรือ #{@listing.user.telephone2}" unless @listing.user.telephone2.blank?  %>
+                  </p>
+              </td>
             </tr>
             <tr>
               <td height="40" valign="top">
                 <%= image_tag "contact.png", :width => '83', :height => '25', :style => "margin:5px 0 0 5px;" %></td>
               <td valign="top" style="padding:5px 0 0 0;">
-                <div class="gotoweb">ไปยังเว็บไซต์ผู้ลงโฆษณานี้</div>
+                <div class="gotoweb"><%= link_to "ไปยังเว็บไซต์ผู้ลงโฆษณานี้", "#{@listing.user.web_site}" %></div>
               </td>
             </tr>
           </table>
         </td>
         <td width="15"></td>
         <td valign="top">
-          <p class="position_profile2" style="float:right; margin:5px 2px 0 0;"> ม.เพชรมณี ซ.ราษฎร์อุทิศ 18 บ้านเดี่ยว 2
-            ชั้น 114 ตร.ว. ถ.สุวินทวงศ์ เขตมีนบุรี กรุงเทพ สภาพใหม่ แต่งสวย บ้านเดี่ยว ขาย</p>
+          <p class="position_profile">ID : <%= @listing.number %></p>
+          <p class="position_profile"><%= t(@listing.property_type) %></p>
+          <p class="position_profile"><%= listing_address(@listing) %></p>
+          <p class="position_profile"><%= "#{@listing.floorsize_x} x #{@listing.floorsize_y} เมตร" %> </p>
+          <p class="position_profile"><%= t(@listing.tenure) %></p>
+          <p class="position_profile"><%= "#{@listing.bedrooms} ห้องนอน" unless @listing.bedrooms.blank? %>  <%= "#{ @listing.bathrooms} ห้องน้ำ" unless @listing.bathrooms.blank? %> </p>
+          <p class="position_profile">ลงประกาศเมือ: 27 เมษายน 2556</p>
+          <p class="position_profile"><%= number_with_delimiter @listing.price %> <%= t(@listing.price_type) %></p>
 
-          <p class="position_profile">
-            <br>
-            <br>
-            <br>
-            <br>
-            ID: 566888<br>
-            บ้านเดี่ยว
-            ราษฎร์อุทิศ 18 สุวินทวงศ์, มีนบุรี, กรุงเทพ<br>
-            1 งาน 14 ตารางวา (ที่ดิน)<br>
-            4 ห้องนอน 4 ห้องน้ำ <br>
-            ลงประกาศเมือ: 13 มีนาคม 2556
-          </p>
+
         </td>
       </tr>
     </table>
@@ -98,7 +95,7 @@
       <tr>
         <td valign="top" style="padding:15px 0 0 0;">
 
-          <%= image_tag "Property-Detail_03.jpg", :width => '589', :height => '325' %>
+          <%= image_tag @listing.images.first.attachment_url(:s589x325), :width => '589', :height => '325' %>
         </td>
       </tr>
     </table>
@@ -129,29 +126,165 @@
     </table>
     <table width="600" border="0" align="center" cellpadding="0" cellspacing="0">
       <tr>
-        <td width="170" valign="top" class="position_profile">ที่อยู่ :</td>
+        <td height="25" valign="top" class="position_profile"><b>ที่อยู่ :</b></td>
         <td valign="top">&nbsp;</td>
-        <td valign="top"><%= image_tag "map2_26.png", :width => '500', :height => '100' %></td>
+        <td valign="top"><%= listing_address(@listing) %></td>
       </tr>
       <tr>
-        <td height="25" valign="top" class="position_profile">ขนาด :</td>
+        <td width="170" valign="top" class="position_profile"><b>แผนที่ :</b></td>
         <td valign="top">&nbsp;</td>
-        <td valign="top" class="position_profile">1 งาน 14 ตารางวา (ที่ดิน)</td>
+        <td valign="top"><%= image_tag "http://maps.google.com/maps/api/staticmap?size=500x150&sensor=false&language=th&zoom=15&markers=#{@listing.lat_value}%2C#{@listing.lon_value}" %></td>
+      </tr>
+
+      <tr>
+        <td height="25" valign="top" class="position_profile"><b>ราคา :</b></td>
+        <td valign="top">&nbsp;</td>
+        <td valign="top" class="position_profile"><%= "#{number_with_delimiter(@listing.price)} #{t(@listing.price_type)}" unless @listing.price.blank? %></td>
       </tr>
       <tr>
-        <td height="25" valign="top" class="position_profile">ราคา :</td>
+        <td height="25" valign="top" class="position_profile">ชื่อโครงการ :</td>
         <td valign="top">&nbsp;</td>
-        <td valign="top" class="position_profile">6,500,000 (บาท)</td>
-      </tr>
-      <tr>
-        <td valign="top" class="position_profile">ข้อมูลเพิ่มเติม :</td>
-        <td valign="top">&nbsp;</td>
-        <td valign="top" class="position_profile">ชื่อโครงการ: เพชรมณี<br>
-          ประเภทอสังหาฯ: บ้านเดี่ยว<br>
-          ราคา: 6,500,000 บาท <br>
-          สภาพ: สอบถาม
+        <td valign="top" class="position_profile">
+         <%= @listing.property_name %><br>
         </td>
       </tr>
+      <tr>
+        <td height="25" valign="top" class="position_profile">ประเภทอสังหาฯ :</td>
+        <td valign="top">&nbsp;</td>
+        <td valign="top" class="position_profile">
+          <%= t(@listing.property_type) %><br>
+        </td>
+      </tr>
+      <tr>
+        <td height="25" valign="top" class="position_profile"><b>การครอบครอง: </b></td>
+        <td valign="top">&nbsp;</td>
+        <td valign="top" class="position_profile">
+          <%= t(@listing.tenure) %><br>
+        </td>
+      </tr>
+      <tr>
+        <td height="25" valign="top" class="position_profile"><b>พื้นที่ใช้สอย: </b></td>
+        <td valign="top">&nbsp;</td>
+        <td valign="top" class="position_profile">
+          <%= "#{@listing.floorarea} ตารางเมตร" %><br>
+        </td>
+      </tr>
+      <tr>
+        <td height="25" valign="top" class="position_profile"><b>ขนาดพื้นที่: </b></td>
+        <td valign="top">&nbsp;</td>
+        <td valign="top" class="position_profile">
+          <%= "#{@listing.floorsize_x} x #{@listing.floorsize_y} เมตร" %><br>
+        </td>
+      </tr>
+      <tr>
+        <td height="25" valign="top" class="position_profile"><b>จำนวนที่ดิน: </b></td>
+        <td valign="top">&nbsp;</td>
+        <td valign="top" class="position_profile">
+          <%= "#{@listing.landarea_rai} ไร่ #{@listing.landarea_ngaan} งาน  #{@listing.landarea_sqw} ตารางวา" %><br>
+        </td>
+      </tr>
+      <tr>
+        <td height="25" valign="top" class="position_profile"><b>ขนาดที่ดิน:</b></td>
+        <td valign="top">&nbsp;</td>
+        <td valign="top" class="position_profile">
+          <%= "#{@listing.landsize_x} x #{@listing.landsize_y} เมตร" unless @listing.landsize_x.blank? %><br>
+        </td>
+      </tr>
+      <tr>
+        <td height="25" valign="top" class="position_profile"><b>จำนวนห้อง:</b></td>
+        <td valign="top">&nbsp;</td>
+        <td valign="top" class="position_profile">
+          <%= "#{@listing.bedrooms} ห้องนอน  #{@listing.bathrooms} ห้องน้ำ  #{@listing.extra_rooms} ห้องแม่บ้าน" %><br>
+        </td>
+      </tr>
+      <tr>
+        <td height="25" valign="top" class="position_profile"><b>จำนวนชั้น:</b></td>
+        <td valign="top">&nbsp;</td>
+        <td valign="top" class="position_profile">
+          <%=  "#{@listing.number_of_floors} ชั้น - อยู่ชั้น #{@listing.floor_position}"%><br>
+        </td>
+      </tr>
+      <tr>
+        <td height="25" valign="top" class="position_profile"><b>หันไปทาง:</b></td>
+        <td valign="top">&nbsp;</td>
+        <td valign="top" class="position_profile">
+          <%= t("accounts.listing.collect.facing.#{@listing.facing.downcase}") %><br>
+        </td>
+      </tr>
+      <tr>
+        <td height="25" valign="top" class="position_profile"><b>เฟอร์นิเจอร์:</b></td>
+        <td valign="top">&nbsp;</td>
+        <td valign="top" class="position_profile">
+          <%= t("accounts.listing.collect.furnishing.#{@listing.furnishing.downcase}")%><br>
+        </td>
+      </tr>
+      <tr>
+        <td height="25" valign="top" class="position_profile"><b>คุณสมบัติพิเศษ:</b></td>
+        <td valign="top">&nbsp;</td>
+        <td valign="top" class="position_profile">
+          <table cellspacing="0" cellpadding="0" class="detailtable">
+            <tbody>
+            <% @listing.unit_features.each_slice(3) do |slice| %>
+            <tr>
+              <% slice.each do |item| %>
+              <td style="width:200px; height: 25px" valign="top">
+                <ul class="normallist">
+                  <li><%= item.name %></li>
+                </ul>
+              </td>
+              <% end %>
+            </tr>
+            <% end %>
+            </tbody>
+          </table>
+
+        </td>
+      </tr>
+      <tr>
+        <td height="25" valign="top" class="position_profile"><b>พื้นที่ว่าง:</b></td>
+        <td valign="top">&nbsp;</td>
+        <td valign="top" class="position_profile">
+          <table cellspacing="0" cellpadding="0" class="detailtable">
+            <tbody>
+            <% @listing.free_spaces.each_slice(3) do |slice| %>
+                <tr>
+                  <% slice.each do |item| %>
+                      <td style="width:200px; height: 25px" valign="top">
+                        <ul class="normallist">
+                          <li><%= item.name %></li>
+                        </ul>
+                      </td>
+                  <% end %>
+                </tr>
+            <% end %>
+            </tbody>
+          </table>
+
+        </td>
+      </tr>
+      <tr>
+        <td height="25" valign="top" class="position_profile"><b>สิ่งอำนวยความสะดวก:</b></td>
+        <td valign="top">&nbsp;</td>
+        <td valign="top" class="position_profile">
+          <table cellspacing="0" cellpadding="0" class="detailtable">
+            <tbody>
+            <% @listing.facilities.each_slice(3) do |slice| %>
+                <tr>
+                  <% slice.each do |item| %>
+                      <td style="width:200px; height: 25px" valign="top">
+                        <ul class="normallist">
+                          <li><%= item.name %></li>
+                        </ul>
+                      </td>
+                  <% end %>
+                </tr>
+            <% end %>
+            </tbody>
+          </table>
+
+        </td>
+      </tr>
+
     </table>
   </div>
   <div class="clear"></div>
@@ -162,15 +295,7 @@
     <table width="599" border="0" align="center" cellpadding="0" cellspacing="0" style="margin:15px 15px 15px 15px;">
       <tr>
         <td valign="top">
-          <p class="position_profile">
-            ม.เพชรมณี ซ.ราษฎร์อุทิศ 18 บ้านเดี่ยว 2 ชั้น 114 ตร.ว. ถ.สุวินทวงศ์ เขตมีนบุรี กรุงเทพ สภาพใหม่ แต่งสวย 4
-            นอน 4 น้ำ จัดสวนสวย พร้อมอ่างจากุชชี่และแท๊งค์น้ำ ใกล้ถ.วงแหวน-ร.ร.นานาชาติ-สนามบินสุวรรณภูมิ
-
-            <br>
-            <br>
-            ราคา 6.5 ล้านบาท
-            <br>
-            สนใจติดต่อ คุณมนสิชา โทร. 081-937-3268 </p>
+          <p class="position_profile"><%= @listing.listing_description_th %></p>
         </td>
       </tr>
     </table>

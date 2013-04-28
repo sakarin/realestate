@@ -107,6 +107,7 @@ Realestate::Application.routes.draw do
         get :draft
         get :exclusive
         get :history
+        post :multi_destroy
       end
 
       resources :images do

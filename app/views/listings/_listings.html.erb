@@ -2,7 +2,7 @@
   <tr>
     <td width="170" valign="top">
       <% if !listing.images.first.nil? and listing.images.first.attachment? %>
-          <%= link_to image_tag(listing.images.first.attachment_url(:thumb), :width => '146', :height => '66'), listing.images.first %>
+          <%= link_to image_tag(listing.images.first.attachment_url(:thumb), :width => '146', :height => '66'), listing.images.first.attachment_url() %>
       <% end %>
     </td>
     <td width="30" align="center" valign="top"><%= image_tag "icon-sale.png", :width => '14', :height => '15' %></td>
@@ -10,16 +10,16 @@
         <span class="text-recom-1">
           <%= link_to "#{t('listing.type.' + listing.listing_type.to_s)} - #{listing.listing_title_th}", listing_path(listing) %>
         </span>
-		<span class="text-recom-2">ตึกแถว/อาคารพาณิชย์ (ขายขาด)
-											พหลโยธิน591/18 Pholyothin Rd
-								ปากเพรียว, เมืองสระบุรี, สระบุรี
+		<span class="text-recom-2">
+          <%= "#{t(listing.property_type)} #{listing_address(listing)}"  %>
         </span>
     </td>
     <td width="30" align="center" valign="top"><%= image_tag "icon-money.png", :width => '12', :height => '13' %></td>
     <td width="189" valign="top" class="text-recom-1" style="border-right:solid 1px #cbcbcb;"><%= number_to_currency listing.price, :precision => 0 %>
       <br/>
-      ที่ดิน : 1 งาน 60 ตารางวา<br/>
-      พื้นที่ใช้สอย : 640 ตารางเมตร
+      <p><%= "ที่ดิน : #{listing.landsize_x} x #{listing.landsize_y} เมตร" unless listing.landsize_x.blank? %></p>
+      <p><%= "พื้นที่ใช้สอย : #{listing.floorarea} ตารางเมตร" unless listing.floorarea.blank? %></p>
+
     </td>
     <td width="30" align="center" valign="top" class="text-recom-2"><%= image_tag "icon-man.png", :width => '12', :height => '12' %></td>
     <td width="266" valign="top" class="text-recom-2"><%= "#{listing.user.first_name} #{listing.user.last_name}" %>

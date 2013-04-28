@@ -31,6 +31,10 @@
 </p>
 
 
+<%#= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@listing.lat_value}%2C#{@listing.lon_value}" %>
+
+
+
 <fieldset id="summary">
 <h4>ยืนยันรายละเอียดประกาศและเปิดใช้งาน</h4>
 
@@ -39,39 +43,39 @@
   <tr>
     <td class="title">สถานะปัจจุบัน:</td>
     <td>
-      <span class="label ประกาศฉบับร่าง">ประกาศฉบับร่าง</span>
+      <span class="label"><%= t("accounts.listing.state.#{@listing.state}") %></span>
     </td>
   </tr>
   <tr>
     <td class="title">ประกาศประเภท :</td>
     <td>
-      ขาย
+      <%= t("listing.type.#{@listing.listing_type}") %>
     </td>
   </tr>
   <tr>
     <td class="title">ประเภท :</td>
     <td>
-      คอนโด
+      <%= t(@listing.property_type) %>
     </td>
   </tr>
   <tr>
     <td class="title">ชื่อโครงการ</td>
     <td>
+      <%= "#{@listing.property_name} " %>
     </td>
   </tr>
   <tr>
     <td class="title">ที่อยู่:</td>
     <td>
+     <%= "#{@listing.street_number} #{@listing.street_name} #{@listing.district.name} #{@listing.amphur.name} #{@listing.province.name} #{@listing.post_code} " %>
 
-      <br>
-      บุ่ง, เมืองอำนาจเจริญ, อำนาจเจริญ
 
     </td>
   </tr>
   <tr>
 
     <td class="title">พื่นที่ใช้สอย / จำนวนห้องนอน:</td>
-    <td>45 ตารางเมตร / สตูดิโอ</td>
+    <td><%= @listing.floorarea %> ตารางเมตร <%= "/ #{ @listing.bedrooms} ห้องนอน" unless @listing.bedrooms.blank? %> </td>
 
   </tr>
   <tr>
@@ -83,6 +87,7 @@
   <tr>
     <td class="title">ราคา:</td>
     <td>
+      <%= @listing.price %> <%= t(@listing.price_type) %>
     </td>
   </tr>
   </tbody>
