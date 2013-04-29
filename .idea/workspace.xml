@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="eb86d650-604e-46f3-b4ec-a83fca82982e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/application.rb" afterPath="$PROJECT_DIR$/config/application.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/deploy.rb" afterPath="$PROJECT_DIR$/config/deploy.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="realestate.iws" />
@@ -164,7 +164,7 @@
     <file path="/image_uploader.rb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1366933850988" ignored="false" />
     <file path="/seeds.rb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1367185144846" ignored="false" />
     <file path="/clear_seed.rb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1367185246831" ignored="false" />
-    <file path="/deploy.rb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1367192504532" ignored="false" />
+    <file path="/deploy.rb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1367193634822" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -306,10 +306,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="deploy.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="deploy.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/deploy.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="7" selection-start="2648" selection-end="2648" vertical-scroll-proportion="0.0">
+            <state line="69" column="29" selection-start="2463" selection-end="2463" vertical-scroll-proportion="0.71458554">
               <folding />
             </state>
           </provider>
@@ -318,7 +318,7 @@
       <file leaf-file-name=".gitignore" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="30" selection-start="519" selection-end="519" vertical-scroll-proportion="0.0">
+            <state line="19" column="22" selection-start="482" selection-end="482" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -345,7 +345,7 @@
       <file leaf-file-name="image_uploader.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/uploaders/image_uploader.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="2" column="33" selection-start="41" selection-end="52" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -378,10 +378,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="application.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/application.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="62" selection-start="3205" selection-end="3205" vertical-scroll-proportion="0.83210915">
+            <state line="71" column="62" selection-start="3205" selection-end="3205" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -430,9 +430,9 @@
         <option value="$PROJECT_DIR$/db/clear_seed.rb" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/app/views/listings/show.html.erb" />
-        <option value="$PROJECT_DIR$/config/deploy.rb" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/config/application.rb" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/config/deploy.rb" />
       </list>
     </option>
   </component>
@@ -1423,13 +1423,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/uploaders/image_uploader.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/account/listings/form/_detail_step.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="56" column="167" selection-start="2458" selection-end="2458" vertical-scroll-proportion="-6.4">
@@ -1444,23 +1437,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/deploy.rb">
+    <entry file="file://$PROJECT_DIR$/config/application.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="7" selection-start="2648" selection-end="2648" vertical-scroll-proportion="0.0">
+        <state line="71" column="62" selection-start="3205" selection-end="3205" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="30" selection-start="519" selection-end="519" vertical-scroll-proportion="0.0">
+        <state line="19" column="22" selection-start="482" selection-end="482" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/application.rb">
+    <entry file="file://$PROJECT_DIR$/app/uploaders/image_uploader.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="62" selection-start="3205" selection-end="3205" vertical-scroll-proportion="0.83210915">
+        <state line="2" column="33" selection-start="41" selection-end="52" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/deploy.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="29" selection-start="2463" selection-end="2463" vertical-scroll-proportion="0.71458554">
           <folding />
         </state>
       </provider>
