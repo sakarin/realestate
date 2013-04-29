@@ -65,8 +65,8 @@ module Realestate
 
 
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
-    config.assets.paths << Rails.root.join('public', 'uploads', 'image')
-    config.assets.paths << Rails.root.join('public', 'uploads', 'redactor-rails')
+    #config.assets.paths << Rails.root.join('public', 'uploads', 'image')
+    #config.assets.paths << Rails.root.join('public', 'uploads', 'redactor-rails')
 
     config.assets.precompile += %w( .svg .eot .woff .ttf )
     config.assets.precompile += %w( *.css *.js )

@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="eb86d650-604e-46f3-b4ec-a83fca82982e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/deploy.rb" afterPath="$PROJECT_DIR$/config/deploy.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/application.rb" afterPath="$PROJECT_DIR$/config/application.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="realestate.iws" />
@@ -50,7 +50,7 @@
     <file path="/thailand_area.rb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1362364775716" ignored="false" />
     <file path="/amphur.rb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1366928681272" ignored="false" />
     <file path="/province.rb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1366928690456" ignored="false" />
-    <file path="/.gitignore" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1367193069674" ignored="false" />
+    <file path="/.gitignore" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1367193990005" ignored="false" />
     <file path="/amphurs_controller.rb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1362649492151" ignored="false" />
     <file path="/search.html.erb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1363607935324" ignored="false" />
     <file path="/_listings.html.erb" changelist="eb86d650-604e-46f3-b4ec-a83fca82982e" time="1367184357807" ignored="false" />
@@ -306,10 +306,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="deploy.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="deploy.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/deploy.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="29" selection-start="2463" selection-end="2463" vertical-scroll-proportion="0.71458554">
+            <state line="37" column="48" selection-start="1216" selection-end="1216" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -318,7 +318,7 @@
       <file leaf-file-name=".gitignore" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="22" selection-start="482" selection-end="482" vertical-scroll-proportion="0.0">
+            <state line="23" column="30" selection-start="538" selection-end="538" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -378,10 +378,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="application.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/application.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="62" selection-start="3205" selection-end="3205" vertical-scroll-proportion="0.0">
+            <state line="72" column="18" selection-start="3208" selection-end="3208" vertical-scroll-proportion="0.83210915">
               <folding />
             </state>
           </provider>
@@ -430,9 +430,9 @@
         <option value="$PROJECT_DIR$/db/clear_seed.rb" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/app/views/listings/show.html.erb" />
-        <option value="$PROJECT_DIR$/config/application.rb" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/config/deploy.rb" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/config/application.rb" />
       </list>
     </option>
   </component>
@@ -704,6 +704,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="realestate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="realestate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uploads" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="image" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="attachment" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1437,20 +1463,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/application.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="62" selection-start="3205" selection-end="3205" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="22" selection-start="482" selection-end="482" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/uploaders/image_uploader.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="33" selection-start="41" selection-end="52" vertical-scroll-proportion="0.0">
@@ -1458,9 +1470,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="30" selection-start="538" selection-end="538" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config/deploy.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="29" selection-start="2463" selection-end="2463" vertical-scroll-proportion="0.71458554">
+        <state line="37" column="48" selection-start="1216" selection-end="1216" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/application.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="18" selection-start="3208" selection-end="3208" vertical-scroll-proportion="0.83210915">
           <folding />
         </state>
       </provider>
