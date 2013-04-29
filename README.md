@@ -13,6 +13,7 @@ Fix with Downgrade to Rails 3.2.12
 
 bundle exec rake assets:precompile RAILS_ENV=development
 bundle exec rake assets:clean RAILS_ENV=development
+bundle exec rake assets:clean RAILS_ENV=production
 
 Deploy
 ------
