@@ -106,7 +106,7 @@ class Listing < ActiveRecord::Base
   has_many :comments, as: :commentable
 
   validates_presence_of :listing_title_th, :listing_type, :price
-  validates_presence_of :amphur_id, :district_id, :province_id
+  validates_presence_of :amphur_id, :province_id
   #validates_presence_of :floorarea
   #validates :permalink, :presence => true
 
@@ -124,22 +124,28 @@ class Listing < ActiveRecord::Base
 
   # shipment state machine (see http://github.com/pluginaweek/state_machine/tree/master for details)
   state_machine :initial => 'draft', :use_transactions => false do
-    event :complete do
-      transition :from => 'draft', :to => 'complete'
-    end
+
     event :show do
-      transition :from => 'complete', :to => 'show'
+      transition :from => 'draft', :to => 'show'
       transition :from => 'hidden', :to => 'show'
+    end
+    event :complete do
+      transition :from => 'show', :to => 'complete'
     end
     event :hidden do
       transition :from => 'show', :to => 'hidden'
-      transition :from => 'complete', :to => 'hidden'
+      transition :from => 'exclusive', :to => 'hidden'
+    end
+    event :expire do
+      transition :from => 'show', :to => 'expire'
+      transition :from => 'exclusive', :to => 'expire'
     end
     event :exclusive do
       transition :from => 'show', :to => 'exclusive'
-      transition :from => 'complete', :to => 'exclusive'
+      transition :from => 'hidden', :to => 'exclusive'
     end
     after_transition :to => 'show', :do => :after_show
+    after_transition :to => 'exclusive', :do => :after_show
   end
 
 
@@ -163,7 +169,9 @@ class Listing < ActiveRecord::Base
   end
 
   def after_show
-    selt.published_at = Date.now
+    touch :published_at
+    #self.published_at = Time.now
+    #self.save
   end
 
 
@@ -198,6 +206,11 @@ class Listing < ActiveRecord::Base
       self.current_step = step
       valid?
     end
+  end
+
+  def job
+
+    logger.info "Running..."
   end
 
 

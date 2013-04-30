@@ -43,7 +43,7 @@
               วันหมดอายุ
               <%#= sort_link @search, :price, t(:price, :scope => 'activerecord.attributes.listing') %>
             </th>
-            <th width="10%">คุณภาพ</th>
+            <th width="10%">สถานะ</th>
             <th width="15%">เครื่องมือ</th>
           </tr>
           </thead>
@@ -59,7 +59,7 @@
                 </td>
                 <td><%= "#{number_with_delimiter(listing.price)} #{t(listing.price_type)}" unless listing.price.blank? %></td>
                 <td><%= listing.updated_at %></td>
-                <td><span class="label success">100%</span></td>
+                <td><%= t('accounts.listing.state.' + listing.state)%></td>
                 <td>
                   <div class="listing_actions">
                     <%= link_to t('toolbars.edit'), edit_account_listing_path(listing), :title => t('toolbars.edit'), :class => "act edit" %>

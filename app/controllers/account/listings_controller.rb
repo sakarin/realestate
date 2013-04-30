@@ -14,7 +14,7 @@ class Account::ListingsController < Account::BaseController
   end
 
   def history
-    @search = Listing.where(:user_id => @current_user.id, :state => 'history').search(params[:q])
+    @search = Listing.where(:user_id => @current_user.id, :state =>  %w(hidden complete)).search(params[:q])
     @listings = @search.result.paginate(:page => params[:page], :per_page => 10)
   end
 
@@ -70,17 +70,33 @@ class Account::ListingsController < Account::BaseController
         @listing.previous_step
         session[:listing_step] = @listing.current_step
         redirect_to edit_account_listing_path(@listing)
-      elsif @listing.last_step?
-        @listing.update_attributes(session[:listing_params]) if @listing.all_valid?
+      #elsif @listing.last_step?
 
-        session[:listing_step] = session[:listing_params] = nil
-        redirect_to account_listings_path
+      # บันทึกและออก
       elsif params[:save_button]
         @listing.update_attributes(session[:listing_params])
         session[:listing_step] = @listing.current_step
         redirect_to account_listings_path
-      elsif params[:ok_button]
+
+       # ยืนยัน
+      elsif params[:show_button]
+        @listing.update_attributes(session[:listing_params]) if @listing.all_valid?
+        session[:listing_step] = session[:listing_params] = nil
+        @listing.show
+        redirect_to account_listings_path
+
+      # ขาย/ให้เช่า ได้แล้ว
+      elsif params[:finish_button]
         @listing.complete
+        redirect_to account_listings_path
+
+      # ยกเลิกประกาศ
+      elsif params[:remove_button]
+        @listing.hidden
+        redirect_to account_listings_path
+      # ต่ออายุประกาศ
+      elsif params[:renew_button]
+        @listing.show
         redirect_to account_listings_path
       else
         @listing.next_step

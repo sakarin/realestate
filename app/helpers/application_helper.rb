@@ -16,7 +16,7 @@ module ApplicationHelper
   end
 
   def listing_address(listing)
-    "#{listing.street_number} #{listing.street_name} #{listing.district.name} #{listing.amphur.name} #{listing.province.name} #{listing.post_code} "
+    "#{listing.street_number} #{listing.street_name} #{listing.district.name unless listing.district.blank?} #{listing.amphur.name} #{listing.province.name} #{listing.post_code} "
   end
 
   def listing_area(listing)

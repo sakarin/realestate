@@ -35,8 +35,10 @@ th:
       state:
         show: "ประกาศปัจจุบัน"
         draft: "ประกาศฉบับร่าง"
-        history: "ประกาศเก่า"
+        hidden: "ยกเลิก"
         exclusive: "ประกาศพิเศษ"
+        complete: "ขาย/ให้เช่าแล้ว"
+
       collect:
         furnishing:
           unfur: "ไม่มี"
@@ -113,6 +115,7 @@ th:
   L: "เซ็งระยะยาว"
 
   buttons:
+    activate: "ลงประกาศอีกครั้ง"
     back: "กลับ"
     next: "ถัดไป"
     update_and_exit: "บันทึกและออก"
@@ -123,6 +126,9 @@ th:
     keep: "เก็บข้อความ"
     draft: "บันทึกเป็นฉบับร่าง"
     ok: "ยืนยัน"
+    show: "ลงประกาศ"
+    remove: "ยกเลิกประกาศ"
+
 
   toolbar: "เครื่องมือ"
   toolbars:

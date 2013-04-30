@@ -24,6 +24,9 @@ gem "mini_magick"
 gem 'state_machine'
 gem 'pretty_param'
 
+gem 'whenever', require: false
+gem 'delayed_job_active_record'
+
 
 # Gems used only for assets and not required
 # in production environments by default.

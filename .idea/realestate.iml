@@ -39,6 +39,7 @@
     <orderEntry type="library" scope="PROVIDED" name="capybara (v2.1.0@338b2d, rbenv: 1.9.3-p194) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="carrierwave (v0.6.2, rbenv: 1.9.3-p194) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="childprocess (v0.3.9, rbenv: 1.9.3-p194) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="chronic (v0.9.1, rbenv: 1.9.3-p194) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coderay (v1.0.9, rbenv: 1.9.3-p194) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-rails (v3.2.2, rbenv: 1.9.3-p194) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-script (v2.2.0, rbenv: 1.9.3-p194) [gem]" level="application" />
@@ -46,6 +47,8 @@
     <orderEntry type="library" scope="PROVIDED" name="commonjs (v0.2.6, rbenv: 1.9.3-p194) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="database_cleaner (v0.9.1, rbenv: 1.9.3-p194) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="debug_inspector (v0.0.2, rbenv: 1.9.3-p194) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="delayed_job (v3.0.5, rbenv: 1.9.3-p194) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="delayed_job_active_record (v0.4.4, rbenv: 1.9.3-p194) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="devise (v2.2.3, rbenv: 1.9.3-p194) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="diff-lcs (v1.2.2, rbenv: 1.9.3-p194) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="email_spec (v1.4.0, rbenv: 1.9.3-p194) [gem]" level="application" />
@@ -140,6 +143,7 @@
     <orderEntry type="library" scope="PROVIDED" name="warden (v1.2.1, rbenv: 1.9.3-p194) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="webrat (v0.7.3, rbenv: 1.9.3-p194) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="websocket (v1.0.7, rbenv: 1.9.3-p194) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="whenever (v0.8.2, rbenv: 1.9.3-p194) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="wicked (v0.6.0, rbenv: 1.9.3-p194) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="will_paginate (v3.0.4, rbenv: 1.9.3-p194) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="will_paginate-bootstrap (v0.2.2, rbenv: 1.9.3-p194) [gem]" level="application" />

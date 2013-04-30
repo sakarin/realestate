@@ -67,7 +67,7 @@
   <tr>
     <td class="title">ที่อยู่:</td>
     <td>
-     <%= "#{@listing.street_number} #{@listing.street_name} #{@listing.district.name} #{@listing.amphur.name} #{@listing.province.name} #{@listing.post_code} " %>
+     <%= listing_address(@listing) %>
 
 
     </td>
@@ -100,10 +100,15 @@
 
    <% if %w(draft).include?(@listing.state) %>
       <%= f.submit t('buttons.draft'), :class => "btn btn-success", :name => "draft_button" %>
-      <%= f.submit t('buttons.ok'), :class => "btn btn-primary", :name => "ok_button" %>
-  <% else %>
-      <%= f.submit t('buttons.finish'), :class => "btn btn-success", :name => "save_button" %>
-      <%= f.submit t('buttons.back'), :class => "btn btn-danger", :name => "back_button" %>
+      <%= f.submit t('buttons.show'), :class => "btn btn-primary", :name => "show_button" %>
+   <% elsif %w(complete).include?(@listing.state) %>
+      <%= f.submit t('buttons.activate'), :class => "btn btn-primary", :name => "activate_button" %>
+  <% elsif %w(hidden).include?(@listing.state) %>
       <%= f.submit t('buttons.renew'), :class => "btn btn-primary", :name => "renew_button" %>
+  <% else %>
+      <%= f.submit t('buttons.finish'), :class => "btn btn-success", :name => "finish_button" %>
+      <%= f.submit t('buttons.remove'), :class => "btn btn-danger", :name => "remove_button" %>
+      <%#= f.submit t('buttons.back'), :class => "btn btn-danger", :name => "back_button" %>
+
   <% end %>
 </div>

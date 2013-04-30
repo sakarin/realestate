@@ -19,7 +19,7 @@ class ListingsController < ApplicationController
   def search
     index
 
-    @search = Listing.search(params[:q])
+    @search = Listing.show.search(params[:q])
     @listings = @search.result.paginate(:page => params[:page], :per_page => 10)
 
     render :search
