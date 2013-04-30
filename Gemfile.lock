@@ -95,6 +95,8 @@ GEM
       launchy (~> 2.1)
       mail (~> 2.2)
     erubis (2.7.0)
+    exception_notification (2.6.1)
+      actionmailer (>= 3.0.4)
     execjs (1.4.0)
       multi_json (~> 1.0)
     factory_girl (4.0.0)
@@ -327,6 +329,7 @@ DEPENDENCIES
   delayed_job_active_record
   devise
   email_spec
+  exception_notification
   factory_girl_rails (= 4.0.0)
   faker
   guard-rspec

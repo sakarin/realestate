@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130429232058) do
+ActiveRecord::Schema.define(:version => 20130430194210) do
 
   create_table "amphurs", :force => true do |t|
     t.string  "code"
@@ -129,7 +129,7 @@ ActiveRecord::Schema.define(:version => 20130429232058) do
     t.string   "listing_type"
     t.string   "property_type"
     t.string   "listing_title_th"
-    t.string   "listing_description_th"
+    t.text     "listing_description_th", :limit => 255
     t.integer  "amphur_id"
     t.integer  "district_id"
     t.integer  "province_id"
@@ -161,10 +161,10 @@ ActiveRecord::Schema.define(:version => 20130429232058) do
     t.string   "status"
     t.datetime "published_date"
     t.datetime "expired_date"
-    t.string   "notepad"
-    t.string   "comment"
-    t.datetime "created_at",             :null => false
-    t.datetime "updated_at",             :null => false
+    t.text     "notepad",                :limit => 255
+    t.text     "comment",                :limit => 255
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
     t.string   "state"
     t.string   "slug"
     t.string   "make_permalink"

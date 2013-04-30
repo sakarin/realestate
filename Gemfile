@@ -61,6 +61,7 @@ group :production do
   gem 'unicorn'
   # Deploy with Capistrano
   gem 'capistrano'
+  gem 'exception_notification', :require => 'exception_notifier'
 end
 
 group :test do
