@@ -15,5 +15,5 @@ class Province < ActiveRecord::Base
 
   has_one :listing
 
-  default_scope order('name ASC')
+  #default_scope order('name ASC')
 end

@@ -2,21 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb86d650-604e-46f3-b4ec-a83fca82982e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/tasks/application.rake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.generators" afterPath="$PROJECT_DIR$/.idea/.generators" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.rakeTasks" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/account/listings/form/_summary_step.html.erb" afterPath="$PROJECT_DIR$/app/views/account/listings/form/_summary_step.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/application_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/application_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/account/listings/history.html.erb" afterPath="$PROJECT_DIR$/app/views/account/listings/history.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/listing.rb" afterPath="$PROJECT_DIR$/app/models/listing.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/listings_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/listings_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/account/listings_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/account/listings_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/realestate.iml" afterPath="$PROJECT_DIR$/.idea/realestate.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/locales/th.yml" afterPath="$PROJECT_DIR$/config/locales/th.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/amphur.rb" afterPath="$PROJECT_DIR$/app/models/amphur.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/district.rb" afterPath="$PROJECT_DIR$/app/models/district.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/province.rb" afterPath="$PROJECT_DIR$/app/models/province.rb" />
     </list>
     <ignored path="realestate.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -336,10 +324,19 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="listing.rb" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="listing.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/models/listing.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="138" column="50" selection-start="5064" selection-end="5064" vertical-scroll-proportion="0.26477543">
+                <state line="121" column="25" selection-start="4490" selection-end="4490" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="listings.js.coffee" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/assets/javascripts/account/listings.js.coffee">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-2.004728">
                   <folding />
                 </state>
               </provider>
@@ -387,10 +384,46 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="listings_controller.rb" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="province.rb" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/models/province.rb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="18" column="6" selection-start="388" selection-end="388" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="district.rb" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/models/district.rb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="21" column="24" selection-start="459" selection-end="459" vertical-scroll-proportion="0.68016195">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="amphur.rb" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/models/amphur.rb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="19" column="10" selection-start="428" selection-end="428" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="listings_controller.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/controllers/listings_controller.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="27" column="80" selection-start="584" selection-end="584" vertical-scroll-proportion="0.87449396">
+                <state line="27" column="80" selection-start="584" selection-end="584" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="README.rdoc" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/README.rdoc">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="48" column="0" selection-start="1079" selection-end="1094" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -419,9 +452,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/db/clear_seed.rb" />
-        <option value="$PROJECT_DIR$/app/views/listings/show.html.erb" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/config/deploy.rb" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/config/application.rb" />
@@ -435,6 +465,9 @@
         <option value="$PROJECT_DIR$/app/controllers/account/listings_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/listings_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/listing.rb" />
+        <option value="$PROJECT_DIR$/app/models/province.rb" />
+        <option value="$PROJECT_DIR$/app/models/amphur.rb" />
+        <option value="$PROJECT_DIR$/app/models/district.rb" />
       </list>
     </option>
   </component>
@@ -774,6 +807,72 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="account" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="realestate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="realestate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="realestate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="realestate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="realestate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="realestate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -1383,39 +1482,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/log/development.log">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/tasks/application.rake">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="28" selection-start="488" selection-end="488" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="75" selection-start="333" selection-end="333" vertical-scroll-proportion="-0.74303406">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/listings/_show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="22" selection-start="444" selection-end="444" vertical-scroll-proportion="-9.6">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/helpers/application_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="46" selection-start="577" selection-end="601" vertical-scroll-proportion="0.0">
@@ -1467,13 +1533,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/account/listings_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="27" selection-start="2940" selection-end="2940" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/account/listings/form/_summary_step.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="113" column="73" selection-start="3736" selection-end="3736" vertical-scroll-proportion="-72.32">
@@ -1487,16 +1546,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/listing.rb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/listings_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="138" column="50" selection-start="5064" selection-end="5064" vertical-scroll-proportion="0.26477543">
+        <state line="27" column="80" selection-start="584" selection-end="584" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/listings_controller.rb">
+    <entry file="file://$PROJECT_DIR$/README.rdoc">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="80" selection-start="584" selection-end="584" vertical-scroll-proportion="0.87449396">
+        <state line="48" column="0" selection-start="1079" selection-end="1094" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/listing.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="121" column="25" selection-start="4490" selection-end="4490" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/account/listings.js.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-2.004728">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/account/listings_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="94" column="27" selection-start="2940" selection-end="2940" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/province.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="6" selection-start="388" selection-end="388" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/amphur.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="10" selection-start="428" selection-end="428" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/district.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="24" selection-start="459" selection-end="459" vertical-scroll-proportion="0.68016195">
           <folding />
         </state>
       </provider>
