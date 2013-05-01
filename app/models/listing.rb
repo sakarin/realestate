@@ -165,7 +165,8 @@ class Listing < ActiveRecord::Base
   end
 
   def generate_slug
-    self.slug ||= listing_title_th
+    self.slug ||=  "#{listing_title_th} - #{I18n.t(property_type)} #{I18n.t('listing.type.' + listing_type.to_s)}" #.to_url
+
   end
 
   def after_show

@@ -24,6 +24,8 @@ gem "mini_magick"
 gem 'state_machine'
 gem 'pretty_param'
 
+#gem 'stringex'
+
 gem 'whenever', require: false
 gem 'delayed_job_active_record'
 
