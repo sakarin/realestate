@@ -20,7 +20,7 @@ class ListingsController < ApplicationController
     index
 
     @search = Listing.show.search(params[:q])
-    @listings = @search.result.paginate(:page => params[:page], :per_page => 10)
+    @listings = @search.result.paginate(:page => params[:page], :per_page => 20).order('created_at DESC')
 
     render :search
   end

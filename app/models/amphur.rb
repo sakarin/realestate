@@ -16,6 +16,6 @@ class Amphur < ActiveRecord::Base
   belongs_to :province
   has_one :listing
 
-  #default_scope order('name ASC')
+  default_scope order('name ASC')
 
 end

@@ -5,22 +5,22 @@ class Account::ListingsController < Account::BaseController
 
   def index
     @search = Listing.where(:user_id => @current_user.id, :state => 'show').search(params[:q])
-    @listings = @search.result.paginate(:page => params[:page], :per_page => 10)
+    @listings = @search.result.paginate(:page => params[:page], :per_page => 10).order('created_at DESC')
   end
 
   def draft
     @search = Listing.where(:user_id => @current_user.id, :state => 'draft').search(params[:q])
-    @listings = @search.result.paginate(:page => params[:page], :per_page => 10)
+    @listings = @search.result.paginate(:page => params[:page], :per_page => 10).order('created_at DESC')
   end
 
   def history
     @search = Listing.where(:user_id => @current_user.id, :state =>  %w(hidden complete)).search(params[:q])
-    @listings = @search.result.paginate(:page => params[:page], :per_page => 10)
+    @listings = @search.result.paginate(:page => params[:page], :per_page => 10).order('created_at DESC')
   end
 
   def exclusive
     @search = Listing.where(:user_id => @current_user.id, :state => 'exclusive').search(params[:q])
-    @listings = @search.result.paginate(:page => params[:page], :per_page => 10)
+    @listings = @search.result.paginate(:page => params[:page], :per_page => 10).order('created_at DESC')
   end
 
 

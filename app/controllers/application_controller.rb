@@ -30,7 +30,12 @@ class ApplicationController < ActionController::Base
 
   # Overwriting the sign_in redirect path method
   def after_sign_in_path_for(resource_or_scope)
-    account_listings_path
+    if current_user.has_role? :admin
+      admin_users_url
+    else
+      account_listings_path
+    end
+
     #redirect_to :back
   end
 
