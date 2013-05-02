@@ -71,6 +71,14 @@ module Realestate
 
     config.assets.precompile += ["redactor-rails/*"]
 
+    config.action_mailer.smtp_settings = {
+        :address              => "smtp.gmail.com",
+        :port                 => 587,
+        :domain               => 'siamliving.com',
+        :user_name            => 'siamliving.com@gmail.com',
+        :password             => 'siam2556',
+        :authentication       => 'plain',
+        :enable_starttls_auto => true  }
 
 
   end
