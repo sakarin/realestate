@@ -65,7 +65,8 @@ Realestate::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
-  config.logger = Logger.new(config.paths.log.first, 1, 5.megabytes)
+
+
 
   config.middleware.use ExceptionNotifier,
                         :email_prefix => "[ERROR]",
