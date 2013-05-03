@@ -128,14 +128,15 @@ class Account::ListingsController < Account::BaseController
 
   def dynamic_amphurs
 
-    @amphurs = Amphur.find_all_by_province_id(params[:province_id])
+    #@amphurs = Amphur.find_all_by_province_id(params[:province_id])
+    @amphurs = Amphur.where(:province_id => params[:province_id]).order("name")
     respond_to do |format|
       format.js
     end
   end
 
   def dynamic_districts
-    @districts = District.find_all_by_amphur_id(params[:amphur_id])
+    @districts = District.where(:amphur_id => params[:amphur_id]).order("name")
     respond_to do |format|
       format.js
     end

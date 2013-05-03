@@ -55,6 +55,7 @@ group :development do
   gem 'meta_request', '0.2.1'
   gem 'rspec-rails'
   gem 'faker'
+  gem 'hirb'
 end
 
 group :production do
