@@ -8,7 +8,16 @@ module PrettyParam
 			result.gsub!(/[ \-]+/i, '-') # No more than one of the separator in a row.
 			result.gsub!(/^\-|\-$/i, '') # Remove leading/trailing separator.
       result.gsub!(/\./, '-')
-      result.gsub!(/\%/, '')
+
+
+      # Remove non chars.
+      result.gsub!(/[\x20-\x2F]+/, '-')
+      result.gsub!(/[\x3A-\x40]+/, '-')
+      result.gsub!(/[\x5B-\x60]+/, '-')
+      result.gsub!(/[\x7B-\x7F]+/, '-')
+      #result.gsub!(/\%/, '')
+
+			#result.downcase.parameterize
 			result.downcase
 		end
 	end

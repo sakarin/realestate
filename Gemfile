@@ -24,6 +24,10 @@ gem "mini_magick"
 gem 'state_machine'
 gem 'pretty_param'
 
+
+
+gem 'jasny_bootstrap_extension_rails'
+
 #gem 'stringex'
 
 gem 'whenever', require: false
@@ -56,6 +60,7 @@ group :development do
   gem 'rspec-rails'
   gem 'faker'
   gem 'hirb'
+  gem 'then'
 end
 
 group :production do

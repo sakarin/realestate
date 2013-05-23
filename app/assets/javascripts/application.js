@@ -20,3 +20,4 @@
 //= require jquery.purr
 //= require best_in_place
 //= require redactor-rails
+//= require jasny-bootstrap

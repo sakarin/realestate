@@ -10,12 +10,56 @@
           <%= f.error_notification %>
           <%= display_base_errors @user %>
 
-          <%= f.input :introduction, :as => :text, :input_html => { :class => 'redactor' } %>
+          <div class="control-group">
+            <label class="control-label" for="property_type">รูปประจำตัว</label>
+
+            <div class="controls">
+              <div class="fileupload fileupload-new" data-provides="fileupload">
+                <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                  <% unless @user.avatar? %>
+                      <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image"/>
+                  <% else %>
+                      <%= image_tag(@user.avatar_url) if @user.avatar? %>
+                  <% end %>
+                </div>
+                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                <div>
+                  <span class="btn btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><%= f.file_field :avatar %></span>
+                  <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <%= f.input :introduction, :as => :text, :input_html => {:class => 'redactor'} %>
           <%= f.input :company %>
           <%= f.input :web_site %>
 
 
+          <div class="control-group">
+            <label class="control-label" for="property_type">โลโก้บริษัท</label>
+
+            <div class="controls">
+              <div class="fileupload fileupload-new" data-provides="fileupload">
+                <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                  <% unless @user.avatar? %>
+                      <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image"/>
+                  <% else %>
+                      <%= image_tag(@user.agent_logo_url) if @user.agent_logo? %>
+                  <% end %>
+                </div>
+                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                <div>
+                  <span class="btn btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><%= f.file_field :agent_logo %></span>
+                  <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
           <h4>บริการและความชำนาญพิเศษ</h4>
+
           <div class="control-group">
             <table class="inline-inputs bare">
               <tbody>

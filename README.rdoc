@@ -49,4 +49,8 @@ cap deploy:setup
 cap deploy:cold
 
 The PostgreSQL Database
-su - postgres
+sudo -u postgres psql
+
+
+# see http://my.thaifox.net/modules.php?name=News&file=article&sid=51
+sudo /etc/init.d/postgresql restart

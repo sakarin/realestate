@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130502001615) do
+ActiveRecord::Schema.define(:version => 20130520161238) do
 
   create_table "amphurs", :force => true do |t|
     t.string  "code"
@@ -316,6 +316,8 @@ ActiveRecord::Schema.define(:version => 20130502001615) do
     t.boolean  "notice_property"
     t.boolean  "notice_new_property"
     t.string   "company"
+    t.string   "avatar"
+    t.string   "agent_log"
   end
 
   create_table "users_roles", :id => false, :force => true do |t|

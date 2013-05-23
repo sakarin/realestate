@@ -64,6 +64,9 @@ class User < ActiveRecord::Base
   attr_accessible :introduction, :service_and_expert, :web_site, :agency_logo, :company
   attr_accessible :notice_news, :notice_property, :notice_new_property
 
+  attr_accessible :avatar, :avatar_cache
+  attr_accessible :agent_logo, :agent_logo_cache
+
   attr_accessible :expert_ids
 
   has_many :experts_users
@@ -72,6 +75,9 @@ class User < ActiveRecord::Base
   has_many :listings
 
   has_many :comments
+
+  mount_uploader :avatar, AvatarUploader
+  mount_uploader :agent_logo, AgentLogoUploader
 
 
 
