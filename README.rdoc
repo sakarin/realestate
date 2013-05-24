@@ -18,6 +18,56 @@ If your login works using Capybara/Rack::Test, but not in Capybara/Selenium
 http://stackoverflow.com/questions/6154687/rails-integration-test-with-selenium-as-webdriver-cant-sign-in
 
 
+apt-get -y update
+apt-get -y install curl git-core python-software-properties
+
+# nginx
+add-apt-repository ppa:nginx/stable
+apt-get -y update
+apt-get -y install nginx
+service nginx start
+
+# PostgreSQL
+add-apt-repository ppa:pitti/postgresql
+apt-get -y update
+apt-get -y install postgresql libpq-dev
+sudo -u postgres psql
+# \password
+# create user blog with password 'secret';
+# create database blog_production owner blog;
+# \q
+
+# Postfix
+apt-get -y install telnet postfix
+
+# Node.js
+add-apt-repository ppa:chris-lea/node.js
+apt-get -y update
+apt-get -y install nodejs
+
+# Add deployer user
+adduser deployer --ingroup admin
+su deployer
+cd
+
+# rbenv
+curl -L https://raw.github.com/fesplugas/rbenv-installer/master/bin/rbenv-installer | bash
+vim ~/.bashrc # add rbenv to the top
+. ~/.bashrc
+rbenv bootstrap-ubuntu-10-04
+rbenv install 1.9.3-p125
+rbenv global 1.9.3-p125
+gem install bundler --no-ri --no-rdoc
+rbenv rehash
+
+# get to know github.com
+ssh git@github.com
+
+# after deploy:cold
+sudo rm /etc/nginx/sites-enabled/default
+sudo service nginx restart
+sudo update-rc.d -f unicorn_blog defaults
+
 Deploy
 ------------------------
 rails new blog -d postgresql

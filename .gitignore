@@ -19,5 +19,6 @@
 
 /public/uploads/image/attachment/*
 /public/uploads/redactor_rails/picture/*
+/public/uploads/tmp/*
 
 
