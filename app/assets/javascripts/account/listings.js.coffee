@@ -56,7 +56,7 @@ jQuery ->
       data: data
       success: (response) ->
         $("#listing_amphur_id").html
-        updateMapCenter(district_lat, district_lng, 13)
+#        updateMapCenter(district_lat, district_lng, 13)
 
 
   $("#listing_amphur_id").change ->

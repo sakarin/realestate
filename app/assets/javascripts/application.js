@@ -15,9 +15,9 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+//= require jasny-bootstrap
 //= require jquery-fileupload/basic
 //= require jquery-fileupload/vendor/tmpl
 //= require jquery.purr
 //= require best_in_place
 //= require redactor-rails
-//= require jasny-bootstrap

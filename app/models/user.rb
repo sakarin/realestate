@@ -42,6 +42,9 @@
 #  notice_news            :boolean
 #  notice_property        :boolean
 #  notice_new_property    :boolean
+#  company                :string(255)
+#  avatar                 :string(255)
+#  agent_logo             :string(255)
 #
 
 class User < ActiveRecord::Base

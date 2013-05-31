@@ -26,7 +26,7 @@ gem 'pretty_param'
 
 
 
-gem 'jasny_bootstrap_extension_rails'
+
 
 #gem 'stringex'
 
@@ -48,6 +48,8 @@ group :assets do
   gem 'twitter-bootstrap-rails', '2.1.3'
   gem 'uglifier', '>= 1.0.3'
   gem 'jquery-fileupload-rails'
+
+  gem 'jasny_bootstrap_extension_rails'
 end
 
 group :development do

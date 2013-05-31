@@ -25,17 +25,6 @@
             updateMapCenter(subdistrict_lat, subdistrict_lng, 14)
         }
 
-//        $("#apartment_province_code").live("change", function () {
-//            $("#district-select, #subdistrict-select").empty().html('<select disabled class="short"><option value="">กำลังโหลด ...</option></select>'), $("#district-select").load("/misc/on_province_changed", {province_code: $(this).val()}, function () {
-//                $("#subdistrict-select").html('<select class="short" id="apartment_subdistrict_code" name="apartment[subdistrict_code]"><option value="">ตำบล/แขวง</option></select>'), e()
-//            })
-//        }), $("#apartment_district_code").live("change", function () {
-//            $("#subdistrict-select").empty().html('<select disabled class="short"><option value="">กำลังโหลด ...</option></select>'), $("#subdistrict-select").load("/misc/on_district_changed", {district_code: $(this).val()}, t)
-//        }), $("#apartment_subdistrict_code").live("change", function () {
-//            $.get("/misc/on_subdistrict_changed", {subdistrict_code: $(this).val()}, function (e) {
-//                updateMapCenter(e.lat, e.lng, 15)
-//            }, "json")
-//        })
     }
 
     function initMap() {

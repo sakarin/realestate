@@ -6,7 +6,7 @@
 #  listing_type           :string(255)
 #  property_type          :string(255)
 #  listing_title_th       :string(255)
-#  listing_description_th :string(255)
+#  listing_description_th :text(255)
 #  amphur_id              :integer
 #  district_id            :integer
 #  province_id            :integer
@@ -38,14 +38,16 @@
 #  status                 :string(255)
 #  published_date         :datetime
 #  expired_date           :datetime
-#  notepad                :string(255)
-#  comment                :string(255)
+#  notepad                :text(255)
+#  comment                :text(255)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  state                  :string(255)
 #  slug                   :string(255)
 #  make_permalink         :string(255)
 #  permalink              :string(255)
+#  number                 :string(255)
+#  published_at           :datetime
 #
 
 # ประกาศมีอายุ 90 วันนับจากวันลงประกาศหรือวันที่ต่ออายุล่าสุด โดยระบบจะแจ้งเตือนทางอีเมลก่อนประกาศหมดอายุ
